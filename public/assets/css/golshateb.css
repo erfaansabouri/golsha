@@ -44,3 +44,11 @@ body {
 .shadow-bottom{
     box-shadow: 0 4px 6px -6px #222;
 }
+
+.contact-us-section-desktop{
+    background-size: 50% 50%;
+}
+
+.contact-us-card-title{
+    min-height: 100px;
+}

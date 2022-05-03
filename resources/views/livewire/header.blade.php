@@ -10,7 +10,7 @@
                         <div class="input-group-append">
                             <button class="btn golshateb-bg-grey rounded-right" type="button"><img src="{{ asset('assets/svg/golshateb/search.svg') }}" alt="Golshateb"></button>
                         </div>
-                        <input type="text" class="form-control golshateb-bg-grey rounded-left" placeholder="جستجو در گلشا">
+                        <input type="text" class="form-control golshateb-bg-grey rounded-left border-0" placeholder="جستجو در گلشا">
                     </div>
 
                 </div>
