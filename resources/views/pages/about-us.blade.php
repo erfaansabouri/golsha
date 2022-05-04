@@ -1,7 +1,7 @@
 @extends('app')
 @section('page-title')
-    ارتباط ما
+    درباره ما
 @endsection
 @section('content')
-    @livewire('contact-us')
+    @livewire('about-us')
 @endsection
