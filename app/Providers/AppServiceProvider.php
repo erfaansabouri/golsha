@@ -2,10 +2,15 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+	protected $pageInfo = [
+		'title' => 'گلشا تب',
+	];
+	
     /**
      * Register any application services.
      *
@@ -23,6 +28,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-    }
+		View::share('pageInfo', $this->pageInfo);
+	}
 }

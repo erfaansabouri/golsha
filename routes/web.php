@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('app');
-});
+})->name('home');
 
 Route::get('/contact-us', function () {
     return view('pages.contact-us');
@@ -23,4 +23,18 @@ Route::get('/contact-us', function () {
 
 Route::get('/about-us', function () {
 	return view('pages.about-us');
+});
+
+Route::prefix('admin')->group(function () {
+	// Auth
+	Route::prefix('auth')->group(function () {
+		Route::get('login', [ \App\Http\Controllers\Admin\AuthController::class , 'loginForm'])->name('admin.auth.login.form');
+		Route::post('login', [ \App\Http\Controllers\Admin\AuthController::class , 'login'])->name('admin.auth.login');
+		Route::any('logout', [ \App\Http\Controllers\Admin\AuthController::class , 'logout'])->name('admin.auth.logout');
+	});
+	
+	// Dashboard
+	Route::prefix('dashboard')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Admin\DashboardController::class , 'index'])->name('admin.dashboard.index');
+	});
 });
