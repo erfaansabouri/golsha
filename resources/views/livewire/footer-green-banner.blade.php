@@ -1,5 +1,6 @@
 <div>
     <div class="row">
-        <img class="img-fluid w-100" style="max-height: 100px" src="{{ asset('assets/image/green-footer.svg') }}">
+        <div class="img-fluid w-100" style="background-color: green; min-height: 100px">
+        </div>
     </div>
 </div>
