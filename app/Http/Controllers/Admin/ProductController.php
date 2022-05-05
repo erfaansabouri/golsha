@@ -20,4 +20,9 @@ class ProductController extends Controller
     {
         return view('admin-pages.products.index')->with('pageInfo', $this->pageInfo);
     }
+	
+	public function create()
+	{
+		return view('admin-pages.products.create')->with('pageInfo', $this->pageInfo);
+	}
 }

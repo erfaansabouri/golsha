@@ -7,6 +7,9 @@
                     <div class="col-sm-6">
                         <h1>{{ $pageInfo['title'] }}</h1>
                     </div>
+                    <div class="col-sm-6">
+                        <a href="{{ route('admin.products.create') }}" class="btn btn-success float-sm-left">تعریف محصول جدید</a>
+                    </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -19,7 +22,6 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">{{ $pageInfo['title'] }}</h3>
-
                                 <div class="card-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
                                         <input wire:model.lazy="search" type="text" name="" class="form-control float-right" placeholder="جستجو">

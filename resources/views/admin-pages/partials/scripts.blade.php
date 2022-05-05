@@ -29,9 +29,12 @@
 <script src="{{ asset('assets/admin/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
 <script src="{{ asset('assets/admin/fastclick/fastclick.js') }}"></script>
+<script src="{{ asset('assets/admin/persian-date.min.js') }}"></script>
+<script src="{{ asset('assets/admin/persian-datepicker.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/admin/adminlte.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('assets/admin/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/admin/demo.js') }}"></script>
+@stack('scripts')
