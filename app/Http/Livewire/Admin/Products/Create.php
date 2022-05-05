@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Products;
 
+use Hekmatinasser\Verta\Facades\Verta;
 use Illuminate\Support\Carbon;
 use Livewire\Component;
 use Livewire\Request;
@@ -11,8 +12,9 @@ class Create extends Component
 	protected $pageInfo = [
 		'title' => 'تعریف محصول جدید',
 	];
-	
+	public $title;
 	public $discountUnixStartedAt;
+	public $discountStartedAt;
 	public $discountUnixEndedAt;
 	
 	public $productAttributeInputs = [];
@@ -56,7 +58,7 @@ class Create extends Component
 			'discountUnixStartedAt' => 'nullable',
 		]);
 		//dd($this->discountUnixStartedAt);
-		
+		$this->discountStartedAt = 555;
 		dd(date("Y-m-d\TH:i:s\Z",$this->discountUnixStartedAt/1000)
 		);
 	}

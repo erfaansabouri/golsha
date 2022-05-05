@@ -175,6 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Ybazli\Faker\FakerServiceProvider::class,
+		Hekmatinasser\Verta\Laravel\VertaServiceProvider::class,
 
     ],
 
@@ -228,6 +229,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Faker' => Ybazli\Faker\Facades\Faker::class,
+		'Verta' => Hekmatinasser\Verta\Verta::class,
     ],
 
 ];

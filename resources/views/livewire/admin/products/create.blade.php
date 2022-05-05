@@ -38,7 +38,7 @@
                                             <div class="form-group">
                                                 <label for="title" class="control-label">عنوان محصول</label>
                                                 <div class="">
-                                                    <input type="text" class="form-control" id="title" placeholder="عنوان محصول را وارد کنید">
+                                                    <input wire:model="title" type="text" class="form-control" id="title" placeholder="عنوان محصول را وارد کنید">
                                                 </div>
                                             </div>
                                         </div>
@@ -112,7 +112,7 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </span>
                                                     </div>
-                                                    <input  id="discountStartedAt" type="text" class="form-control" placeholder="تاریخ "  wire:model.defer="discountStartedAt">
+                                                    <input value="{{ $discountStartedAt }}"  id="discountStartedAt" type="text" class="form-control" placeholder="تاریخ "  wire:model="discountStartedAt">
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -127,7 +127,7 @@
                                                             <i class="fa fa-calendar"></i>
                                                         </span>
                                                     </div>
-                                                    <input  id="discountEndedAt" type="text" class="form-control" placeholder="تاریخ "  wire:model.defer="discountEndedAt">
+                                                    <input  id="discountEndedAt" type="text" class="form-control" placeholder="تاریخ "  wire:model="discountEndedAt">
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -251,9 +251,10 @@
         $(document).ready(function () {
             $("#discountStartedAt").persianDatepicker({
                 format: 'YYYY/MM/DD',
-                initialValue: false,
+                initialValueType: 'gregorian',
                 onSelect: function(unix){
                     console.log('discountStartedAt select : ' + unix);
+                    @this.set('discountStartedAt', unix, true);
                     @this.set('discountUnixStartedAt', unix, true);
                 }
 
