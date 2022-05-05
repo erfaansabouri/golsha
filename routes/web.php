@@ -29,12 +29,17 @@ Route::prefix('admin')->group(function () {
 	// Auth
 	Route::prefix('auth')->group(function () {
 		Route::get('login', [ \App\Http\Controllers\Admin\AuthController::class , 'loginForm'])->name('admin.auth.login.form');
-		Route::post('login', [ \App\Http\Controllers\Admin\AuthController::class , 'login'])->name('admin.auth.login');
+		Route::post('login', [ \App\Http\Controllers\Admin\AuthController::class , 'login'])->name('login');
 		Route::any('logout', [ \App\Http\Controllers\Admin\AuthController::class , 'logout'])->name('admin.auth.logout');
 	});
-	
+
 	// Dashboard
 	Route::prefix('dashboard')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Admin\DashboardController::class , 'index'])->name('admin.dashboard.index');
 	});
+
+    // Products
+    Route::prefix('products')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\ProductController::class , 'index'])->name('admin.products.index');
+    });
 });

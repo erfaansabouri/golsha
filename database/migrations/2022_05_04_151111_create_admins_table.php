@@ -21,6 +21,13 @@ class CreateAdminsTable extends Migration
 			$table->rememberToken();
 			$table->timestamps();
         });
+
+        \App\Models\Admin::query()
+            ->create([
+                'full_name' => 'erfan sb',
+                'email' => 'erfan@mail.com',
+                'password' => bcrypt('as12AS!@'),
+            ]);
     }
 
     /**

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+@livewireStyles
+
 @include('admin-pages.partials.head', ['pageTitle' => $pageTitle ?? ''])
 @yield('head')
 <body class="hold-transition sidebar-mini">
@@ -8,7 +10,7 @@
     @include('admin-pages.partials.navbar')
     @include('admin-pages.partials.sidebar')
 
-    @yield('content')
+        @yield('content')
 
     @include('admin-pages.partials.footer')
 
@@ -16,5 +18,6 @@
 <!-- ./wrapper -->
 @include('admin-pages.partials.scripts')
 @yield('scripts')
+@livewireScripts
 </body>
 </html>
