@@ -11,6 +11,16 @@
                         <a href="{{ route('admin.products.create') }}" class="btn btn-success float-sm-left">تعریف محصول جدید</a>
                     </div>
                 </div>
+                <div class="row">
+                    <div>
+                        @if (session()->has('message'))
+                            <div class="alert alert-success alert-dismissible fade show">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>عملیات موفقیت آمیز بود!</strong> {{ session('message') }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
             </div><!-- /.container-fluid -->
         </section>
 
@@ -47,7 +57,11 @@
                                             <td>{{ $product->id }}</td>
                                             <td>{{ $product->title }}</td>
                                             <td>{{ $product->seller_name }}</td>
-                                            <td>{{ $product->comma_seperated_price }}</td>
+                                            @if($product->price == $product->purchase_price)
+                                                <td>{{ $product->price }}</td>
+                                            @else
+                                                <td><strike>{{ $product->price }}</strike> {{ $product->purchase_price }}</td>
+                                            @endif
                                             <td><button class="btn btn-sm btn-primary">ویرایش</button></td>
                                         </tr>
                                     @endforeach

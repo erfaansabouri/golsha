@@ -23,8 +23,9 @@ class Index extends Component
             $products = $products->where('title', 'like', '%'. $this->search .'%')
                 ->orWhere('id', '=', $this->search);
         }
+        $products = $products->orderBy('id', 'desc')->paginate(25);
         return view('livewire.admin.products.index', [
-            'products' => $products->paginate(25),
+            'products' => $products,
         ])->with('pageInfo', $this->pageInfo);
     }
 }
