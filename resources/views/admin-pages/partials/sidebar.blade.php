@@ -30,6 +30,22 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('admin.categories.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-th-list"></i>
+                            <p>
+                                دسته بندی محصولات
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.categories.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-th-list"></i>
+                            <p>
+                                گروه های ویژه محصولات
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="pages/widgets.html" class="nav-link">
                             <i class="nav-icon fa fa-users"></i>
                             <p>
@@ -50,10 +66,69 @@
                     </li>
                     <li class="nav-item">
                         <a href="pages/widgets.html" class="nav-link">
+                            <i class="nav-icon fa fa-tag"></i>
+                            <p>
+                                کوبون های تخفیف
+                                <span class="right badge badge-info">5 فعال</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
                             <i class="nav-icon fa fa-map-signs"></i>
                             <p>
                                 بنر ها
                                 <span class="right badge badge-info">5 فعال</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
+                            <i class="nav-icon fa fa-comment"></i>
+                            <p>
+                                نظر ها
+                                <span class="right badge badge-danger">5 جدید</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
+                            <i class="nav-icon fa fa-comment"></i>
+                            <p>
+                                وبلاگ
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
+                            <i class="nav-icon fa fa-comment"></i>
+                            <p>
+                                تیکت ها
+                                <span class="right badge badge-danger">5 جدید</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
+                            <i class="nav-icon fa fa-comment"></i>
+                            <p>
+                                درخواست های همکاری
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
+                            <i class="nav-icon fa fa-comment"></i>
+                            <p>
+                                درخواست های بشتیبانی
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
+                            <i class="nav-icon fa fa-comment"></i>
+                            <p>
+                                نارضایتی ها
                             </p>
                         </a>
                     </li>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Admin\Products;
 
+use App\Models\Category;
+use App\Models\CategoryProduct;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\ProductFaq;
@@ -42,6 +44,14 @@ class Create extends Component
 
     public $purchasePrice = 0;
 
+    public $categories;
+    public $category_ids = [];
+
+    public function mount()
+    {
+         $this->categories = Category::all();
+    }
+
     public function appendProductAttribute($i)
     {
         $productAttributeCounter = $i + 1;
@@ -74,11 +84,6 @@ class Create extends Component
 
     public function store()
     {
-
-        //dd($this->discountUnixStartedAt);
-        //$this->discountStartedAt = 555;
-        //dd(date("Y-m-d\TH:i:s\Z",$this->discountUnixStartedAt/1000));
-
         $product = Product::query()
             ->create([
                 'title' => $this->title,
@@ -114,6 +119,15 @@ class Create extends Component
                     ]);
             }
 
+        }
+
+        foreach ($this->category_ids as $category_id)
+        {
+            CategoryProduct::query()
+                ->create([
+                    'product_id' => $product->id,
+                    'category_id' => $category_id
+                ]);
         }
 
         session()->flash('message', 'محصول با موفقیت ایجاد شد.');

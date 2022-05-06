@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/iCheck/flat/blue.css') }}">
     <!-- Morris chart -->
     <link rel="stylesheet" href="{{ asset('assets/admin/morris/morris.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/select2/select2.min.css') }}">
     <!-- jvectormap -->
     <link rel="stylesheet" href="{{ asset('assets/admin/jvectormap/jquery-jvectormap-1.2.2.css') }}">
     <!-- Date Picker -->

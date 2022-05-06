@@ -27,6 +27,7 @@
 <script src="{{ asset('assets/admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- Slimscroll -->
 <script src="{{ asset('assets/admin/slimScroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ asset('assets/admin/select2/select2.min.js') }}"></script>
 <!-- FastClick -->
 <script src="{{ asset('assets/admin/fastclick/fastclick.js') }}"></script>
 <script src="{{ asset('assets/admin/persian-date.min.js') }}"></script>

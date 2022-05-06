@@ -9,9 +9,7 @@
 
     @include('admin-pages.partials.navbar')
     @include('admin-pages.partials.sidebar')
-
-        @yield('content')
-
+    @yield('content')
     @include('admin-pages.partials.footer')
 
 </div>

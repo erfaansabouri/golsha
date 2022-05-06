@@ -1,6 +1,4 @@
 <div>
-
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -109,6 +107,23 @@
                                         </div>
                                     </div>
                                     <hr>
+                                    <h4>دسته بندی و گروه</h4>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="form-group">
+                                                <label>انتخاب دسته بندی</label>
+                                                <div wire:ignore>
+                                                    <select id="categories-dropdown" class="form-control" multiple="multiple">
+                                                        @foreach($categories as $category)
+                                                            <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
                                     <div class="row">
                                         <div class="col">
                                             <h4>مشخصات محصول</h4>
@@ -183,8 +198,7 @@
 
                                 <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-info"  wire:click.prevent="store()">ورود</button>
-                                    <button type="submit" class="btn btn-default float-left">لغو</button>
+                                    <button type="button" class="btn btn-info"  wire:click.prevent="store()">ثبت</button>
                                 </div>
                                 <!-- /.card-footer -->
                             </form>
@@ -220,6 +234,14 @@
                 }
 
             });
+            $('#categories-dropdown').select2({
+                theme: "classic"
+            });
+            $('#categories-dropdown').on('change', function (e) {
+                let data = $(this).val();
+                @this.set('category_ids', data);
+            });
+
         });
     </script>
 @endpush
