@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Admin\Products;
 
 use App\Models\Category;
 use App\Models\CategoryProduct;
+use App\Models\Group;
+use App\Models\GroupProduct;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\ProductFaq;
@@ -47,9 +49,13 @@ class Create extends Component
     public $categories;
     public $category_ids = [];
 
+    public $groups;
+    public $group_ids = [];
+
     public function mount()
     {
          $this->categories = Category::all();
+         $this->groups = Group::all();
     }
 
     public function appendProductAttribute($i)
@@ -130,6 +136,15 @@ class Create extends Component
                 ]);
         }
 
+
+        foreach ($this->group_ids as $group_id)
+        {
+            GroupProduct::query()
+                ->create([
+                    'product_id' => $product->id,
+                    'group_id' => $group_id
+                ]);
+        }
         session()->flash('message', 'محصول با موفقیت ایجاد شد.');
         redirect()->route('admin.products.index');
     }

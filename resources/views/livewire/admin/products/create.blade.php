@@ -122,6 +122,20 @@
 
                                             </div>
                                         </div>
+                                        <div class="col-3">
+                                            <div class="form-group">
+                                                <label>انتخاب گروه</label>
+                                                <div wire:ignore>
+                                                    <select id="groups-dropdown" class="form-control" multiple="multiple">
+                                                        @foreach($groups as $group)
+                                                            <option value="{{ $group->id }}">{{ $group->title }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <hr>
                                     <div class="row">
@@ -240,6 +254,14 @@
             $('#categories-dropdown').on('change', function (e) {
                 let data = $(this).val();
                 @this.set('category_ids', data);
+            });
+
+            $('#groups-dropdown').select2({
+                theme: "classic"
+            });
+            $('#groups-dropdown').on('change', function (e) {
+                let data = $(this).val();
+                @this.set('group_ids', data);
             });
 
         });
