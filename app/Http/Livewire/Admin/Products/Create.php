@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\CategoryProduct;
 use App\Models\Group;
 use App\Models\GroupProduct;
+use App\Models\ImageProduct;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\ProductFaq;
@@ -13,9 +14,12 @@ use Hekmatinasser\Verta\Facades\Verta;
 use Illuminate\Support\Carbon;
 use Livewire\Component;
 use Livewire\Request;
+use Livewire\WithFileUploads;
 
 class Create extends Component
 {
+    use WithFileUploads;
+
     protected $pageInfo = [
         'title' => 'تعریف محصول جدید',
     ];
@@ -27,7 +31,7 @@ class Create extends Component
     public $virtues;
     public $introduction;
     public $price = 0;
-    public $discountPercentage;
+    public $discountPercentage = 0;
     public $discountStartedAt;
     public $discountEndedAt;
     public $discountUnixStartedAt;
@@ -51,6 +55,8 @@ class Create extends Component
 
     public $groups;
     public $group_ids = [];
+
+    public $images = [];
 
     public function mount()
     {
@@ -88,6 +94,22 @@ class Create extends Component
         return view('livewire.admin.products.create')->with('pageInfo', $this->pageInfo);
     }
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+    protected $rules = [
+        'discountPercentage' => 'nullable|numeric|min:0|max:100',
+        'images.*' => 'image|max:1024',
+    ];
+
+    protected $messages = [
+        'discountPercentage.numeric' => 'درصد تخفیف نا معتبر است.',
+        'discountPercentage.min' => 'درصد تخفیف نا معتبر است.',
+        'discountPercentage.max' => 'درصد تخفیف نا معتبر است.',
+    ];
+
     public function store()
     {
         $product = Product::query()
@@ -101,6 +123,17 @@ class Create extends Component
                 'price' => $this->price,
                 'discount_percentage' => $this->discountPercentage,
             ]);
+
+        foreach ($this->images as $key => $image)
+        {
+            $img = $image->store('images');
+            $this->images[$key] = $img;
+            ImageProduct::query()->create([
+                'product_id' => $product->id,
+                'name' => $img
+            ]);
+        }
+
 
         foreach ($this->productAttributeInputs as $key => $value) {
             if(!empty(@$this->attributeKey[$key]))

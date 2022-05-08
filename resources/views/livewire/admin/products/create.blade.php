@@ -49,6 +49,26 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label class="form-label">آپلود تصاویر</label>
+                                                <input type="file" class="form-control" wire:model="images" multiple>
+                                                <div wire:loading wire:target="images">در حال آپلود تصاویر</div>
+                                            </div>
+                                        </div>
+                                        @if ($images)
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    @foreach($images as $image)
+                                                        <img style="width: 200px" class="img-fluid img-bordered" src="{{ $image->temporaryUrl() }}" alt="Photo">
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <hr>
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
@@ -103,9 +123,17 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p class="text-danger">قیمت نهایی با احتساب تخفیف : {{ $purchasePrice }} تومان</p>
+                                            <p class="text-success">قیمت نهایی با احتساب تخفیف : {{ $purchasePrice }} تومان</p>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p class="text-danger">@error('discountPercentage') <span class="error">{{ $message }}</span> @enderror</p>
+                                        </div>
+                                    </div>
+
+
                                     <hr>
                                     <h4>دسته بندی و گروه</h4>
                                     <div class="row">
