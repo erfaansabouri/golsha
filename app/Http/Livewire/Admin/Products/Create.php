@@ -12,6 +12,7 @@ use App\Models\ProductAttribute;
 use App\Models\ProductFaq;
 use Hekmatinasser\Verta\Facades\Verta;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\Request;
 use Livewire\WithFileUploads;
@@ -126,8 +127,10 @@ class Create extends Component
 
         foreach ($this->images as $key => $image)
         {
-            $img = $image->store('images');
-            $this->images[$key] = $img;
+            //$img = $image->store('images');
+            $fileName = Str::random(16). '.' . $image->getClientOriginalExtension();
+            $img = $image->storeAs('images', $fileName, 'parswebserver');
+            $this->images[$key] = $image;
             ImageProduct::query()->create([
                 'product_id' => $product->id,
                 'name' => $img
