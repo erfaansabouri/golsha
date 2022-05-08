@@ -10,4 +10,10 @@ class ImageProduct extends Model
     protected $table = 'product_images';
     protected $guarded = [];
     use HasFactory;
+
+    public function getPathAttribute()
+    {
+        return getenv('APP_URL'). "/storage/". $this->name;
+    }
+
 }

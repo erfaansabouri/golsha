@@ -47,6 +47,7 @@
                                 <table class="table table-hover">
                                     <tr>
                                         <th>شناسه</th>
+                                        <th>تصویر</th>
                                         <th>عنوان محصول</th>
                                         <th>فروشنده</th>
                                         <th>قیمت (تومان)</th>
@@ -55,6 +56,7 @@
                                     @foreach($products as $product)
                                         <tr>
                                             <td>{{ $product->id }}</td>
+                                            <td><img class="img-fluid img-thumbnail img-size-64" src="{{ $product->firstImage()->path }}" alt="Img"></img></td>
                                             <td>{{ $product->title }}</td>
                                             <td>{{ $product->seller_name }}</td>
                                             @if($product->price == $product->purchase_price)

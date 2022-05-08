@@ -127,7 +127,6 @@ class Create extends Component
 
         foreach ($this->images as $key => $image)
         {
-            //$img = $image->store('images');
             $fileName = Str::random(16). '.' . $image->getClientOriginalExtension();
             $img = $image->storeAs('images', $fileName, 'parswebserver');
             $this->images[$key] = $image;
