@@ -37,6 +37,8 @@ class Product extends Model
 
     public function firstImage()
     {
-        return $this->images()->first();
+        return $this->images()->firstOr(function (){
+            return null;
+        });
     }
 }
