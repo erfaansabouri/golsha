@@ -16,6 +16,16 @@ class Product extends Model
         return number_format($this->price);
     }
 
+    public function attributes()
+    {
+        return $this->hasMany(ProductAttribute::class);
+    }
+
+    public function faqs()
+    {
+        return $this->hasMany(ProductFaq::class);
+    }
+
     public function purchasePrice()
     {
         if(!empty($this->discount_percentage))

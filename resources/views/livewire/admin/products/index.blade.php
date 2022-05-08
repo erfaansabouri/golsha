@@ -64,7 +64,7 @@
                                             @else
                                                 <td><strike>{{ $product->price }}</strike> {{ $product->purchase_price }}</td>
                                             @endif
-                                            <td><button class="btn btn-sm btn-primary">ویرایش</button></td>
+                                            <td><a class="btn btn-sm btn-primary" href="{{ route('admin.products.edit', $product->id) }}">ویرایش</a></td>
                                         </tr>
                                     @endforeach
                                 </table>

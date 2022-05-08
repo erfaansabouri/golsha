@@ -42,6 +42,7 @@ Route::prefix('admin')->group(function () {
     Route::prefix('products')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\ProductController::class , 'index'])->name('admin.products.index');
         Route::get('/create', [ \App\Http\Controllers\Admin\ProductController::class , 'create'])->name('admin.products.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\ProductController::class , 'edit'])->name('admin.products.edit');
     });
 
     // Product categories
