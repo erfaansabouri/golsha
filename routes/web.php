@@ -58,4 +58,18 @@ Route::prefix('admin')->group(function () {
         Route::get('/create', [ \App\Http\Controllers\Admin\GroupController::class , 'create'])->name('admin.groups.create');
         Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\GroupController::class , 'edit'])->name('admin.groups.edit');
     });
+
+    // Users
+    Route::prefix('users')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\UserController::class , 'index'])->name('admin.users.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\UserController::class , 'create'])->name('admin.users.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\UserController::class , 'edit'])->name('admin.users.edit');
+    });
+
+    // Coupons
+    Route::prefix('coupons')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\CouponController::class , 'index'])->name('admin.coupons.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\CouponController::class , 'create'])->name('admin.coupons.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\CouponController::class , 'edit'])->name('admin.coupons.edit');
+    });
 });

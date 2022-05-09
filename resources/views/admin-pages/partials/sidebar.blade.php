@@ -46,12 +46,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
+                        <a href="{{ route('admin.users.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-users"></i>
                             <p>
                                 کاربران
-                                <span class="right badge badge-danger">12 جدید</span>
-
                             </p>
                         </a>
                     </li>
@@ -60,16 +58,14 @@
                             <i class="nav-icon fa fa-shopping-bag"></i>
                             <p>
                                 سفارشات
-                                <span class="right badge badge-danger">5 جدید</span>
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
+                        <a href="{{ route('admin.coupons.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-tag"></i>
                             <p>
-                                کوبون های تخفیف
-                                <span class="right badge badge-info">5 فعال</span>
+                                کوپون های تخفیف
                             </p>
                         </a>
                     </li>
@@ -78,7 +74,6 @@
                             <i class="nav-icon fa fa-map-signs"></i>
                             <p>
                                 بنر ها
-                                <span class="right badge badge-info">5 فعال</span>
                             </p>
                         </a>
                     </li>
@@ -87,7 +82,6 @@
                             <i class="nav-icon fa fa-comment"></i>
                             <p>
                                 نظر ها
-                                <span class="right badge badge-danger">5 جدید</span>
                             </p>
                         </a>
                     </li>
@@ -104,7 +98,6 @@
                             <i class="nav-icon fa fa-comment"></i>
                             <p>
                                 تیکت ها
-                                <span class="right badge badge-danger">5 جدید</span>
                             </p>
                         </a>
                     </li>

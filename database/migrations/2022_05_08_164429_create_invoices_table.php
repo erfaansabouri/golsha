@@ -19,6 +19,8 @@ class CreateInvoicesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('address_id');
             $table->unsignedBigInteger('coupon_id')->nullable();
+            $table->unsignedDouble('discount_percentage')->default(0);
+            $table->unsignedDouble('discount_toman')->default(0);
             $table->text('status')->nullable();
             $table->unsignedBigInteger('delivery_type')->nullable();
             $table->unsignedDouble('delivery_amount')->default(0);
