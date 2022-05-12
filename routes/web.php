@@ -72,4 +72,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/create', [ \App\Http\Controllers\Admin\CouponController::class , 'create'])->name('admin.coupons.create');
         Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\CouponController::class , 'edit'])->name('admin.coupons.edit');
     });
+
+    // Banners
+    Route::prefix('banners')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\BannerController::class , 'index'])->name('admin.banners.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\BannerController::class , 'create'])->name('admin.banners.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\BannerController::class , 'edit'])->name('admin.banners.edit');
+    });
 });

@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
+                        <a href="{{ route('admin.banners.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-map-signs"></i>
                             <p>
                                 بنر ها
