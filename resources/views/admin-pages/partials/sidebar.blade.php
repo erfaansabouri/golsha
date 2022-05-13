@@ -87,41 +87,17 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.blog-posts.index') }}" class="nav-link">
-                            <i class="nav-icon fa fa-comment"></i>
+                            <i class="nav-icon fa fa-weibo"></i>
                             <p>
                                 وبلاگ
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
-                            <i class="nav-icon fa fa-comment"></i>
+                        <a href="{{ route('admin.tickets.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-ticket"></i>
                             <p>
-                                تیکت ها
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
-                            <i class="nav-icon fa fa-comment"></i>
-                            <p>
-                                درخواست های همکاری
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
-                            <i class="nav-icon fa fa-comment"></i>
-                            <p>
-                                درخواست های بشتیبانی
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
-                            <i class="nav-icon fa fa-comment"></i>
-                            <p>
-                                نارضایتی ها
+                                درخواست های پشتیبانی
                             </p>
                         </a>
                     </li>

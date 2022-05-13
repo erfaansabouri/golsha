@@ -91,4 +91,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/create', [ \App\Http\Controllers\Admin\BlogPostController::class , 'create'])->name('admin.blog-posts.create');
         Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\BlogPostController::class , 'edit'])->name('admin.blog-posts.edit');
     });
+
+    // Blog Posts
+    Route::prefix('tickets')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\TicketController::class , 'index'])->name('admin.tickets.index');
+    });
 });
