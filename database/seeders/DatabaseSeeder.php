@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\BlogPost;
+use App\Models\Comment;
 use App\Models\Coupon;
 use App\Models\Product;
 use App\Models\User;
@@ -19,5 +21,7 @@ class DatabaseSeeder extends Seeder
         Product::factory(100)->create();
         User::factory(100)->create();
         Coupon::factory(100)->create();
+        Comment::factory(100)->create();
+        BlogPost::factory(100)->create();
     }
 }

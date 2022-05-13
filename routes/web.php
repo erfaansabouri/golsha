@@ -79,4 +79,16 @@ Route::prefix('admin')->group(function () {
         Route::get('/create', [ \App\Http\Controllers\Admin\BannerController::class , 'create'])->name('admin.banners.create');
         Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\BannerController::class , 'edit'])->name('admin.banners.edit');
     });
+
+    // Comments
+    Route::prefix('comments')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\CommentController::class , 'index'])->name('admin.comments.index');
+    });
+
+    // Blog Posts
+    Route::prefix('blog-posts')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\BlogPostController::class , 'index'])->name('admin.blog-posts.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\BlogPostController::class , 'create'])->name('admin.blog-posts.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\BlogPostController::class , 'edit'])->name('admin.blog-posts.edit');
+    });
 });

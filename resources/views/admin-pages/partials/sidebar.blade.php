@@ -78,7 +78,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
+                        <a href="{{ route('admin.comments.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-comment"></i>
                             <p>
                                 نظر ها
@@ -86,7 +86,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
+                        <a href="{{ route('admin.blog-posts.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-comment"></i>
                             <p>
                                 وبلاگ

@@ -40,6 +40,11 @@ class Product extends Model
         return $this->purchasePrice();
     }
 
+    public function comment()
+    {
+        return $this->morphOne(Comment::class, 'commentable');
+    }
+
     public function images()
     {
         return $this->hasMany(ImageProduct::class);

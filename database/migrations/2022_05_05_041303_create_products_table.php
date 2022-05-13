@@ -29,33 +29,33 @@ class CreateProductsTable extends Migration
 			$table->unsignedBigInteger('view_count')->default(0);
 			$table->timestamps();
         });
-	
+
 		Schema::create('categories', function (Blueprint $table) {
 			$table->id();
 			$table->text('title')->nullable();
 			$table->timestamps();
 		});
-	
+
 		Schema::create('category_product', function (Blueprint $table) {
 			$table->id();
 			$table->unsignedBigInteger('category_id');
 			$table->unsignedBigInteger('product_id');
 			$table->timestamps();
 		});
-	
+
 		Schema::create('groups', function (Blueprint $table) {
 			$table->id();
 			$table->text('title')->nullable();
 			$table->timestamps();
 		});
-	
+
 		Schema::create('group_product', function (Blueprint $table) {
 			$table->id();
 			$table->unsignedBigInteger('group_id');
 			$table->unsignedBigInteger('product_id');
 			$table->timestamps();
 		});
-		
+
 		Schema::create('product_attributes', function (Blueprint $table) {
 			$table->id();
 			$table->unsignedBigInteger('product_id');
@@ -63,7 +63,7 @@ class CreateProductsTable extends Migration
 			$table->text('value')->nullable();
 			$table->timestamps();
 		});
-	
+
 		Schema::create('product_faqs', function (Blueprint $table) {
 			$table->id();
 			$table->unsignedBigInteger('product_id');
@@ -71,16 +71,7 @@ class CreateProductsTable extends Migration
 			$table->text('answer')->nullable();
 			$table->timestamps();
 		});
-	
-		Schema::create('comments', function (Blueprint $table) {
-			$table->id();
-			$table->unsignedBigInteger('parent_id')->nullable();
-			$table->unsignedBigInteger('product_id');
-			$table->unsignedBigInteger('user_id');
-			$table->text('title')->nullable();
-			$table->text('description')->nullable();
-			$table->timestamps();
-		});
+
     }
 
     /**

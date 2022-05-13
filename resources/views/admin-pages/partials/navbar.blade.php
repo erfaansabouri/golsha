@@ -9,7 +9,5 @@
             <a target="_blank" href="{{ route('home') }}" class="nav-link">نمایش وبسایت</a>
         </li>
     </ul>
-
-
 </nav>
 <!-- /.navbar -->
