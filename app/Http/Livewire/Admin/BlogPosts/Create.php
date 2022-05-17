@@ -36,8 +36,8 @@ class Create extends Component
         $blogPost->title = $this->title;
         $blogPost->body = $this->body;
 		$blogPost->tags = $this->tags;
-		$blogPost->is_popular = $this->is_popular;
-		$blogPost->is_news = $this->is_news;
+		$blogPost->is_popular = (boolean)$this->is_popular;
+		$blogPost->is_news = (boolean)$this->is_news;
         if($this->image)
         {
             $fileName = Str::random(16). '.' . $this->image->getClientOriginalExtension();

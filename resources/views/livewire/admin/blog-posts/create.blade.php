@@ -77,6 +77,25 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="is_popular">
+                                                    <label class="form-check-label">نمایش در لیست محبوب ترین ها</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="is_news">
+                                                    <label class="form-check-label">نمایش در لیست اخبار</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- /.card-body -->

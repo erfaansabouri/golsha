@@ -26,13 +26,13 @@ class Edit extends Component
 
     public function mount($record)
     {
-        $this->record = $record;
-        $this->title = $this->record->title;
-        $this->body = $this->record->body;
-        $this->oldImage = $this->record->imagePath;
-		$this->tags = $record->tags;
-		$this->is_news = $record->is_news;
-		$this->is_popular = $record->is_popular;
+        $this->record 		= $record;
+        $this->title 		= $this->record->title;
+        $this->body 		= $this->record->body;
+        $this->oldImage 	= $this->record->imagePath;
+		$this->tags 		= $record->tags;
+		$this->is_popular 	= (boolean)$record->is_popular;
+		$this->is_news 		= (boolean)$record->is_news;
     }
     public function render()
     {
@@ -41,11 +41,11 @@ class Edit extends Component
 
     public function update()
     {
-        $this->record->title = $this->title;
-        $this->record->body = $this->body;
-        $this->record->tags = $this->tags;
-        $this->record->is_popular = $this->is_popular;
-        $this->record->is_news = $this->is_news;
+        $this->record->title 	= $this->title;
+        $this->record->body 	= $this->body;
+        $this->record->tags 	= $this->tags;
+        $this->record->is_popular = (boolean)$this->is_popular;
+        $this->record->is_news 	= (boolean)$this->is_news;
         if($this->image)
         {
             $fileName = Str::random(16). '.' . $this->image->getClientOriginalExtension();
