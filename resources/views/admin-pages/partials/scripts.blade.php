@@ -25,6 +25,7 @@
 <script src="{{ asset('assets/admin/datepicker/bootstrap-datepicker.js') }}"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{ asset('assets/admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
+<script src="{{ asset('assets/admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- Slimscroll -->
 <script src="{{ asset('assets/admin/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('assets/admin/select2/select2.min.js') }}"></script>
@@ -38,4 +39,6 @@
 <script src="{{ asset('assets/admin/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/admin/demo.js') }}"></script>
+<script src="{{asset('assets/admin/tinymce/tinymce.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/tinymce_config.js')}}" type="text/javascript"></script>
 @stack('scripts')

@@ -25,6 +25,8 @@ Route::get('/about-us', function () {
 	return view('pages.about-us');
 });
 
+Route::post('/upload-image', [\App\Http\Controllers\Admin\UploadController::class, 'upload']);
+
 Route::prefix('admin')->group(function () {
 	// Auth
 	Route::prefix('auth')->group(function () {

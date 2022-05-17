@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('phone_number_verified_at')->nullable();
             $table->string('otp')->nullable();
             $table->timestamp('otp_expire_at')->nullable();
+            $table->text('password')->nullable();
+            $table->boolean('is_disable')->default(false);
             $table->string('sex',100)->nullable();
             $table->string('email',100)->nullable();
             $table->timestamp('birthday')->nullable();

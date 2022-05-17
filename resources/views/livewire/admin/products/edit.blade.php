@@ -80,7 +80,9 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>برخی ترکیبیات</label>
-                                                <textarea wire:model="ingredients" class="form-control" rows="3" placeholder="وارد کردن برخی ترکیبیات ..."></textarea>
+                                                <div wire:ignore>
+                                                    <textarea wire:model="ingredients" id="ingredients" name="ingredients" class="form-control tinymce-editor" placeholder="وارد کردن برخی ترکیبیات ..."></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -316,6 +318,34 @@
     </div>
     <!-- /.content-wrapper -->
     @push('scripts')
+        <script>
+            tinymce.init({
+                selector: '#ingredients',
+                language: 'fa_IR',
+                valid_elements : '*[*]',
+                directionality: 'rtl',
+                allow_script_urls: true,
+                image_uploadtab: true,
+                automatic_uploads: true,
+                images_upload_url: '/upload-image',
+                theme: 'modern',
+                plugins:'image code paste print searchreplace autolink directionality  visualblocks visualchars fullscreen link template ' +
+                    'codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount  ' +
+                    '    contextmenu colorpicker textpattern help',
+                toolbar1:'image paste formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | code',
+                min_height: 200,
+                setup : function(editor)
+                {
+                    editor.on('init change', function () {
+                        editor.save();
+                    });
+                    editor.on('change', function (e) {
+                        @this.set('ingredients', editor.getContent());
+                    });
+                }
+
+            });
+        </script>
         <script>
             $(document).ready(function () {
                 $("#discountStartedAt").persianDatepicker({

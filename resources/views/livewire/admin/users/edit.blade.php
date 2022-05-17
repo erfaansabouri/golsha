@@ -79,11 +79,63 @@
 
                                 <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-info"  wire:click.prevent="update({{ $record->id }})">ثبت</button>
+                                    <button type="button" class="btn btn-info"  wire:click.prevent="update({{ $record->id }})">ویرایش اطلاعات فردی</button>
                                 </div>
                                 <!-- /.card-footer -->
                             </form>
                         </div>
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title"></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form class="form">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="password" class="control-label">رمز عبور</label>
+                                                <div class="">
+                                                    <input wire:model.defer="password" type="password" class="form-control" id="password" placeholder="در صورتی که قصد تغییر رمز عبور را دارید این قسمت را پر کنید">
+                                                    @error('password') <span class="text-danger">{{ $message }}</span> @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-info"  wire:click.prevent="updatePassword({{ $record->id }})">ثبت رمز عبور جدید</button>
+                                </div>
+                                <!-- /.card-footer -->
+                            </form>
+                        </div>
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title"></h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form class="form">
+                                <div class="card-body">
+                                    @if($record->is_disable)
+                                        <button type="button" class="btn btn-success"  wire:click.prevent="toggleIsDisable({{ $record->id }})">آزاد سازی کاربر</button>
+                                    @else
+                                        <button type="button" class="btn btn-dark"  wire:click.prevent="toggleIsDisable({{ $record->id }})">مسدود کردن کاربر</button>
+                                    @endif
+
+                                </div>
+
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                </div>
+                                <!-- /.card-footer -->
+                            </form>
+                        </div>
+
                     </div>
                     <!--/.col (right) -->
                 </div>
