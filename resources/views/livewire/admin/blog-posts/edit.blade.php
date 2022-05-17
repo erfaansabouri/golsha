@@ -129,32 +129,15 @@
                 image_uploadtab: true,
                 automatic_uploads: true,
                 images_upload_url: '/upload-image',
+                relative_urls: false,
+                remove_script_host: false,
+                document_base_url: '{{ config('app.url') }}',
                 theme: 'modern',
                 plugins:'image code paste print searchreplace autolink directionality  visualblocks visualchars fullscreen link template ' +
                     'codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount  ' +
                     '    contextmenu colorpicker textpattern help',
                 toolbar1:'image paste formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | code',
                 min_height: 200,
-                file_picker_callback: function(cb, value, meta) {
-                    var input = document.createElement('input');
-                    input.setAttribute('type', 'file');
-                    input.setAttribute('accept', 'image/*');
-                    input.onchange = function() {
-                        var file = this.files[0];
-
-                        var reader = new FileReader();
-                        reader.readAsDataURL(file);
-                        reader.onload = function () {
-                            var id = 'blobid' + (new Date()).getTime();
-                            var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
-                            var base64 = reader.result.split(',')[1];
-                            var blobInfo = blobCache.create(id, file, base64);
-                            blobCache.add(blobInfo);
-                            cb(blobInfo.blobUri(), { title: file.name });
-                        };
-                    };
-                    input.click();
-                },
                 setup : function(editor)
                 {
                     editor.on('init change', function () {
