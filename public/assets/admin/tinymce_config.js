@@ -1,6 +1,3 @@
-
-
-
 tinymce.init({
     selector: '.tinymce-editor-baby',
     language: 'fa_IR',

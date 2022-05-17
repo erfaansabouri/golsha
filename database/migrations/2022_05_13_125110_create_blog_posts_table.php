@@ -19,7 +19,10 @@ class CreateBlogPostsTable extends Migration
             $table->text('title')->nullable();
             $table->text('body')->nullable();
             $table->text('image_name')->nullable();
-            $table->timestamps();
+			$table->text('tags')->nullable();
+			$table->boolean('is_popular')->default(0);
+			$table->boolean('is_news')->default(0);
+			$table->timestamps();
         });
     }
 

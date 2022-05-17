@@ -41,4 +41,5 @@
 <script src="{{ asset('assets/admin/demo.js') }}"></script>
 <script src="{{asset('assets/admin/tinymce/tinymce.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/admin/tinymce_config.js')}}" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 @stack('scripts')

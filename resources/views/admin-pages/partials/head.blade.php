@@ -29,6 +29,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- bootstrap rtl -->
     <link rel="stylesheet" href="{{ asset('assets/admin/bootstrap-rtl.min.css') }}">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <!-- template rtl version -->
     <link rel="stylesheet" href="{{ asset('assets/admin/custom-style.css') }}">
 

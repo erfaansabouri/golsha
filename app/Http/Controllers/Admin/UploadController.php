@@ -10,9 +10,9 @@ class UploadController extends Controller
 {
     public function upload(Request $request)
 	{
-		$fileName = Str::random(16). '.' . $request->file('file')->getClientOriginalName();
+		$fileName = Str::random(16). '.' . $request->file('file')->getClientOriginalExtension();
 		$imageName = $request->file('file')->storeAs('images', $fileName, 'parswebserver');
-		return response()->json(['location'=>"/storage/$imageName"]);
+		return response()->json(['location'=>"/storage/". $imageName]);
 		
 		/*$imgpath = request()->file('file')->store('uploads', 'public');
 		return response()->json(['location' => "/storage/$imgpath"]);*/

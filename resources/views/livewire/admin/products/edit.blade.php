@@ -90,7 +90,9 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>حجم</label>
-                                                <textarea wire:model="size" class="form-control" rows="3" placeholder="وارد کردن حجم ..."></textarea>
+                                                <div wire:ignore>
+                                                    <textarea wire:model="size" id="size" name="size" class="form-control" rows="3" placeholder="وارد کردن حجم ..."></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +100,9 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>خواص</label>
-                                                <textarea wire:model="virtues" class="form-control" rows="3" placeholder="وارد کردن خواص ..."></textarea>
+                                                <div wire:ignore>
+                                                    <textarea wire:model="virtues" id="virtues" name="virtues" class="form-control" rows="3" placeholder="وارد کردن خواص ..."></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +110,9 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>معرفی</label>
-                                                <textarea wire:model="introduction" class="form-control" rows="3" placeholder="وارد کردن معرفی ..."></textarea>
+                                                <div wire:ignore>
+                                                    <textarea wire:model="introduction" id="introduction" name="introduction" class="form-control" rows="3" placeholder="وارد کردن معرفی ..."></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -328,6 +334,9 @@
                 image_uploadtab: true,
                 automatic_uploads: true,
                 images_upload_url: '/upload-image',
+                relative_urls: false,
+                remove_script_host: false,
+                document_base_url: '{{ config('app.url') }}',
                 theme: 'modern',
                 plugins:'image code paste print searchreplace autolink directionality  visualblocks visualchars fullscreen link template ' +
                     'codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount  ' +
@@ -341,6 +350,93 @@
                     });
                     editor.on('change', function (e) {
                         @this.set('ingredients', editor.getContent());
+                    });
+                }
+
+            });
+            tinymce.init({
+                selector: '#size',
+                language: 'fa_IR',
+                valid_elements : '*[*]',
+                directionality: 'rtl',
+                allow_script_urls: true,
+                image_uploadtab: true,
+                automatic_uploads: true,
+                images_upload_url: '/upload-image',
+                relative_urls: false,
+                remove_script_host: false,
+                document_base_url: '{{ config('app.url') }}',
+                theme: 'modern',
+                plugins:'image code paste print searchreplace autolink directionality  visualblocks visualchars fullscreen link template ' +
+                    'codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount  ' +
+                    '    contextmenu colorpicker textpattern help',
+                toolbar1:'image paste formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | code',
+                min_height: 200,
+                setup : function(editor)
+                {
+                    editor.on('init change', function () {
+                        editor.save();
+                    });
+                    editor.on('change', function (e) {
+                        @this.set('size', editor.getContent());
+                    });
+                }
+
+            });
+            tinymce.init({
+                selector: '#virtues',
+                language: 'fa_IR',
+                valid_elements : '*[*]',
+                directionality: 'rtl',
+                allow_script_urls: true,
+                image_uploadtab: true,
+                automatic_uploads: true,
+                images_upload_url: '/upload-image',
+                relative_urls: false,
+                remove_script_host: false,
+                document_base_url: '{{ config('app.url') }}',
+                theme: 'modern',
+                plugins:'image code paste print searchreplace autolink directionality  visualblocks visualchars fullscreen link template ' +
+                    'codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount  ' +
+                    '    contextmenu colorpicker textpattern help',
+                toolbar1:'image paste formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | code',
+                min_height: 200,
+                setup : function(editor)
+                {
+                    editor.on('init change', function () {
+                        editor.save();
+                    });
+                    editor.on('change', function (e) {
+                        @this.set('virtues', editor.getContent());
+                    });
+                }
+
+            });
+            tinymce.init({
+                selector: '#introduction',
+                language: 'fa_IR',
+                valid_elements : '*[*]',
+                directionality: 'rtl',
+                allow_script_urls: true,
+                image_uploadtab: true,
+                automatic_uploads: true,
+                images_upload_url: '/upload-image',
+                relative_urls: false,
+                remove_script_host: false,
+                document_base_url: '{{ config('app.url') }}',
+                theme: 'modern',
+                plugins:'image code paste print searchreplace autolink directionality  visualblocks visualchars fullscreen link template ' +
+                    'codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount  ' +
+                    '    contextmenu colorpicker textpattern help',
+                toolbar1:'image paste formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | code',
+                min_height: 200,
+                setup : function(editor)
+                {
+                    editor.on('init change', function () {
+                        editor.save();
+                    });
+                    editor.on('change', function (e) {
+                        @this.set('introduction', editor.getContent());
                     });
                 }
 

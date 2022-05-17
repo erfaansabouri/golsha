@@ -60,8 +60,19 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="body" class="control-label">متن</label>
-                                                <div class="">
-                                                    <textarea rows="10" wire:model.defer="body" type="text" class="form-control" id="body" placeholder="متن را وارد کنید"></textarea>
+                                                <div wire:ignore>
+                                                    <textarea rows="10" wire:model.defer="body" type="text" class="form-control" id="body" name="body" placeholder="متن را وارد کنید"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="body" class="control-label">تگ ها (برای جدا کردن تگ ها از کاما استفاده نمایید.)</label>
+                                                <div wire:ignore>
+                                                    <input rows="10" wire:model.defer="tags" type="text" class="form-control" id="body" placeholder="تگ ها را وارد کنید (برای جدا کردن تگ ها از کاما استفاده نمایید.)">
                                                 </div>
                                             </div>
                                         </div>
@@ -86,7 +97,35 @@
     <!-- /.content-wrapper -->
     @push('scripts')
         <script>
+            tinymce.init({
+                selector: '#body',
+                language: 'fa_IR',
+                valid_elements : '*[*]',
+                directionality: 'rtl',
+                allow_script_urls: true,
+                image_uploadtab: true,
+                automatic_uploads: true,
+                images_upload_url: '/upload-image',
+                relative_urls: false,
+                remove_script_host: false,
+                document_base_url: '{{ config('app.url') }}',
+                theme: 'modern',
+                plugins:'image code paste print searchreplace autolink directionality  visualblocks visualchars fullscreen link template ' +
+                    'codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount  ' +
+                    '    contextmenu colorpicker textpattern help',
+                toolbar1:'image paste formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | code',
+                min_height: 200,
+                setup : function(editor)
+                {
+                    editor.on('init change', function () {
+                        editor.save();
+                    });
+                    editor.on('change', function (e) {
+                        @this.set('body', editor.getContent());
+                    });
+                }
 
+            });
         </script>
     @endpush
 </div>

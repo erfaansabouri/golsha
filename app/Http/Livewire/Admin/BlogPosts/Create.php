@@ -19,6 +19,9 @@ class Create extends Component
     public $title;
     public $body;
     public $image;
+    public $tags;
+	public $is_popular;
+	public $is_news;
 
 
     public function render()
@@ -32,6 +35,9 @@ class Create extends Component
         $blogPost->admin_id = auth()->user()->id;
         $blogPost->title = $this->title;
         $blogPost->body = $this->body;
+		$blogPost->tags = $this->tags;
+		$blogPost->is_popular = $this->is_popular;
+		$blogPost->is_news = $this->is_news;
         if($this->image)
         {
             $fileName = Str::random(16). '.' . $this->image->getClientOriginalExtension();
