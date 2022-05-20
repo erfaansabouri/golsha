@@ -13,20 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-})->name('home');
-
-Route::get('/contact-us', function () {
-    return view('pages.contact-us');
-});
-
-Route::get('/about-us', function () {
-	return view('pages.about-us');
-});
 
 Route::post('/upload-image', [\App\Http\Controllers\Admin\UploadController::class, 'upload']);
-
 Route::prefix('admin')->group(function () {
 	// Auth
 	Route::prefix('auth')->group(function () {
@@ -94,8 +82,35 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\BlogPostController::class , 'edit'])->name('admin.blog-posts.edit');
     });
 
-    // Blog Posts
+    // Tickets
     Route::prefix('tickets')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\TicketController::class , 'index'])->name('admin.tickets.index');
     });
+});
+
+Route::middleware([])->group(function () {
+	Route::prefix('/')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Front\HomeController::class , 'index'])->name('home');
+	});
+	
+	Route::prefix('contact-us')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Front\ContactUsController::class , 'index'])->name('contact-us.index');
+	});
+	
+	Route::prefix('support')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Front\SupportController::class , 'index'])->name('support.index');
+	});
+	
+	Route::prefix('dissatisfaction')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Front\DissatisfactionController::class , 'index'])->name('dissatisfaction.index');
+	});
+	
+	Route::prefix('work-with-us')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Front\WorkWithUsController::class , 'index'])->name('work-with-us.index');
+	});
+	
+	Route::prefix('about-us')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Front\AboutUsController::class , 'index'])->name('about-us.index');
+	});
+
 });
