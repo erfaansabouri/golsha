@@ -6,18 +6,18 @@
                 <div class="quicOrdrBox">
                     <div class="quicOrdrRght">
                         <p>مشاوره و ثبت سفارش سریع در واتساپ و تلگرام</p>
-                        <small>09109272066</small>
-                        <a href="#" class="quicOrdrLnk1">
+                        <small>{{ (new \App\Models\Setting())->findByKey('footer-1') }}</small>
+                        <a href="{{ (new \App\Models\Setting())->findByKey('footer-2') }}" class="quicOrdrLnk1">
                             <span class="icon-whatsapp_black_24dp"></span>
                         </a>
-                        <a href="#" class="quicOrdrLnk2">
+                        <a href="{{ (new \App\Models\Setting())->findByKey('footer-3') }}" class="quicOrdrLnk2">
                             <span class="icon-telegram-alt"></span>
                         </a>
                     </div>
                     <div class="quicOrdrleft">
                         <span class="material-icons">phone_enabled</span>
                         <small>تماس</small>
-                        <p>02183724837</p>
+                        <p>{{ (new \App\Models\Setting())->findByKey('footer-4') }}</p>
                     </div>
                 </div>
             </div>
@@ -31,9 +31,9 @@
                         <div class="ftrTpLstBx">
                             <h6>گلشا</h6>
                             <ul>
-                                <li><a href="#">درباره گلشا</a></li>
+                                <li><a href="{{ route('about-us.index') }}">درباره گلشا</a></li>
                                 <li><a href="{{ route('contact-us.index') }}">تماس با گلشا</a></li>
-                                <li><a href="#">همکاری با گلشا</a></li>
+                                <li><a href="{{ route('work-with-us.index') }}">همکاری با گلشا</a></li>
                                 <li><a href="#">اخبار گلشا</a></li>
                             </ul>
                         </div>
@@ -41,7 +41,7 @@
                             <h6>خدمات مشتریان</h6>
                             <ul>
                                 <li><a href="#">سوالات متداول</a></li>
-                                <li><a href="#">ثبت نارضیتی</a></li>
+                                <li><a href="{{ route('dissatisfaction.index') }}">ثبت نارضیتی</a></li>
                                 <li><a href="#">بازیابی رمز عبور</a></li>
                                 <li><a href="#">حریم خصوصی </a></li>
                             </ul>
@@ -61,7 +61,7 @@
                     <div class="ftrPaperBox">
                         <img src="{{ asset('assets/front/img/logo4.png') }}" alt="logo">
                         <p>
-                            یادا بهترین رسانه دیجیتال برای یادگیری شما در ایران میباشد و توانسته است خدمتی بزرگ در جهت دسترسی ایرانیان به آموزش با کیفیت فارسی ارائه دهد، یادا با هدف تولید آموزش حرفه ای و کاربردی فعالیت خود را آغاز
+                            {{ (new \App\Models\Setting())->findByKey('footer-5') }}
                         </p>
                         <a href="#">
                             <i>مقالات بیشتر</i>
@@ -74,22 +74,22 @@
                         <p>گلشا در شبکه های اجتماعی</p>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('footer-6') }}">
                                     <span class="icon-telegram-alt"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('footer-7') }}">
                                     <span class="icon-bxl-instagram"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('footer-8') }}">
                                     <span class="icon-twitter"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('footer-9') }}">
                                     <img src="{{ asset('assets/front/img/aparat.png') }}" alt="img">
                                 </a>
                             </li>
@@ -98,7 +98,7 @@
                     <div class="ftrnewsBox">
                         <p>عضویت در خبر نامه گلشا</p>
                         <div class="ftrnewsReg">
-                            <input type="text" placeholder="ایمیل خود را وارد کنی">
+                            <input type="email" placeholder="ایمیل خود را وارد کنی">
                             <button>ثبت</button>
                         </div>
                     </div>
@@ -115,15 +115,12 @@
                             <img src="{{ asset('assets/front/img/logo3.png') }}" alt="logo">
                         </a>
                         <div class="ftrAboutTxt">
-                            <h5>فروشگاه اینترنتی گلشا</h5>
+                            <h5>{{ (new \App\Models\Setting())->findByKey('footer-10') }}</h5>
                             <p>
-                                یادا بهترین رسانه دیجیتال برای یادگیری شما در ایران میباشد و توانسته است خدمتی بزرگ در جهت دسترسی ایرانیان به آموزش با کیفیت فارسی ارائه دهد، یادا با هدف تولید آموزش حرفه ای و کاربردی فعالیت خود را آغاز کرده مبحث فعلی یادا در زمینه توسعه فردی میباشد، و با ظبط و ارائه آموزش ها با بهره گیری توانمندی هایی از بهترین اساتید، کارشناسان، و متخصصین باتجربه کشور خود را آغاز پایان آموزش سنتی در ایران میداند. ما اعتقاد داریم هیچ کس نباید بخاطر هیچ چیز از لذت یادگرفتن محروم شود. نباید سن و سال یا موقعیت و امکانات مالی افرادی را از یادگیری با کیفیت و موفقیت باز دارد پیشنهاد میکنیم برای عالی شدن و حرفه ای شدن با یادا همراه باشید!
+                                {{ (new \App\Models\Setting())->findByKey('footer-11') }}
                             </p>
                         </div>
-                        <div class="ftrAbutLnks">
-                            <a href="#"></a>
-                            <a href="#"></a>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -136,18 +133,18 @@
                     <div class="ftrClintBx">
                         <ul>
                             <li>
-                                <a href="#">
-                                    <img src="{{ asset('assets/front/img/img1.png') }}" alt="img">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('footer-12') }}">
+                                    <img src="{{ (new \App\Models\Setting())->findByKey('footer-13') }}" alt="img">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img src="{{ asset('assets/front/img/img2.jpg') }}" alt="img">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('footer-14') }}">
+                                    <img src="{{ (new \App\Models\Setting())->findByKey('footer-15') }}" alt="img">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img src="{{ asset('assets/front/img/img3.jpg') }}" alt="img">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('footer-16') }}">
+                                    <img src="{{ (new \App\Models\Setting())->findByKey('footer-17') }}" alt="img">
                                 </a>
                             </li>
                         </ul>

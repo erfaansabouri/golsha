@@ -16,6 +16,7 @@ class SettingSeeder extends Seeder
     {
 		Setting::query()->truncate();
         $this->aboutUs();
+        $this->footer();
     }
 	
 	public function aboutUs()
@@ -199,6 +200,118 @@ class SettingSeeder extends Seeder
 				'key' => 'about-us-30',
 				'value' => 'images/fdph4xhLT9hLaQYB.jpg',
 				'category' => 'about-us',
+				'type' => 'image',
+			],
+		];
+		
+		foreach ($items as $item)
+		{
+			Setting::query()->create($item);
+		}
+	}
+	public function footer()
+	{
+		$items = [
+			[
+				'key' => 'footer-1',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-2',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-3',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-4',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-5',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-6',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-7',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-8',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-9',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-10',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-11',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-12',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-13',
+				'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+				'category' => 'footer',
+				'type' => 'image',
+			],
+			[
+				'key' => 'footer-14',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-15',
+				'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+				'category' => 'footer',
+				'type' => 'image',
+			],
+			[
+				'key' => 'footer-16',
+				'value' => 'test test test',
+				'category' => 'footer',
+				'type' => 'text',
+			],
+			[
+				'key' => 'footer-17',
+				'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+				'category' => 'footer',
 				'type' => 'image',
 			],
 		];
