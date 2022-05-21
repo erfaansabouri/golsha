@@ -17,6 +17,7 @@ class SettingSeeder extends Seeder
 		Setting::query()->truncate();
         $this->aboutUs();
         $this->footer();
+        $this->socials();
     }
 	
 	public function aboutUs()
@@ -262,25 +263,25 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'footer-9',
-				'value' => 'test test test',
+				'value' => 'test test test 09',
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-10',
-				'value' => 'test test test',
+				'value' => 'test test test 10',
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-11',
-				'value' => 'test test test',
+				'value' => 'test test test 11',
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-12',
-				'value' => 'test test test',
+				'value' => 'test test test 12',
 				'category' => 'footer',
 				'type' => 'text',
 			],
@@ -313,6 +314,70 @@ class SettingSeeder extends Seeder
 				'value' => 'images/fdph4xhLT9hLaQYB.jpg',
 				'category' => 'footer',
 				'type' => 'image',
+			],
+		];
+		
+		foreach ($items as $item)
+		{
+			Setting::query()->create($item);
+		}
+	}
+	public function socials()
+	{
+		$items = [
+			[
+				'key' => 'socials-1',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
+			],
+			[
+				'key' => 'socials-2',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
+			],
+			[
+				'key' => 'socials-3',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
+			],
+			[
+				'key' => 'socials-4',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
+			],
+			[
+				'key' => 'socials-5',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
+			],
+			[
+				'key' => 'socials-6',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
+			],
+			[
+				'key' => 'socials-7',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
+			],
+			[
+				'key' => 'socials-8',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
+			],
+			[
+				'key' => 'socials-9',
+				'value' => 'test test test',
+				'category' => 'socials',
+				'type' => 'text',
 			],
 		];
 		

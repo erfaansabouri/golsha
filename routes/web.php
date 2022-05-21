@@ -112,5 +112,9 @@ Route::middleware([])->group(function () {
 	Route::prefix('about-us')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\AboutUsController::class , 'index'])->name('about-us.index');
 	});
+	
+	Route::prefix('faq')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Front\FaqController::class , 'index'])->name('faq.index');
+	});
 
 });

@@ -19,7 +19,7 @@ class BlogPostFactory extends Factory
     protected $model = BlogPost::class;
 
     /**
-     * Define the model's default state.
+     * Define the model's default state.\Ybazli\Faker\Facades\Faker::word()
      *
      * @return array
      */

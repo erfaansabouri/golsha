@@ -23,5 +23,8 @@ class DatabaseSeeder extends Seeder
         Coupon::factory(100)->create();
         Comment::factory(100)->create();
         BlogPost::factory(100)->create();
+		$this->call(SettingSeeder::class);
+		$this->call(FaqSeeder::class);
+		
     }
 }

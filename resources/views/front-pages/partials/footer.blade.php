@@ -40,8 +40,8 @@
                         <div class="ftrTpLstBx">
                             <h6>خدمات مشتریان</h6>
                             <ul>
-                                <li><a href="#">سوالات متداول</a></li>
-                                <li><a href="{{ route('dissatisfaction.index') }}">ثبت نارضیتی</a></li>
+                                <li><a href="{{ route('faq.index') }}">سوالات متداول</a></li>
+                                <li><a href="{{ route('dissatisfaction.index') }}">ثبت نارضایتی</a></li>
                                 <li><a href="#">بازیابی رمز عبور</a></li>
                                 <li><a href="#">حریم خصوصی </a></li>
                             </ul>
@@ -120,7 +120,10 @@
                                 {{ (new \App\Models\Setting())->findByKey('footer-11') }}
                             </p>
                         </div>
-
+                        <div class="ftrAbutLnks">
+                            <a href="#"></a>
+                            <a href="#"></a>
+                        </div>
                     </div>
                 </div>
             </div>

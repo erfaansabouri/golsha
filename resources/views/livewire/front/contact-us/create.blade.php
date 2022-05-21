@@ -83,54 +83,7 @@
                             <h6>اطلاعات تماس</h6>
                             <p>ساعات پاسخگویی شنبه تا جمعه ۱۰ الی ۲۱ به جز ایام تعطیل رسمی</p>
                         </div>
-                        <ul class="qNotFoundUl">
-                            <li class="qNotFoundLi">
-                                <div class="qNtFndCrdImg">
-                                    <img src="{{ asset('assets/front/img/icon1.png') }}" alt="img">
-                                    <p>شبکات اجتماعی</p>
-                                </div>
-                                <ul class="qNtFndCrdStial">
-                                    <li>
-                                        <a href="#">
-                                            <span class="icon-telegram-alt"></span>
-                                            <i>پاسخگویی در تلگرام</i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="icon-whatsapp_black_24dp"></span>
-                                            <i>پاسخگویی در تلگرام</i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="qNotFoundLi">
-                                <div class="qNtFndCrdImg">
-                                    <img src="{{ asset('assets/front/img/icon2.png') }}" alt="img">
-                                    <p>تماس تلفنی</p>
-                                </div>
-                                <ul class="qNtFndCrdSCall">
-                                    <li>
-                                        <span>۰۲۱ - ۶۱۹۳۰۰۰۰</span>
-                                        <a href="#">تماس</a>
-                                    </li>
-                                    <li>
-                                        <span>09120543215</span>
-                                        <a href="#">تماس</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="qNotFoundLi">
-                                <div class="qNtFndCrdImg">
-                                    <img src="{{ asset('assets/front/img/icon3.png') }}" alt="img">
-                                    <p>ایمیل</p>
-                                </div>
-                                <div class="qNtFndSndEmail">
-                                    <span>ایمیل سازمانی info@golsha.com</span>
-                                    <a href="#">ارسال ایمیل</a>
-                                </div>
-                            </li>
-                        </ul>
+                        @include('front-pages.partials.socials')
                     </div>
                 </div>
             </div>
