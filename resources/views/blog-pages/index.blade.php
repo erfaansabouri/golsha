@@ -6,49 +6,57 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blgArticleBx">
-                        <div class="blgArtclRight">
-                            @php $blogPostTopI = \App\Models\BlogPost::query()->topI()->first(); @endphp
-                            <a href="{{ route('blog.show', $blogPostTopI->id) }}" class="artclRightBx">
-                                <img src="{{ $blogPostTopI->image_path }}" alt="img">
-                                <div>
-                                    <p>
-                                        {{ $blogPostTopI->title }}
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="blgArtclLeft">
-                            <div class="blgArtclTop">
-                                @php $blogPostTopII = \App\Models\BlogPost::query()->topII()->first(); @endphp
-                                <a href="{{ route('blog.show', $blogPostTopII->id) }}" class="artcleTopBx">
-                                    <img src="{{ $blogPostTopII->image_path }}" alt="img">
+                        @php $blogPostTopI = \App\Models\BlogPost::query()->topI()->first(); @endphp
+                        @if($blogPostTopI)
+                            <div class="blgArtclRight">
+                                <a href="{{ route('blog.show', @$blogPostTopI->id) }}" class="artclRightBx">
+                                    <img src="{{ @$blogPostTopI->image_path }}" alt="img">
                                     <div>
                                         <p>
-                                            {{ $blogPostTopII->title }}
+                                            {{ @$blogPostTopI->title }}
                                         </p>
                                     </div>
                                 </a>
                             </div>
+                        @endif
+                        <div class="blgArtclLeft">
+                            @php $blogPostTopII = \App\Models\BlogPost::query()->topII()->first(); @endphp
+                            @if($blogPostTopII)
+                                <div class="blgArtclTop">
+                                    <a href="{{ route('blog.show', @$blogPostTopII->id) }}" class="artcleTopBx">
+                                        <img src="{{ @$blogPostTopII->image_path }}" alt="img">
+                                        <div>
+                                            <p>
+                                                {{ @$blogPostTopII->title }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endif
                             <div class="blgArtclBtm">
                                 @php $blogPostTopIII = \App\Models\BlogPost::query()->topIII()->first(); @endphp
-                                <a href="{{ route('blog.show', $blogPostTopIII->id) }}" class="artclBotomBx">
-                                    <img src="{{ $blogPostTopIII->image_path }}" alt="img">
+                                @if($blogPostTopIII)
+                                <a href="{{ route('blog.show', @$blogPostTopIII->id) }}" class="artclBotomBx">
+                                    <img src="{{ @$blogPostTopIII->image_path }}" alt="img">
                                     <div>
                                         <p>
-                                            {{ $blogPostTopIII->title }}
+                                            {{ @$blogPostTopIII->title }}
                                         </p>
                                     </div>
                                 </a>
-                                @php $blogPostTopIV= \App\Models\BlogPost::query()->topIV()->first(); @endphp
+                                @endif
 
-                                <a href="{{ route('blog.show', $blogPostTopIV->id) }}" class="artclBotomBx">
-                                    <img src="{{ $blogPostTopIV->image_path }}" alt="img">
+                                @php $blogPostTopIV= \App\Models\BlogPost::query()->topIV()->first(); @endphp
+                                @if($blogPostTopIV)
+                                <a href="{{ route('blog.show', @$blogPostTopIV->id) }}" class="artclBotomBx">
+                                    <img src="{{ @$blogPostTopIV->image_path }}" alt="img">
                                     <div>
                                         <p>
-                                            {{ $blogPostTopIV->title }}
+                                            {{ @$blogPostTopIV->title }}
                                         </p>
                                     </div>
                                 </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -113,7 +121,7 @@
                                             </div>
                                             <div class="blgPostInfo">
                                                 <h6>{{ $blogPost->title }}</h6>
-                                                <p>{{ $blogPost->body }}</p>
+                                                <p>{!! $blogPost->body !!}</p>
                                                 <div class="blgPstInfoBtm">
                                                     <div class="blgPstBtmRght">
                                                         <div>
@@ -138,11 +146,11 @@
                         </div>
                         <div class="blogAdvSide">
                             <div class="advRowBxLft">
-                                <a href="#">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('socials-1') }}">
                                     <span class="icon-telegram-alt"></span>
                                     <i>در تلگرام گلشا را دنبال کنید</i>
                                 </a>
-                                <a href="#">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('socials-2') }}">
                                     <span class="icon-bxl-instagram"></span>
                                     <i>در اینستاگرام گلشا را دنبال کنید</i>
                                 </a>

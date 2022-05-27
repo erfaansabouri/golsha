@@ -6,15 +6,15 @@
         </div>
         <ul class="qNtFndCrdStial">
             <li>
-                <a href="{{ (new \App\Models\Setting())->findByKey('socials-1') }}">
+                <a href="{{ (new \App\Models\Setting())->findByKey('footer-6') }}">
                     <span class="icon-telegram-alt"></span>
                     <i>پاسخگویی در تلگرام</i>
                 </a>
             </li>
             <li>
-                <a href="{{ (new \App\Models\Setting())->findByKey('socials-2') }}">
+                <a href="{{ (new \App\Models\Setting())->findByKey('footer-7') }}">
                     <span class="icon-whatsapp_black_24dp"></span>
-                    <i>پاسخگویی در تلگرام</i>
+                    <i>پاسخگویی در واتسپ</i>
                 </a>
             </li>
         </ul>

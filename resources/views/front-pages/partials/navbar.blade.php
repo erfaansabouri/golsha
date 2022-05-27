@@ -57,7 +57,7 @@
                             </div>
                         </li>
                         <li class="navRowLi">
-                            <a href="#">
+                            <a href="{{ route('blog.index') }}">
                                 <i>مجله گلشا</i>
                             </a>
                         </li>

@@ -22,6 +22,8 @@ class CreateBlogPostsTable extends Migration
 			$table->text('tags')->nullable();
 			$table->boolean('is_popular')->default(0);
 			$table->boolean('is_news')->default(0);
+			$table->boolean('is_editor_selected')->default(0);
+			$table->integer('top_order')->default(0);
 			$table->timestamps();
         });
     }

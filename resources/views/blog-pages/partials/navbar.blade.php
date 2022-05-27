@@ -13,13 +13,9 @@
                             <img src="{{ asset('assets/front/img/logo4.png') }}" alt="logo">
                         </a>
                         <ul>
-                            <li><a href="#">اتاق خبر گلشا</a></li>
-                            <li><a href="#">زیبایی</a></li>
-                            <li><a href="#">بیماری ها</a></li>
-                            <li><a href="#">طب سنتی و گیاهان</a></li>
-                            <li><a href="#">سبک زندگی</a></li>
-                            <li><a href="#">تغذیه</a></li>
-                            <li><a href="#">تناسب اندام</a></li>
+                            @foreach(\App\Models\BlogCategory::all() ?? [] as $blogCategory)
+                                <li><a href="{{ route('blog.index', ['category_id' => $blogCategory->id]) }}">{{ $blogCategory->title }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="strSrchLink">

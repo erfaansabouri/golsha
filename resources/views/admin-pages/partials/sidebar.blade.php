@@ -85,14 +85,30 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.blog-posts.index') }}" class="nav-link">
-                            <i class="nav-icon fa fa-weibo"></i>
+                    <li class="nav-item has-treeview ">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-podcast"></i>
                             <p>
                                 وبلاگ
+                                <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.blog-posts.index') }}" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>پست های وبلاگ</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.blog-posts.index') }}" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>تنظیمات</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="{{ route('admin.tickets.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-ticket"></i>

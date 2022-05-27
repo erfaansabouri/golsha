@@ -79,7 +79,7 @@
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <div class="form-group">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" wire:model.defer="is_popular">
@@ -87,12 +87,47 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-4">
                                             <div class="form-group">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" wire:model.defer="is_news">
                                                     <label class="form-check-label">نمایش در لیست اخبار</label>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="is_editor_selected">
+                                                    <label class="form-check-label">نمایش در منتخب سر دبیر</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="top_order" class="control-label">نمایش در برترین های هدر (اعداد یک تا چهار را جهت اولویت بندی وارد نمایید. جهت عدم نمایش در هدر عدد صفر را وارد کنید)</label>
+                                                <div wire:ignore>
+                                                    <input wire:model.defer="top_order" type="text" class="form-control" id="top_order" placeholder="عدد بین صفر تا چهار وارد نمایید.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label>انتخاب دسته بندی</label>
+                                                <div wire:ignore>
+                                                    <select id="categories-dropdown" class="form-control" multiple="multiple">
+                                                        @foreach($categories as $category)
+                                                            <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -144,6 +179,14 @@
                     });
                 }
 
+            });
+
+            $('#categories-dropdown').select2({
+                theme: "classic"
+            });
+            $('#categories-dropdown').on('change', function (e) {
+                let data = $(this).val();
+                @this.set('category_ids', data);
             });
         </script>
     @endpush

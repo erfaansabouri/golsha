@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         BlogPost::factory(100)->create();
 		$this->call(SettingSeeder::class);
 		$this->call(FaqSeeder::class);
+		$this->call(BlogCategorySeeder::class);
 		
     }
 }
