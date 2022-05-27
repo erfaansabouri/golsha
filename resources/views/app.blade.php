@@ -16,7 +16,7 @@
 
 <div class="hdrSubMnuBox"></div>
 <div class="hdrSrchSubBx"></div>
-@include('front-pages.partials.scripts', ['pageTitle' => $pageTitle ?? ''])
+@include('front-pages.partials.scripts')
 @yield('scripts')
 @livewireScripts
 </body>

@@ -116,5 +116,10 @@ Route::middleware([])->group(function () {
 	Route::prefix('faq')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\FaqController::class , 'index'])->name('faq.index');
 	});
+	
+	Route::prefix('blog')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Blog\BlogController::class , 'index'])->name('blog.index');
+		Route::get('/{id}', [ \App\Http\Controllers\Blog\BlogController::class , 'show'])->name('blog.show');
+	});
 
 });

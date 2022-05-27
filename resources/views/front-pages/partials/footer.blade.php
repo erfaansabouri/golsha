@@ -34,7 +34,7 @@
                                 <li><a href="{{ route('about-us.index') }}">درباره گلشا</a></li>
                                 <li><a href="{{ route('contact-us.index') }}">تماس با گلشا</a></li>
                                 <li><a href="{{ route('work-with-us.index') }}">همکاری با گلشا</a></li>
-                                <li><a href="#">اخبار گلشا</a></li>
+                                <li><a href="{{ route('blog.index') }}">اخبار گلشا</a></li>
                             </ul>
                         </div>
                         <div class="ftrTpLstBx">
@@ -42,17 +42,16 @@
                             <ul>
                                 <li><a href="{{ route('faq.index') }}">سوالات متداول</a></li>
                                 <li><a href="{{ route('dissatisfaction.index') }}">ثبت نارضایتی</a></li>
-                                <li><a href="#">بازیابی رمز عبور</a></li>
                                 <li><a href="#">حریم خصوصی </a></li>
                             </ul>
                         </div>
                         <div class="ftrTpLstBx">
                             <h6>راهنمای خرید محصولات</h6>
                             <ul>
-                                <li><a href="#">نحوه ثبت سفارش</a></li>
-                                <li><a href="#">روش های پرداخت </a></li>
-                                <li><a href="#">نحوه ارسال سفارشات</a></li>
-                                <li><a href="#">پیگیری سفارشات</a></li>
+                                <li><a href="{{ route('faq.index') }}">نحوه ثبت سفارش</a></li>
+                                <li><a href="{{ route('faq.index') }}">روش های پرداخت </a></li>
+                                <li><a href="{{ route('faq.index') }}">نحوه ارسال سفارشات</a></li>
+                                <li><a href="{{ route('faq.index') }}">پیگیری سفارشات</a></li>
                             </ul>
                         </div>
                     </div>
@@ -63,7 +62,7 @@
                         <p>
                             {{ (new \App\Models\Setting())->findByKey('footer-5') }}
                         </p>
-                        <a href="#">
+                        <a href="{{ route('blog.index') }}">
                             <i>مقالات بیشتر</i>
                             <span class="material-icons-outlined">arrow_back</span>
                         </a>

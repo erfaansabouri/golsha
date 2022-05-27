@@ -18,9 +18,55 @@ class BlogPost extends Model
             return getenv('APP_URL'). "/storage/". $this->image_name;
         return null;
     }
-
+	
+	public function getHumanReadableCreatedAttribute()
+	{
+		if($this->image_name)
+			return getenv('APP_URL'). "/storage/". $this->image_name;
+		return null;
+	}
+	
+	public function getTagsArrayAttribute()
+	{
+		return explode(',',$this->tags);
+	}
     public function admin()
     {
         return $this->belongsTo(Admin::class);
     }
+	
+	public function relatedBlogPosts()
+	{
+		return $this->hasMany(BlogPost::class,'id','id'); // TODO
+	}
+	
+	/* SCOPES */
+	public function scopeTopI($query)
+	{
+		return $query->inRandomOrder()->take(1);
+	}
+	public function scopeTopII($query)
+	{
+		return $query->inRandomOrder()->take(1);
+	}
+	public function scopeTopIII($query)
+	{
+		return $query->inRandomOrder()->take(1);
+	}
+	public function scopeTopIV($query)
+	{
+		return $query->inRandomOrder()->take(1);
+	}
+	public function scopeSelectedEditor($query)
+	{
+		return $query->inRandomOrder()->take(5);
+	}
+	public function scopePopular($query)
+	{
+		return $query->inRandomOrder()->take(5);
+	}
+	public function scopeNews($query)
+	{
+		return $query->inRandomOrder()->take(5);
+	}
 }
