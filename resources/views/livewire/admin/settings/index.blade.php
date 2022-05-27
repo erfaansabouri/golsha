@@ -48,14 +48,23 @@
                                         <th>مقدار</th>
                                         <th>نوع</th>
                                         <th>دسته</th>
+                                        <th>ویرایش</th>
                                     </tr>
                                     @foreach($settings as $setting)
                                         <tr>
                                             <td>{{ $setting->id }}</td>
                                             <td>{{ $setting->key }}</td>
-                                            <td>{{ $setting->value }}</td>
+                                            @if($setting->type == \App\Models\Setting::TYPES['text'])
+                                                <td>{{ $setting->value_preview }}</td>
+                                            @endif
+                                            @if($setting->type == \App\Models\Setting::TYPES['image'])
+                                                <td>
+                                                    <img class="img-fluid img-thumbnail img-size-64" src="{{ $setting->value_preview }}" alt="">
+                                                </td>
+                                            @endif
                                             <td>{{ \App\Models\Setting::translateType($setting->type) }}</td>
                                             <td>{{ \App\Models\Setting::translateCategories($setting->category) }}</td>
+                                            <td><a class="btn btn-sm btn-primary" href="{{ route('admin.settings.edit', $setting->id) }}">ویرایش</a></td>
                                         </tr>
                                     @endforeach
                                 </table>

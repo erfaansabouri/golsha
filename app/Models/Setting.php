@@ -19,6 +19,7 @@ class Setting extends Model
 		'about-us' => 'about-us',
 		'footer' => 'footer',
 		'socials' => 'socials',
+		'blog' => 'blog',
 	];
 	
 	public static function translateCategories($category)
@@ -30,6 +31,8 @@ class Setting extends Model
 				return 'فوتر';
 			case self::CATEGORIES['socials']:
 				return 'شبکه های اجتماعی';
+			case self::CATEGORIES['blog']:
+				return 'بلاگ';
 		}
 	}
 	
@@ -62,6 +65,34 @@ class Setting extends Model
 			}
 		}
 		
+		return '-';
+	}
+	
+	public function getHrefByKey($key)
+	{
+		$model = self::query()
+					 ->where('key', $key)
+					 ->first();
+		
+		if($model)
+		{
+			return $model->href;
+		}
+		
+		return '-';
+	}
+	
+	public function getValuePreviewAttribute()
+	{
+		if ($this->type == self::TYPES['image'])
+		{
+			return $this->image_path;
+		}
+		
+		if ($this->type == self::TYPES['text'])
+		{
+			return $this->value;
+		}
 		return '-';
 	}
 	

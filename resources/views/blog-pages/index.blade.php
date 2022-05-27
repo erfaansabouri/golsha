@@ -103,8 +103,8 @@
                     <div class="blogPostsBox">
                         <div class="blogPstsRght">
                             <div class="advRowBxRght">
-                                <a href="#">
-                                    <img src="{{ $ads[0]->image_path }}" alt="img">
+                                <a href="{{ (new \App\Models\Setting())->getHrefByKey('blog-1') }}">
+                                    <img src="{{ (new \App\Models\Setting())->findByKey('blog-1') }}" alt="img">
                                 </a>
                             </div>
                             <div class="blgLastPost">
@@ -146,20 +146,20 @@
                         </div>
                         <div class="blogAdvSide">
                             <div class="advRowBxLft">
-                                <a href="{{ (new \App\Models\Setting())->findByKey('socials-1') }}">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('blog-4') }}">
                                     <span class="icon-telegram-alt"></span>
                                     <i>در تلگرام گلشا را دنبال کنید</i>
                                 </a>
-                                <a href="{{ (new \App\Models\Setting())->findByKey('socials-2') }}">
+                                <a href="{{ (new \App\Models\Setting())->findByKey('blog-5') }}">
                                     <span class="icon-bxl-instagram"></span>
                                     <i>در اینستاگرام گلشا را دنبال کنید</i>
                                 </a>
                             </div>
-                            <a href="#" class="blgAdvSidBx">
-                                <img src="{{ $ads[1]->image_path }}" alt="img">
+                            <a href="{{ (new \App\Models\Setting())->getHrefByKey('blog-2') }}" class="blgAdvSidBx">
+                                <img src="{{ (new \App\Models\Setting())->findByKey('blog-2') }}" alt="img">
                             </a>
-                            <a href="#" class="blgAdvSidBx">
-                                <img src="{{ $ads[2]->image_path }}" alt="img">
+                            <a href="{{ (new \App\Models\Setting())->getHrefByKey('blog-3') }}" class="blgAdvSidBx">
+                                <img src="{{ (new \App\Models\Setting())->findByKey('blog-3') }}" alt="img">
                             </a>
                             @include('blog-pages.partials.populars')
                             @include('blog-pages.partials.news')

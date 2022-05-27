@@ -18,6 +18,7 @@ class SettingSeeder extends Seeder
         $this->aboutUs();
         $this->footer();
         $this->socials();
+        $this->blog();
     }
 	
 	public function aboutUs()
@@ -31,13 +32,13 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'about-us-2',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
 			[
 				'key' => 'about-us-3',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
@@ -49,19 +50,19 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'about-us-5',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
 			[
 				'key' => 'about-us-6',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
 			[
 				'key' => 'about-us-7',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
@@ -79,13 +80,13 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'about-us-10',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
 			[
 				'key' => 'about-us-11',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
@@ -97,13 +98,13 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'about-us-13',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
 			[
 				'key' => 'about-us-14',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
@@ -115,13 +116,13 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'about-us-16',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
 			[
 				'key' => 'about-us-17',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
@@ -133,13 +134,13 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'about-us-19',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
 			[
 				'key' => 'about-us-20',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
@@ -151,13 +152,13 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'about-us-22',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
 			[
 				'key' => 'about-us-23',
-				'value' => 'متن تست',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'about-us',
 				'type' => 'text',
 			],
@@ -215,73 +216,73 @@ class SettingSeeder extends Seeder
 		$items = [
 			[
 				'key' => 'footer-1',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-2',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-3',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-4',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-5',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-6',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-7',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-8',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-9',
-				'value' => 'test test test 09',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-10',
-				'value' => 'test test test 10',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-11',
-				'value' => 'test test test 11',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
 			[
 				'key' => 'footer-12',
-				'value' => 'test test test 12',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
@@ -293,7 +294,7 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'footer-14',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
@@ -305,7 +306,7 @@ class SettingSeeder extends Seeder
 			],
 			[
 				'key' => 'footer-16',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
 			],
@@ -327,56 +328,105 @@ class SettingSeeder extends Seeder
 		$items = [
 			[
 				'key' => 'socials-1',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
 				'type' => 'text',
 			],
 			[
 				'key' => 'socials-2',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
 				'type' => 'text',
 			],
 			[
 				'key' => 'socials-3',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
 				'type' => 'text',
 			],
 			[
 				'key' => 'socials-4',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
 				'type' => 'text',
 			],
 			[
 				'key' => 'socials-5',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
 				'type' => 'text',
 			],
 			[
 				'key' => 'socials-6',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
 				'type' => 'text',
 			],
 			[
 				'key' => 'socials-7',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
 				'type' => 'text',
 			],
 			[
 				'key' => 'socials-8',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
 				'type' => 'text',
 			],
 			[
 				'key' => 'socials-9',
-				'value' => 'test test test',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'socials',
+				'type' => 'text',
+			],
+		];
+		
+		foreach ($items as $item)
+		{
+			Setting::query()->create($item);
+		}
+	}
+	public function blog()
+	{
+		$items = [
+			[
+				'key' => 'blog-1',
+				'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+				'category' => 'blog',
+				'href' => 'https://google.com',
+				'type' => 'image',
+			],
+			[
+				'key' => 'blog-2',
+				'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+				'category' => 'blog',
+				'href' => 'https://google.com',
+				'type' => 'image',
+			],
+			[
+				'key' => 'blog-3',
+				'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+				'category' => 'blog',
+				'href' => 'https://google.com',
+				'type' => 'image',
+			],
+			[
+				'key' => 'blog-4',
+				'value' => 'https://google.com',
+				'category' => 'blog',
+				'type' => 'text',
+			],
+			[
+				'key' => 'blog-5',
+				'value' => 'https://google.com',
+				'category' => 'blog',
+				'type' => 'text',
+			],
+			[
+				'key' => 'blog-6',
+				'value' => \Ybazli\Faker\Facades\Faker::sentence().\Ybazli\Faker\Facades\Faker::sentence().\Ybazli\Faker\Facades\Faker::sentence(),
+				'category' => 'blog',
 				'type' => 'text',
 			],
 		];

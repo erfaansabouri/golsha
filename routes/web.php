@@ -90,7 +90,6 @@ Route::prefix('admin')->group(function () {
 	// Settings
 	Route::prefix('settings')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Admin\SettingController::class , 'index'])->name('admin.settings.index');
-		Route::get('/create', [ \App\Http\Controllers\Admin\SettingController::class , 'create'])->name('admin.settings.create');
 		Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\SettingController::class , 'edit'])->name('admin.settings.edit');
 	});
 	
@@ -98,7 +97,7 @@ Route::prefix('admin')->group(function () {
 
 Route::middleware([])->group(function () {
 	Route::prefix('/')->group(function () {
-		Route::get('/', [ \App\Http\Controllers\Front\HomeController::class , 'index'])->name('home');
+		Route::get('/', [ \App\Http\Controllers\Blog\BlogController::class , 'index'])->name('home');
 	});
 	
 	Route::prefix('contact-us')->group(function () {

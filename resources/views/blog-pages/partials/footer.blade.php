@@ -26,7 +26,7 @@
                     <div class="blogFtrAbout">
                         <p>
                             <span>گلشا مگ: </span>
-                            {{ $footerDescription }}
+                            {{ (new \App\Models\Setting())->findByKey('blog-6') }}
                         </p>
                     </div>
                 </div>
