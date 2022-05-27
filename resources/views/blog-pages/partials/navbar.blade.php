@@ -22,19 +22,16 @@
                         <div class="blgHdrSerch">
                             <span class="icon-search_black_36dp blgHdrSrchLnk"></span>
                             <div class="blgHdrSrchBx">
-                                <div class="blgHdrSrchRw">
-                                    <button><span class="icon-search_black_36dp"></span></button>
-                                    <input type="text" placeholder="جستجو در بین مطالب">
-                                </div>
+                                <form action="{{ route('blog.index') }}" method="get">
+                                    @csrf
+                                    @method('get')
+                                    <div class="blgHdrSrchRw">
+                                        <button><span class="icon-search_black_36dp"></span></button>
+                                        <input name="search" type="text" placeholder="جستجو در بین مطالب">
+                                    </div>
+                                </form>
                                 <div class="mostSearch">
-                                    <p>پرطرفدار</p>
                                     <span>{{ \App\Models\BlogPost::query()->count() }} مطلب</span>
-                                </div>
-                                <div class="mostSrchTags">
-                                    <a href="#">تقویت مو</a>
-                                    <a href="#">کرونا</a>
-                                    <a href="#">لاغری شکم</a>
-                                    <a href="#">تقویت مو</a>
                                 </div>
                             </div>
                         </div>

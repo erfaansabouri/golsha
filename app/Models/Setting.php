@@ -15,6 +15,34 @@ class Setting extends Model
 		'text' => 'text',
 	];
 	
+	const CATEGORIES = [
+		'about-us' => 'about-us',
+		'footer' => 'footer',
+		'socials' => 'socials',
+	];
+	
+	public static function translateCategories($category)
+	{
+		switch ($category){
+			case self::CATEGORIES['about-us']:
+				return 'درباره ما';
+			case self::CATEGORIES['footer']:
+				return 'فوتر';
+			case self::CATEGORIES['socials']:
+				return 'شبکه های اجتماعی';
+		}
+	}
+	
+	public static function translateType($type)
+	{
+		switch ($type){
+			case self::TYPES['image']:
+				return 'تصویر';
+			case self::TYPES['text']:
+				return 'متن';
+		}
+	}
+	
 	public function findByKey($key)
 	{
 		$model = self::query()

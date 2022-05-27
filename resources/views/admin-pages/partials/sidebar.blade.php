@@ -100,12 +100,6 @@
                                     <p>پست های وبلاگ</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.blog-posts.index') }}" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>تنظیمات</p>
-                                </a>
-                            </li>
                         </ul>
                     </li>
 
@@ -114,6 +108,15 @@
                             <i class="nav-icon fa fa-ticket"></i>
                             <p>
                                 درخواست های پشتیبانی
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('admin.settings.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-gears"></i>
+                            <p>
+                                تنظیمات
                             </p>
                         </a>
                     </li>

@@ -86,6 +86,14 @@ Route::prefix('admin')->group(function () {
     Route::prefix('tickets')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\TicketController::class , 'index'])->name('admin.tickets.index');
     });
+	
+	// Settings
+	Route::prefix('settings')->group(function () {
+		Route::get('/', [ \App\Http\Controllers\Admin\SettingController::class , 'index'])->name('admin.settings.index');
+		Route::get('/create', [ \App\Http\Controllers\Admin\SettingController::class , 'create'])->name('admin.settings.create');
+		Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\SettingController::class , 'edit'])->name('admin.settings.edit');
+	});
+	
 });
 
 Route::middleware([])->group(function () {

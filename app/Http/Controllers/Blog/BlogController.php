@@ -10,13 +10,50 @@ use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
-    public function index(Request $request)
+	protected $pageInfo = [
+		'title' => 'وبلاگ گلشاتب',
+	];
+	
+	private function footerTags()
+	{
+		$tags = [];
+		$blogPosts = BlogPost::query()->whereNotNull('tags')->get();
+		foreach ($blogPosts as $blogPost)
+		{
+			$exploded = explode(',',$blogPost->tags);
+			foreach ($exploded as $tag)
+			{
+				$tags[] = $tag;
+			}
+		}
+		
+		return collect($tags)->take(20)->all();
+	}
+	
+	private function ads()
 	{
 		$ads = Setting::query()->where('type', Setting::TYPES['image'])->take(3)->get();
+		return $ads;
+	}
+	
+	private function description()
+	{
+		return 'test';
+	}
+	
+    public function index(Request $request)
+	{
+		$ads = $this->ads();
 		$blogPosts = BlogPost::query()->orderByDesc('id');
+		
 		if(!empty($request->tag))
 		{
 			$blogPosts = $blogPosts->where('tags', 'like', '%'. $request->tag .'%');
+		}
+		if(!empty($request->search))
+		{
+			$blogPosts = $blogPosts->where('tags', 'like', '%'. $request->search .'%')
+				->orWhere('title', 'like', '%'.$request->search.'%');
 		}
 		if(!empty($request->category_id))
 		{
@@ -28,25 +65,17 @@ class BlogController extends Controller
 		}
 		
 		$blogPosts = $blogPosts->paginate(10);
-		
-		$tags = BlogPost::query()
-			->whereNotNull('tags')
-			->get()
-			->pluck('tags');
-		$footerDescription = 'footer description';
-		return view('blog-pages.index', compact('blogPosts', 'ads', 'tags', 'footerDescription'));
+		$tags = $this->footerTags();
+		$footerDescription = $this->description();
+		return view('blog-pages.index', compact('blogPosts', 'ads', 'tags', 'footerDescription'))->with('pageInfo', $this->pageInfo);
 	}
 	
 	public function show($id)
 	{
-		$ads = Setting::query()->where('type', Setting::TYPES['image'])->take(3)->get();
+		$ads = $this->ads();
 		$blogPost = BlogPost::query()->findOrFail($id);
-		$tags = BlogPost::query()
-						->whereNotNull('tags')
-						->get()
-						->pluck('tags');
-		$footerDescription = 'footer description';
+		$tags = $this->footerTags();
+		$footerDescription = $this->description();
 		return view('blog-pages.show', compact('ads', 'blogPost', 'tags', 'footerDescription'));
-		
 	}
 }
