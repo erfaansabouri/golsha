@@ -14,17 +14,23 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('user.profile.saved-products') }}">
                 <span class="icon-bookmark_border_black_24dp"></span>
                 <i>ذخیره شده ها</i>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('user.profile.comments') }}">
                 <span class="icon-chat_bubble_outline_black_24dp"></span>
                 <i>دیدگاه و پاسخ ها</i>
             </a>
         </li>
     </ul>
-    <button>خروج از حساب</button>
+
+    <a href="{{ route('user.auth.logout') }}">
+        <button>
+            خروج از حساب
+        </button>
+    </a>
+
 </div>

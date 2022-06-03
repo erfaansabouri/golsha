@@ -14,6 +14,14 @@ class AuthController extends Controller
 		return view('front-pages.auth.login');
 	}
 
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('user.auth.login.form');
+    }
+
 	public function sendOTP(Request $request)
 	{
         $request->validate([
@@ -42,7 +50,7 @@ class AuthController extends Controller
         if($user->otp == $request->otp)
         {
             Auth::login($user);
-            return redirect()->route('home');
+            return redirect()->route('user.profile.details');
         }
         return redirect()->route('user.auth.OTPForm',[
             'id' => encrypt($user->id),

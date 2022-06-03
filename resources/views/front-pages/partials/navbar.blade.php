@@ -11,7 +11,7 @@
                     </div>
                     <ul class="navRowUl">
                         <li class="navRowLi">
-                            <a href="#">
+                            <a href="{{ route('home') }}">
                                 <i>صفحه اصلی</i>
                             </a>
                         </li>

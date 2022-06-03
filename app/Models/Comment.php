@@ -42,6 +42,11 @@ class Comment extends Model
         return $this->hasOne(Comment::class, 'parent_id', 'id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function getMorphTypeAttribute()
     {
         switch (get_class($this->commentable)){

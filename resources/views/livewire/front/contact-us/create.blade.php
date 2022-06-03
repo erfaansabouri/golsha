@@ -13,7 +13,7 @@
                         </div>
                         <div class="contctUsNtic">
                             <span class="icon-exclamation-mark-round"></span>
-                            <p>لطفاً پیش از ارسال ایمیل یا تماس تلفنی، ابتدا  <a href="#">پرسش های متداول</a>    را مشاهده کنید</p>
+                            <p>لطفاً پیش از ارسال ایمیل یا تماس تلفنی، ابتدا  <a href="{{ route('faq.index') }}">پرسش های متداول</a>    را مشاهده کنید</p>
                         </div>
                         <div class="contctUsForm">
                             <div class="cntctFrmTitl">فرم ارسال پیام</div>
