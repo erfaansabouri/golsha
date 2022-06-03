@@ -86,44 +86,53 @@ Route::prefix('admin')->group(function () {
     Route::prefix('tickets')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\TicketController::class , 'index'])->name('admin.tickets.index');
     });
-	
+
 	// Settings
 	Route::prefix('settings')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Admin\SettingController::class , 'index'])->name('admin.settings.index');
 		Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\SettingController::class , 'edit'])->name('admin.settings.edit');
 	});
-	
+
+});
+
+Route::prefix('user')->group(function () {
+	Route::prefix('auth')->group(function () {
+		Route::get('login', [ \App\Http\Controllers\Front\AuthController::class , 'loginForm'])->name('user.auth.login.form');
+		Route::post('sendOTP', [ \App\Http\Controllers\Front\AuthController::class , 'sendOTP'])->name('user.auth.sendOTP');
+		Route::get('OTPForm/{id}', [ \App\Http\Controllers\Front\AuthController::class , 'OTPForm'])->name('user.auth.OTPForm');
+		Route::post('validateOTPAndLogin', [ \App\Http\Controllers\Front\AuthController::class , 'validateOTPAndLogin'])->name('user.auth.validateOTPAndLogin');
+	});
 });
 
 Route::middleware([])->group(function () {
 	Route::prefix('/')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Blog\BlogController::class , 'index'])->name('home');
 	});
-	
+
 	Route::prefix('contact-us')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\ContactUsController::class , 'index'])->name('contact-us.index');
 	});
-	
+
 	Route::prefix('support')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\SupportController::class , 'index'])->name('support.index');
 	});
-	
+
 	Route::prefix('dissatisfaction')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\DissatisfactionController::class , 'index'])->name('dissatisfaction.index');
 	});
-	
+
 	Route::prefix('work-with-us')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\WorkWithUsController::class , 'index'])->name('work-with-us.index');
 	});
-	
+
 	Route::prefix('about-us')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\AboutUsController::class , 'index'])->name('about-us.index');
 	});
-	
+
 	Route::prefix('faq')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\FaqController::class , 'index'])->name('faq.index');
 	});
-	
+
 	Route::prefix('blog')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Blog\BlogController::class , 'index'])->name('blog.index');
 		Route::get('/{id}', [ \App\Http\Controllers\Blog\BlogController::class , 'show'])->name('blog.show');
