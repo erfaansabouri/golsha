@@ -102,6 +102,17 @@ Route::prefix('user')->group(function () {
 		Route::get('OTPForm/{id}', [ \App\Http\Controllers\Front\AuthController::class , 'OTPForm'])->name('user.auth.OTPForm');
 		Route::post('validateOTPAndLogin', [ \App\Http\Controllers\Front\AuthController::class , 'validateOTPAndLogin'])->name('user.auth.validateOTPAndLogin');
 	});
+
+    Route::prefix('profile')->group(function () {
+        Route::get('/details', [ \App\Http\Controllers\Front\ProfileController::class , 'details'])->name('user.profile.details');
+        Route::put('/update-details', [ \App\Http\Controllers\Front\ProfileController::class , 'updateDetails'])->name('user.profile.updateDetails');
+        Route::get('/destroy-address/{id}', [ \App\Http\Controllers\Front\ProfileController::class , 'destroyAddress'])->name('user.profile.destroyAddress');
+        Route::post('/store-address', [ \App\Http\Controllers\Front\ProfileController::class , 'storeAddress'])->name('user.profile.storeAddress');
+        Route::put('/update-address/{id}', [ \App\Http\Controllers\Front\ProfileController::class , 'updateAddress'])->name('user.profile.updateAddress');
+        Route::get('/orders', [ \App\Http\Controllers\Front\ProfileController::class , 'orders'])->name('user.profile.orders');
+        Route::get('/saved-products', [ \App\Http\Controllers\Front\ProfileController::class , 'saved-products'])->name('user.profile.saved-products');
+        Route::get('/comments', [ \App\Http\Controllers\Front\ProfileController::class , 'comments'])->name('user.profile.comments');
+    });
 });
 
 Route::middleware([])->group(function () {

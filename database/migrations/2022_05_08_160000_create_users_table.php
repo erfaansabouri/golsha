@@ -25,7 +25,8 @@ class CreateUsersTable extends Migration
             $table->boolean('is_disable')->default(false);
             $table->string('sex',100)->nullable();
             $table->string('email',100)->nullable();
-            $table->timestamp('birthday')->nullable();
+            $table->date('birthday')->nullable();
+            $table->text('bank_card')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -41,6 +42,7 @@ class CreateUsersTable extends Migration
             $table->text('first_line')->nullable();
             $table->text('second_line')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

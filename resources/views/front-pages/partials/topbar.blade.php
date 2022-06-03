@@ -23,10 +23,10 @@
                         <div class="accLinkBox">
                             <span class="icon-person_outline_black_24dp opnUserMnu"></span>
                             <div class="userMnuBox">
-                                <p>ایمان امیری</p>
+                                <p>{{ $user->full_name }}</p>
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ route('user.profile.details') }}">
                                             <span class="icon-address-book-o"></span>
                                             <i>اطلاعات و آدرس ها</i>
                                         </a>
