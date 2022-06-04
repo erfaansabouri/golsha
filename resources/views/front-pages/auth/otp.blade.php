@@ -29,7 +29,7 @@
                             @endif
                         </div>
                         <div class="loginFormLbl">
-                            رمز ورود جهت تست سیستم : {{ $user->opt }}
+                            رمز ورود جهت تست سیستم : {{ $user->otp }}
                         </div>
                         <form method="post" action="{{ route('user.auth.validateOTPAndLogin') }}">
                             @csrf
