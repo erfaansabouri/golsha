@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="storeLink">فروشگاه گلشا</a>
+                        <a href="{{ route('products.index') }}" class="storeLink">فروشگاه گلشا</a>
                         <a href="#" class="opnMinMnu"><span class="material-icons">menu</span></a>
                     </div>
                 </div>
