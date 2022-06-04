@@ -29,6 +29,8 @@ class BlogPostFactory extends Factory
             'admin_id' => Admin::query()->inRandomOrder()->first()->id,
             'title' => \Ybazli\Faker\Facades\Faker::word(),
             'body' => \Ybazli\Faker\Facades\Faker::sentence(). ' ' .\Ybazli\Faker\Facades\Faker::sentence(),
+            'name' => 'images/sample.jpg',
+
         ];
     }
 }
