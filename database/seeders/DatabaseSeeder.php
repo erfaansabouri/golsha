@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Product::factory(100)->create();
+        Product::factory(2000)->create();
         User::factory(100)->create();
         Coupon::factory(100)->create();
         Comment::factory(100)->create();
@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
 		$this->call(SettingSeeder::class);
 		$this->call(FaqSeeder::class);
 		$this->call(BlogCategorySeeder::class);
-		
+		$this->call(ProductImageSeeder::class);
+		$this->call(ProductCategoryAndGroupSeeder::class);
+
     }
 }

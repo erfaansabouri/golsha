@@ -36,13 +36,13 @@
                                                     @foreach($productGroups as $productGroup)
                                                         <ul>
                                                             @foreach($productGroup as $product)
-                                                                <li><a href="#">{{ $product->title }}</a></li>
+                                                                <li><a href="{{ route('products.show', $product->id) }}">{{ $product->title }}</a></li>
                                                             @endforeach
                                                         </ul>
                                                     @endforeach
                                                     <ul>
                                                         <li>
-                                                            <a href="#" class="allPrdctLnk">
+                                                            <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="allPrdctLnk">
                                                                 <i>همه محصولات دسته</i>
                                                                 <span class="material-icons">keyboard_arrow_left</span>
                                                             </a>

@@ -2,7 +2,7 @@
 
 html, body , ul{
     margin:0;
-    padding: 0; 
+    padding: 0;
     font-family: 'IRANSansWeb';
     direction: rtl;
 }
@@ -326,8 +326,8 @@ body.bodyOpened:after{
         width: 163px;
         height: auto;
         transition: all 0.6s;
-        display: none; 
-        margin-left: auto;   
+        display: none;
+        margin-left: auto;
         margin-right: auto;
     }
     .navRow .navRowDiv .navRowLogo img{
@@ -805,7 +805,7 @@ body.bodyOpened:after{
             width: 100%;
             height: 400px;
         }
-        #topSliderSec .swiper-container .swiper-button-next , 
+        #topSliderSec .swiper-container .swiper-button-next ,
         #topSliderSec .swiper-container .swiper-button-prev{
             width: 42px;
             height: 42px;
@@ -819,7 +819,7 @@ body.bodyOpened:after{
             align-items: center;
             justify-content: center;
         }
-        #topSliderSec .swiper-container .swiper-button-prev:after , 
+        #topSliderSec .swiper-container .swiper-button-prev:after ,
         #topSliderSec .swiper-container .swiper-button-next:after{
             font-size: 25px;
             font-weight: bold;
@@ -1409,7 +1409,7 @@ body.bodyOpened:after{
             font-size: 16px;
             color: #6D6E70;
         }
-        
+
     /*******************drnkGlshaSec*******************/
         .drnkGlshaSec{
             margin-top: 50px;
@@ -1546,16 +1546,16 @@ body.bodyOpened:after{
             color: #98999A;
         }
 
-    /**********************bannerSec*******************/ 
+    /**********************bannerSec*******************/
         #bannerSec{
             margin-top: 20px;
             margin-bottom: 20px;
-        }   
+        }
         #bannerSec .bannrSecBox{
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-        }   
+        }
         #bannerSec .bannerBox{
             display: block;
             width: 50%;
@@ -1568,12 +1568,12 @@ body.bodyOpened:after{
         }
         #bannerSec .bannerBox:last-child{
             margin-left: 0;
-        }   
+        }
         #bannerSec .bannerBox img{
             width: 100%;
             height: 100%;
             border-radius: 10px;
-        }   
+        }
         #bannerSec .bannerBox:hover{
             transform: translateY(-2px);
             opacity: 1;
@@ -2109,7 +2109,7 @@ body.bodyOpened:after{
             opacity: 1;
         }
 
- 
+
 
     /********************blogPostSec********************/
         #blogPostSec{
@@ -2324,7 +2324,7 @@ body.bodyOpened:after{
             font-family: 'IRANSansWeb_Bold';
         }
         #blogPostSec .blogPostsBox .blgLastPost h5 span{
-            
+
         }
         #blogPostSec .blogPostsBox .blgLastPost .blglstPostLi{
             width: 100%;
@@ -2844,7 +2844,7 @@ body.bodyOpened:after{
             opacity: 1;
         }
         #frqntlyQuSec .frqntlyQuBox .ProductNav_Indicator {
-           display: none;         
+           display: none;
         }
         #frqntlyQuSec .frqntlyQuBox .frqntlyQus{
             padding: 20px;
@@ -2883,7 +2883,7 @@ body.bodyOpened:after{
             color: #B1B2B5;
             font-size: 30px;
             transition: all 0.6s;
-        }        
+        }
         #frqntlyQuSec .frqntlyQuBox .cardLink span.collpsedSpan{
             transform: rotate(-90deg);
         }
@@ -3205,7 +3205,7 @@ body.bodyOpened:after{
             width: 100px;
             background-color: transparent;
             transform-origin: 0 0;
-            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;         
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
         }
 
         #ordersSec .orderSecBox .ordrsLstBx{
@@ -3567,7 +3567,7 @@ body.bodyOpened:after{
         }
 
 /*----------------------shppngCart-page-----------------------------*/
-    
+
     /*******************shppngCartSec**************/
         #shppngCartSec .ordrFrmWizBx {
             display: block;
@@ -4139,7 +4139,7 @@ body.bodyOpened:after{
         }
 
 /*--------------------info&address-page-----------------------------*/
-    
+
     /*******************ifoAndAdrsBx**************/
         .ifoAndAdrsBx{
             border: 1px solid #E0E0E2;
@@ -4360,7 +4360,7 @@ body.bodyOpened:after{
         }
 
 /*--------------------contact-us-page-----------------------------*/
-    
+
     /*******************contctUsBox**************/
         .contctUsBox .contctUsTitl{
             display: flex;
@@ -4407,7 +4407,7 @@ body.bodyOpened:after{
         .contctUsBox .contctUsNtic p a{
             font-size: 15px;
             position: relative;
-            color: #3DC3EB;           
+            color: #3DC3EB;
         }
         .contctUsBox .contctUsNtic p a:after{
             position: absolute;
@@ -4490,7 +4490,7 @@ body.bodyOpened:after{
         }
 
 /*--------------------------about-page---------------------------*/
-    
+
     /*****************abutTopSec*****************/
         #abutTopSec{
             margin-bottom: 20px;
@@ -5034,7 +5034,7 @@ body.bodyOpened:after{
     }
 
 /*----------------------prdct-intrnal-page------------------------*/
-    
+
     /******************pageMapSec***************/
         #pageMapSec{
             margin-top: 20px;
@@ -5266,6 +5266,7 @@ body.bodyOpened:after{
         }
         #prdctIntrnlSec .prdctIntrnlMain .simlrPrdctCrd .simlrPrdctImg{
             padding: 10px;
+            margin: auto;
             width: 160px;
             height: 160px;
         }
@@ -5498,7 +5499,7 @@ body.bodyOpened:after{
             background: transparent;
             width: 100%;
 
-             Center slide text vertically 
+             Center slide text vertically
             display: -webkit-box;
             display: -ms-flexbox;
             display: -webkit-flex;
@@ -6028,7 +6029,7 @@ body.bodyOpened:after{
             -ms-flex-align: center;
             -webkit-align-items: center;
             align-items: center;
-        
+
             height: 280px;
             background: #F5F7FA;
             border-radius: 10px;
@@ -6139,7 +6140,7 @@ body.bodyOpened:after{
         }
 
 /*----------------------login-page------------------------*/
-    
+
     /******************loginSec***************/
         #loginSec .loginSecBox{
             margin-left: auto;
@@ -6224,7 +6225,7 @@ body.bodyOpened:after{
         }
         #loginSec .loginForm .input-group input::placeholder {
             color: #B6B6B7;
-            opacity: 1; 
+            opacity: 1;
         }
         #loginSec .loginForm .input-group input:-ms-input-placeholder {
             color: #B6B6B7;
@@ -6726,7 +6727,7 @@ body.bodyOpened:after{
         }
         #prdctOptnSec .prdctOptnLst{
             flex-wrap: wrap;
-        }  
+        }
         #prdctOptnSec .prdctOptnLst .prdctOptnBx{
             width: 48%;
             flex: 48%;
@@ -6734,7 +6735,7 @@ body.bodyOpened:after{
         #prdctOptnSec .prdctOptnBx .prdctOptnImg ,
         #prdctOptnSec .prdctOptnBx .prdctOptnImg img{
             width: 48px;
-        }  
+        }
     }
     @media (min-width: 768px) and (max-width: 991px){
         #onlineShopSec .onlineShopBox .onlinShopImg{
@@ -6812,7 +6813,7 @@ body.bodyOpened:after{
         }
         #blogFooter .blogFtrBox .blogFtrTags{
             min-width: 30%;
-        }       
+        }
         #topPrdctSec .topPrdctBox .topPrdctLft .topLeftCrd{
             width: 212px;
         }
@@ -7209,7 +7210,7 @@ body.bodyOpened:after{
         #ordersSec .ordrsMainBx .ordrDetailHdr div{
             flex-wrap: wrap;
         }
-        #ordersSec .ordrsMainBx .ordrDetailHdr h6 , 
+        #ordersSec .ordrsMainBx .ordrDetailHdr h6 ,
         #ordersSec .ordrsMainBx .ordrDetailHdr p{
             margin-bottom: 10px;
         }
@@ -7282,10 +7283,10 @@ body.bodyOpened:after{
         #SlctdEditrSec .slctdEditrBdy{
             flex-wrap: nowrap;
             overflow: auto;
-        } 
+        }
         #SlctdEditrSec .slctdEditrBdy .slctdEditrCrd{
             min-width: 204px;
-        } 
+        }
         #advRowSec .advRowBox{
             flex-direction: column;
         }
@@ -7368,7 +7369,7 @@ body.bodyOpened:after{
         }
         #topPrdctSec .topLeftCrd .topLeftCrdImg{
             width: 100px;
-        } 
+        }
         #topPrdctSec .topLeftCrd .topLeftCrdTxt{
             font-size: 14px;
         }
@@ -7536,7 +7537,7 @@ body.bodyOpened:after{
             max-width: 105px;
         }
     }
-    @media (min-width: 481px) and (max-width: 767px){        
+    @media (min-width: 481px) and (max-width: 767px){
         .ifoAndAdrsBx .yourAdrssBox li .yourAdrssBdy{
             width: calc(100% - 110px);
         }
@@ -7551,14 +7552,14 @@ body.bodyOpened:after{
         }
         .ifoAndAdrsBx .form-inline .form-group{
             width: 48%;
-        } 
+        }
         #ordersSec .ordrsMainBx .ordrDtailTtl li{
             font-size: 12px;
             line-height: 12px;
         }
         #topPrdctSec .topPrdctRght .topRghtCrd .topRghtCrdTxt{
             width: calc(100% - 55px);
-        }        
+        }
         #vipPrdctSec .vipPrdctBox .vipPrdctRght{
             flex-direction: row;
         }
@@ -7684,7 +7685,7 @@ body.bodyOpened:after{
         #GolshaInfoSec .GolshaInfoHed .GolshaInfIcon small{
             font-size: 38px;
         }
-        .contctUsBox .contctUsForm .formTAreaDiv .infoAdrsLabl, 
+        .contctUsBox .contctUsForm .formTAreaDiv .infoAdrsLabl,
         .contctUsBox .contctUsForm .form-group .infoAdrsLabl{
             font-size: 12px;
         }
@@ -7719,7 +7720,7 @@ body.bodyOpened:after{
         }
         #blogPostSec .blgLastPost .blglstPostLi .blgPostInfo h6{
             font-size: 14px;
-        } 
+        }
         #blogPostSec .blgLastPost .blglstPostLi .blgPstBtmRght div{
             margin-left: 10px;
         }
@@ -7734,7 +7735,7 @@ body.bodyOpened:after{
         }
         #blogPostSec .blgLastPost .blglstPostLi .blgPostInfo p{
             font-size: 12px;
-        }     
+        }
         #topSliderSec .row{
             margin: 0;
         }
@@ -7791,10 +7792,10 @@ body.bodyOpened:after{
             text-align: center;
         }
     }
-    @media (min-width: 481px) and (max-width: 575px){    
+    @media (min-width: 481px) and (max-width: 575px){
         .commntsSecBx .commntBox .commntBxBdy{
             width: calc(100% - 80px);
-        }        
+        }
         #abutTopSec .abtCuntersBx .abtCuntrsLi{
             width: 100px;
             margin-left: 35px;
@@ -7922,7 +7923,7 @@ body.bodyOpened:after{
         #topPrdctSec .topPrdctRght .topRghtCrd .topRghtCrdTxt{
             width: 100%;
             text-align: center;
-        }        
+        }
         #glshaPrdctSec .glshaPrdctBox .glshaPrdctImg img{
             border-radius: 50px 10px;
         }

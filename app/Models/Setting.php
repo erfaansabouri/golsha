@@ -9,19 +9,21 @@ class Setting extends Model
 {
     protected $table = 'settings';
 	protected $guarded = [];
-	
+
 	const TYPES = [
 		'image' => 'image',
 		'text' => 'text',
 	];
-	
+
 	const CATEGORIES = [
 		'about-us' => 'about-us',
 		'footer' => 'footer',
 		'socials' => 'socials',
 		'blog' => 'blog',
+        'sliders' => 'sliders',
+        'product-banner' => 'product-banner',
 	];
-	
+
 	public static function translateCategories($category)
 	{
 		switch ($category){
@@ -33,9 +35,13 @@ class Setting extends Model
 				return 'شبکه های اجتماعی';
 			case self::CATEGORIES['blog']:
 				return 'بلاگ';
+            case self::CATEGORIES['sliders']:
+                return 'اسلایدر';
+            case self::CATEGORIES['product-banner']:
+                return 'بنر های صفحه محصولات';
 		}
 	}
-	
+
 	public static function translateType($type)
 	{
 		switch ($type){
@@ -45,57 +51,57 @@ class Setting extends Model
 				return 'متن';
 		}
 	}
-	
+
 	public function findByKey($key)
 	{
 		$model = self::query()
 			->where('key', $key)
 			->first();
-		
+
 		if($model)
 		{
 			if ($model->type == self::TYPES['image'])
 			{
 				return $model->image_path;
 			}
-			
+
 			if ($model->type == self::TYPES['text'])
 			{
 				return $model->value;
 			}
 		}
-		
+
 		return '-';
 	}
-	
+
 	public function getHrefByKey($key)
 	{
 		$model = self::query()
 					 ->where('key', $key)
 					 ->first();
-		
+
 		if($model)
 		{
 			return $model->href;
 		}
-		
+
 		return '-';
 	}
-	
+
 	public function getValuePreviewAttribute()
 	{
 		if ($this->type == self::TYPES['image'])
 		{
 			return $this->image_path;
 		}
-		
+
 		if ($this->type == self::TYPES['text'])
 		{
 			return $this->value;
 		}
 		return '-';
 	}
-	
+
 	public function getImagePathAttribute()
 	{
 		return getenv('APP_URL'). "/storage/". $this->value;

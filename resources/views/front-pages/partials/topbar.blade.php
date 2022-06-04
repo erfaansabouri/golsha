@@ -6,15 +6,19 @@
                     <a href="{{ route('home') }}" class="hdrLogo"><img src="{{ asset('assets/front/img/logo1.png') }}" alt="img"></a>
                     <div class="hdrSrchBox">
                         <div class="srchDropDn">
-                            <div class="srchDropSel">
-                                <input type="text" class="form-control srchDropInpt"  placeholder="جستجو در گلشا">
-                            </div>
-                            <ul class="srchDropList">
-                                <p>بیشترین جستجوها</p>
-                                <li class="srchDropItem"><a href="#">Item 1</a></li>
-                                <li class="srchDropItem"><a href="#">Item 2</a></li>
-                                <li class="srchDropItem"><a href="#">Item 3</a></li>
-                            </ul>
+                            <form action="{{ route('products.index') }}" method="get">
+                                @csrf
+                                @method('get')
+                                <div class="srchDropSel">
+                                    <input name="search" type="text" class="form-control srchDropInpt"  placeholder="جستجو در گلشا">
+                                </div>
+                                <ul class="srchDropList">
+                                    <p>بیشترین جستجوها</p>
+                                    <li class="srchDropItem"><a href="#">Item 1</a></li>
+                                    <li class="srchDropItem"><a href="#">Item 2</a></li>
+                                    <li class="srchDropItem"><a href="#">Item 3</a></li>
+                                </ul>
+                            </form>
                         </div>
                         <button class="hdrSrchBtn"><span class="icon-search_black_24dp"></span></button>
                     </div>

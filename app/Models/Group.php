@@ -9,4 +9,11 @@ class Group extends Model
 {
     protected $guarded = [];
     use HasFactory;
+
+    public function getImagePathAttribute()
+    {
+        if($this->image_name)
+            return getenv('APP_URL'). "/storage/". $this->image_name;
+        return null;
+    }
 }

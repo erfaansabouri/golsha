@@ -1,0 +1,13 @@
+@extends('app')
+@section('content')
+    @include('front-pages.home.partials.sliders')
+    @include('front-pages.home.partials.most-sold-products')
+    @include('front-pages.home.partials.golsha-suggestion')
+    @include('front-pages.home.partials.twin-banners')
+    @include('front-pages.home.partials.golsha-benoosh')
+    @include('front-pages.home.partials.special-products')
+    @include('front-pages.home.partials.golsha-packs')
+    @include('front-pages.home.partials.groups-introduction')
+    @include('front-pages.home.partials.twin-banners')
+    @include('front-pages.home.partials.options')
+@endsection

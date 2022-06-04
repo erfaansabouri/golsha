@@ -75,7 +75,7 @@
                             <p>
                                 {{ (new \App\Models\Setting())->findByKey('about-us-7') }}
                             </p>
-                            <a href="#">محصولات</a>
+                            <a href="{{ route('products.index') }}">محصولات</a>
                         </div>
                         <div class="onlinShopImg">
                             <img src="{{ (new \App\Models\Setting())->findByKey('about-us-8') }}" alt="img">

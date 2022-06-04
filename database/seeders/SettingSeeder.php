@@ -19,8 +19,10 @@ class SettingSeeder extends Seeder
         $this->footer();
         $this->socials();
         $this->blog();
+        $this->sliders();
+        $this->productBanners();
     }
-	
+
 	public function aboutUs()
 	{
 		$items = [
@@ -205,7 +207,7 @@ class SettingSeeder extends Seeder
 				'type' => 'image',
 			],
 		];
-		
+
 		foreach ($items as $item)
 		{
 			Setting::query()->create($item);
@@ -317,7 +319,7 @@ class SettingSeeder extends Seeder
 				'type' => 'image',
 			],
 		];
-		
+
 		foreach ($items as $item)
 		{
 			Setting::query()->create($item);
@@ -381,7 +383,7 @@ class SettingSeeder extends Seeder
 				'type' => 'text',
 			],
 		];
-		
+
 		foreach ($items as $item)
 		{
 			Setting::query()->create($item);
@@ -430,10 +432,95 @@ class SettingSeeder extends Seeder
 				'type' => 'text',
 			],
 		];
-		
+
 		foreach ($items as $item)
 		{
 			Setting::query()->create($item);
 		}
 	}
+    public function sliders()
+    {
+        $items = [
+            [
+                'key' => 'sliders-1',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'sliders-2',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'sliders-3',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'sliders-4',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'sliders-5',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+        ];
+
+        foreach ($items as $item)
+        {
+            Setting::query()->create($item);
+        }
+    }
+
+    public function productBanners()
+    {
+        $items = [
+            [
+                'key' => 'product-banner-1',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'product-banner',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'product-banner-2',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'product-banner',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'product-banner-3',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'product-banner',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'product-banner-4',
+                'value' => 'images/fdph4xhLT9hLaQYB.jpg',
+                'category' => 'product-banner',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+        ];
+
+        foreach ($items as $item)
+        {
+            Setting::query()->create($item);
+        }
+    }
+
 }

@@ -122,8 +122,15 @@ Route::prefix('user')->group(function () {
 
 Route::middleware([])->group(function () {
 	Route::prefix('/')->group(function () {
-		Route::get('/', [ \App\Http\Controllers\Blog\BlogController::class , 'index'])->name('home');
+		Route::get('/', [ \App\Http\Controllers\Front\HomeController::class , 'index'])->name('home');
 	});
+
+    Route::prefix('/products')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Front\ProductController::class , 'index'])->name('products.index');
+        Route::get('/{id}', [ \App\Http\Controllers\Front\ProductController::class , 'show'])->name('products.show');
+        Route::post('store-comment/{id}', [ \App\Http\Controllers\Front\ProductController::class , 'storeComment'])->name('products.store-comment');
+        Route::get('save/{id}', [ \App\Http\Controllers\Front\ProductController::class , 'save'])->name('products.save');
+    });
 
 	Route::prefix('contact-us')->group(function () {
 		Route::get('/', [ \App\Http\Controllers\Front\ContactUsController::class , 'index'])->name('contact-us.index');

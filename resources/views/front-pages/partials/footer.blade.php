@@ -42,7 +42,7 @@
                             <ul>
                                 <li><a href="{{ route('faq.index') }}">سوالات متداول</a></li>
                                 <li><a href="{{ route('dissatisfaction.index') }}">ثبت نارضایتی</a></li>
-                                <li><a href="#">حریم خصوصی </a></li>
+                                <li><a href="{{ route('faq.index') }}">حریم خصوصی </a></li>
                             </ul>
                         </div>
                         <div class="ftrTpLstBx">

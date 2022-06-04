@@ -7,12 +7,12 @@
                         <ul>
                             <p>محصولات</p>
                             @foreach(\App\Models\Category::query()->take(4)->get() ?? [] as $category)
-                                <li><a href="#">{{ $category->title }}</a></li>
+                                <li><a href="{{ route('products.index', ['category_id' => $category->id]) }}">{{ $category->title }}</a></li>
                             @endforeach
                         </ul>
                         <ul>
                             <p>گلشا</p>
-                            <li><a href="#">محصولات گلشا</a></li>
+                            <li><a href="{{ route('products.index') }}">محصولات گلشا</a></li>
                             <li><a href="{{ route('about-us.index') }}">درباره گلشا</a></li>
                             <li><a href="{{ route('contact-us.index') }}">تماس با گلشا</a></li>
                             <li><a href="{{ route('blog.index') }}">اخبار گلشا</a></li>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="blgFtrCpyRght">
                     <span>صاحب امتیاز حقوق تمامی وبلاگ  </span>
-                    <a href="#">گلشا</a>
+                    <a href="{{ route('home') }}">گلشا</a>
                     <span> می باشد. بازنشر محتوا صرفا با ذکر منبع مجاز است</span>
                 </div>
             </div>

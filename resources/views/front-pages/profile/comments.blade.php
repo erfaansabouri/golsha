@@ -31,8 +31,8 @@
                                             @php
                                                 $product = \App\Models\Product::query()->findOrFail($comment->commentable_id);
                                             @endphp
-                                            <a href="#" class="commntBxImg">
-                                                <img src="{{ $product->firstImage() ? $product->firstImage()->path : '' }}" alt="img">
+                                            <a href="{{ route('products.show', $product->id) }}" class="commntBxImg">
+                                                <img src="{{ $product->first_image_path }}" alt="img">
                                             </a>
                                         </li>
                                     @endforeach

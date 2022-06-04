@@ -40,9 +40,14 @@ class Product extends Model
         return $this->purchasePrice();
     }
 
-    public function comment()
+    public function comments()
     {
-        return $this->morphOne(Comment::class, 'commentable');
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function verifiedComments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->whereNotNull('verified_at');
     }
 
     public function images()
@@ -55,5 +60,63 @@ class Product extends Model
         return $this->images()->firstOr(function (){
             return null;
         });
+    }
+
+    public function getFirstImagePathAttribute()
+    {
+        return $this->firstImage() ? $this->firstImage()->path : '';
+    }
+
+    public function scopeMostSold($query)
+    {
+        return $query->orderBy('view_count');
+    }
+
+    public function scopeNewest($query)
+    {
+        return $query->orderBy('created_at', 'desc');
+    }
+
+    public function scopeGolshaPacks($query)
+    {
+        $query->whereHas('categories', function ($q){
+           $q->where('categories.id', 1); // todo
+        });
+    }
+
+    public function scopeGolshaBenoosh($query)
+    {
+        $query->whereHas('categories', function ($q){
+            $q->where('categories.id', 2); // todo
+        });
+    }
+
+    public function scopeSpecial($query)
+    {
+        $query->whereHas('groups', function ($q){
+            $q->where('groups.id', 1); // todo
+        });
+    }
+
+    public function scopeSuggestion($query)
+    {
+        $query->whereHas('groups', function ($q){
+            $q->where('groups.id', 1); // todo
+        });
+    }
+
+    public function hasActiveDiscount()
+    {
+        return !empty($this->discount_percentage);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class);
     }
 }
