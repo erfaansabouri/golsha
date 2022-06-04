@@ -20,7 +20,7 @@ class ProductImageSeeder extends Seeder
             DB::table('product_images')
                 ->insert([
                     'product_id' => $product->id,
-                    'name' => 'images/fdph4xhLT9hLaQYB.jpg',
+                    'name' => 'sample.jpg',
                 ]);
         }
     }
