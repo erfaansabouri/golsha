@@ -4,9 +4,8 @@
             <div class="col-md-12">
                 <div class="topRowBx">
                     <a href="{{ route('home') }}" class="hdrLogo"><img src="{{ asset('assets/front/img/logo1.png') }}" alt="img"></a>
-                    <div class="hdrSrchBox">
+                    <form action="{{ route('products.index') }}" method="get"  class="hdrSrchBox">
                         <div class="srchDropDn">
-                            <form action="{{ route('products.index') }}" method="get">
                                 @csrf
                                 @method('get')
                                 <div class="srchDropSel">
@@ -14,15 +13,14 @@
                                 </div>
                                 <ul class="srchDropList">
                                     <p>بیشترین جستجوها</p>
-                                    <li class="srchDropItem"><a href="#">Item 1</a></li>
-                                    <li class="srchDropItem"><a href="#">Item 2</a></li>
-                                    <li class="srchDropItem"><a href="#">Item 3</a></li>
+                                    @foreach(\App\Models\Product::query()->orderByDesc('view_count')->take(3)->get() as $item)
+                                        <li class="srchDropItem"><a href="{{ route('products.show', $item->id) }}">{{ $item->title }}</a></li>
+                                    @endforeach
                                 </ul>
-                            </form>
                         </div>
                         <button class="hdrSrchBtn"><span class="icon-search_black_24dp"></span></button>
-                    </div>
-                    @if(\Illuminate\Support\Facades\Auth::check())
+                    </form>
+                @if(\Illuminate\Support\Facades\Auth::check())
                     <div class="hdrLginBox">
                         <!-- <a href="#" class="hdrLginLink">ورود / عضویت</a>  login Link -->
                         <div class="accLinkBox">

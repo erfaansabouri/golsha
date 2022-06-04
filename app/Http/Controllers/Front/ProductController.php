@@ -25,6 +25,12 @@ class ProductController extends Controller
             });
         }
 
+        if(!empty($request->search))
+        {
+            $currentFilterName = $request->search;
+            $products = $products->where('title', 'like', '%'. $request->search .'%');
+        }
+
         $productGroups = $products->latest()->take(100)->get()->chunk(4);
 
         return view('front-pages.products.index', compact('currentFilterName','productGroups'));

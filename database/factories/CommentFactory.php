@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Comment;
 use App\Models\Product;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CommentFactory extends Factory
@@ -29,6 +30,7 @@ class CommentFactory extends Factory
             'body' => \Ybazli\Faker\Facades\Faker::sentence(),
             'commentable_id' => Product::query()->inRandomOrder()->first()->id,
             'commentable_type' => Product::class,
+            'verified_at' => Carbon::now(),
         ];
     }
 }
