@@ -119,6 +119,11 @@ Route::prefix('user')->group(function () {
 
         Route::get('/comments', [ \App\Http\Controllers\Front\ProfileController::class , 'comments'])->name('user.profile.comments');
     });
+
+    Route::prefix('cart')->middleware(['auth'])->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Front\CartController::class , 'show'])->name('user.cart.show');
+        Route::get('/add-product/{id}', [ \App\Http\Controllers\Front\CartController::class , 'addToCart'])->name('user.cart.add-product');
+    });
 });
 
 Route::middleware([])->group(function () {

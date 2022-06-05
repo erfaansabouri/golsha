@@ -21,7 +21,7 @@
                                             </div>
                                             <div class="savedPBxInfo">
                                                 <p>{{ $product->title }}</p>
-                                                <a href="#" class="savdPAddBtn">
+                                                <a href="{{ route('user.cart.add-product', $product->id ) }}" class="savdPAddBtn">
                                                     <span class="icon-shopping_bag_black_24dp"></span>
                                                     <i>افزودن به سبد خرید</i>
                                                 </a>
