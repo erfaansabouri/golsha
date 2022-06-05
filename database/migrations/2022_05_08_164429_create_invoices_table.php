@@ -22,11 +22,14 @@ class CreateInvoicesTable extends Migration
             $table->unsignedDouble('discount_percentage')->default(0);
             $table->unsignedDouble('discount_toman')->default(0);
             $table->text('status')->nullable();
-            $table->unsignedBigInteger('delivery_type')->nullable();
+            $table->text('delivery_type')->nullable();
             $table->unsignedDouble('delivery_amount')->default(0);
             $table->unsignedDouble('paid_amount')->default(0);
             $table->timestamp('paid_at')->nullable();
             $table->text('tracking_code')->nullable();
+            $table->text('card_owner_name')->nullable();
+            $table->text('card_number')->nullable();
+            $table->text('bank_name')->nullable();
             $table->timestamps();
         });
         Schema::create('invoice_products', function (Blueprint $table) {

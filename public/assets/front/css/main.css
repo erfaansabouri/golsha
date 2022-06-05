@@ -3435,6 +3435,10 @@ body.bodyOpened:after{
         #ordersSec .ordrDtailTtl .ordrPayHstry .payHstryBx strong.confirmed{
             background: #29A71A;
         }
+
+        #ordersSec .ordrDtailTtl .ordrPayHstry .payHstryBx strong.rejected{
+            background: #a71a3b;
+        }
         #ordersSec .ordrDtailTtl .ordrPayHstry .payHstryBx p{
             font-size: 12px;
             color: #6D6E70;

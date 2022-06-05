@@ -112,6 +112,7 @@ Route::prefix('user')->group(function () {
         Route::put('/update-address/{id}', [ \App\Http\Controllers\Front\ProfileController::class , 'updateAddress'])->name('user.profile.updateAddress');
 
         Route::get('/orders', [ \App\Http\Controllers\Front\ProfileController::class , 'orders'])->name('user.profile.orders');
+        Route::get('/order-details/{id}', [ \App\Http\Controllers\Front\ProfileController::class , 'orderDetails'])->name('user.profile.order-details');
 
         Route::get('/saved-products', [ \App\Http\Controllers\Front\ProfileController::class , 'savedProducts'])->name('user.profile.saved-products');
         Route::get('/destroy-saved-product/{id}', [ \App\Http\Controllers\Front\ProfileController::class , 'destroySavedProduct'])->name('user.profile.destroy-saved-product');

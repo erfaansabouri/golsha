@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Address;
 use App\Models\Comment;
+use App\Models\Invoice;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -104,5 +105,47 @@ class ProfileController extends Controller
             ->with('answer')
             ->get();
         return view('front-pages.profile.comments', compact('user', 'comments'));
+    }
+
+	public function orders(Request $request)
+	{
+		$user = Auth::user();
+
+        $allInvoices = Invoice::query()
+			->where('user_id', $user->id)
+            ->orderByDesc('id')
+            ->get();
+
+        $processingInvoices = Invoice::query()
+            ->where('user_id', $user->id)
+            ->where('status', Invoice::STATUSES['processing'])
+            ->orderByDesc('id')
+            ->get();
+
+        $doneInvoices = Invoice::query()
+            ->where('user_id', $user->id)
+            ->where('status', Invoice::STATUSES['done'])
+            ->orderByDesc('id')
+            ->get();
+
+        $canceledInvoices = Invoice::query()
+            ->where('user_id', $user->id)
+            ->where('status', Invoice::STATUSES['canceled'])
+            ->orderByDesc('id')
+            ->get();
+
+		return view('front-pages.profile.orders', compact('allInvoices', 'processingInvoices', 'doneInvoices', 'canceledInvoices'));
+	}
+
+    public function orderDetails($id)
+    {
+        $user = Auth::user();
+
+        $invoice = Invoice::query()->where('user_id', $user->id)
+            ->where('id', $id)
+            ->firstOrFail();
+
+        return view('front-pages.profile.order-details', compact('invoice'));
+
     }
 }
