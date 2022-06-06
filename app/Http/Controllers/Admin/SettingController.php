@@ -11,17 +11,18 @@ class SettingController extends Controller
 	protected $pageInfo = [
 		'title' => 'تنظیمات',
 	];
-	
+
 	public function __construct()
 	{
 		$this->middleware('auth:admin');
 	}
-	
-    public function index()
+
+    public function index(Request $request)
 	{
-		return view('admin-pages.settings.index')->with('pageInfo', $this->pageInfo);
+        $category = $request->category;
+		return view('admin-pages.settings.index', compact('category'))->with('pageInfo', $this->pageInfo);
 	}
-	
+
 	public function edit($id)
 	{
 		$record = Setting::query()->findOrFail($id);

@@ -13,8 +13,15 @@ class Index extends Component
 	protected $pageInfo = [
 		'title' => 'تنظیمات',
 	];
-	
+
 	public $search = '';
+	public $category = '';
+
+    public function mount($category)
+    {
+        $this->category = $category;
+    }
+
 	public function render()
 	{
 		$settings = Setting::query();
@@ -22,8 +29,13 @@ class Index extends Component
 		{
 			$settings = $settings->where('key', 'like', '%'. $this->search .'%');
 		}
-		
-		$settings = $settings->orderBy('id', 'desc')->paginate(25);
+
+        if(!empty($this->category))
+        {
+            $settings = $settings->where('category',$this->category);
+        }
+
+		$settings = $settings->orderBy('id', 'desc')->paginate(200);
 		return view('livewire.admin.settings.index', [
 			'settings' => $settings,
 		])->with('pageInfo', $this->pageInfo);

@@ -44,7 +44,6 @@
                                 <table class="table table-hover">
                                     <tr>
                                         <th>شناسه</th>
-                                        <th>کلید</th>
                                         <th>مقدار</th>
                                         <th>نوع</th>
                                         <th>دسته</th>
@@ -53,7 +52,6 @@
                                     @foreach($settings as $setting)
                                         <tr>
                                             <td>{{ $setting->id }}</td>
-                                            <td>{{ $setting->key }}</td>
                                             @if($setting->type == \App\Models\Setting::TYPES['text'])
                                                 <td>{{ $setting->value_preview }}</td>
                                             @endif

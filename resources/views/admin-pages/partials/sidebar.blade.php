@@ -112,13 +112,24 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="{{ route('admin.settings.index') }}" class="nav-link">
+                    <li class="nav-item has-treeview ">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-gears"></i>
                             <p>
-                                تنظیمات
+                                تنظیمات داینامیک
+                                <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            @foreach(array_keys(\App\Models\Setting::CATEGORIES) as $settingCategory)
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.settings.index', ['category' => $settingCategory]) }}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>{{ \App\Models\Setting::translateCategories($settingCategory) }}</p>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
                     </li>
                 </ul>
             </nav>
