@@ -48,14 +48,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-4">
-                                            <div class="form-group">
-                                                <label for="discountToman" class="control-label">تخفیف به تومان</label>
-                                                <div class="">
-                                                    <input wire:model="discountToman" type="text" class="form-control" id="discountToman" placeholder="تخفیف به تومان را وارد کنید">
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 

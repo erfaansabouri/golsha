@@ -1,7 +1,5 @@
 <div>
     <div class="frmStpBtns">
-        <a href="https://google.com">
-            <button class="btn btn-success">پرداخت</button>
-        </a>
+        <button wire:click.prevent="pay" class="btn btn-success">پرداخت</button>
     </div>
 </div>

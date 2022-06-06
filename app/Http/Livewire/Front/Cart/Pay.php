@@ -17,4 +17,10 @@ class Pay extends Component
     {
         return view('livewire.front.cart.pay');
     }
+
+    public function pay()
+    {
+        $this->cart->convertToInvoice();
+        return redirect()->to('http://zarinp.al/imanamiri');
+    }
 }

@@ -22,7 +22,6 @@ class Create extends Component
             ->create([
                 'code' => $this->code,
                 'discount_percentage' => $this->discountPercentage,
-                'discount_toman' => $this->discountToman,
             ]);
 
         session()->flash('message', 'کوپون با موفقیت ایجاد شد.');

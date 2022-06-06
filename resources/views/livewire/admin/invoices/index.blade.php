@@ -8,7 +8,6 @@
                         <h1>{{ $pageInfo['title'] }}</h1>
                     </div>
                     <div class="col-sm-6">
-                        <a href="{{ route('admin.coupons.create') }}" class="btn btn-success float-sm-left">تعریف کد تخفیف جدید</a>
                     </div>
                 </div>
                 <div class="row">
@@ -47,25 +46,33 @@
                                 <table class="table table-hover">
                                     <tr>
                                         <th>شناسه</th>
-                                        <th>کد</th>
-                                        <th>درصد تخفیف</th>
+                                        <th>شماره پیگیری</th>
+                                        <th>کد تخفیف</th>
+                                        <th>وضعیت</th>
+                                        <th>نحوه ارسال</th>
+                                        <th>تعداد محصولات</th>
+                                        <th>جمع کل قابل پرداخت</th>
+                                        <th>تاریخ ایجاد</th>
                                         <th>عملیات</th>
                                     </tr>
-                                    @foreach($coupons as $coupon)
+                                    @foreach($invoices as $invoice)
                                         <tr>
-                                            <td>{{ $coupon->id }}</td>
-                                            <td>{{ $coupon->code }}</td>
-                                            <td>{{ $coupon->discount_percentage }}</td>
-                                            <td>
-                                                <a href="{{ route('admin.coupons.edit', $coupon->id) }}" class="btn btn-sm btn-primary">ویرایش</a>
-                                            </td>
-                                        </tr>
+                                            <td>{{ $invoice->id }}</td>
+                                            <td>{{ $invoice->unique_code }}</td>
+                                            <td>{{ $invoice->coupon_id ? @$invoice->coupon->code : 'ندارد' }}</td>
+                                            <td>{{ $invoice->status }}</td>
+                                            <td>{{ $invoice->delivery_type }}</td>
+                                            <td>{{ $invoice->products()->count() }} عدد</td>
+                                            <td>{{ number_format($invoice->totalPrice()) }}</td>
+                                            <td>{{ verta($invoice->created_at)->format('%d %B %Y - H:i') }}</td>
+                                            <td><a href="{{ route('admin.invoices.show', $invoice->id) }}" class="btn btn-info btn-sm">نمایش جزئیات</a></td>
+                                      </tr>
                                     @endforeach
                                 </table>
                             </div>
                             <!-- /.card-body -->
                         </div>
-                        {{ $coupons->links() }}
+                        {{ $invoices->links() }}
                         <!-- /.card -->
                     </div>
                 </div><!-- /.row -->

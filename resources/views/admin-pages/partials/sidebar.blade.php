@@ -53,13 +53,24 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/widgets.html" class="nav-link">
-                            <i class="nav-icon fa fa-shopping-bag"></i>
+                    <li class="nav-item has-treeview ">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-gears"></i>
                             <p>
-                                سفارشات
+                                سفارش ها
+                                <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            @foreach(array_keys(\App\Models\Invoice::STATUSES) as $invoiceStatus)
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.invoices.index', ['status' => $invoiceStatus]) }}" class="nav-link">
+                                        <i class="fa fa-circle-o nav-icon"></i>
+                                        <p>{{ \App\Models\Invoice::STATUSES[$invoiceStatus] }}</p>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.coupons.index') }}" class="nav-link">

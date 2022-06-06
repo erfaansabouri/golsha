@@ -22,9 +22,19 @@ class Invoice extends Model
 		'one_day' => 'یک روزه',
 	];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function address()
     {
         return $this->belongsTo(Address::class);
+    }
+
+    public function coupon()
+    {
+        return $this->belongsTo(Coupon::class);
     }
 
     public function products()

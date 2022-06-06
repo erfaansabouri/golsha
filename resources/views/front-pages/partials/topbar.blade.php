@@ -35,7 +35,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ route('user.profile.orders') }}">
                                             <span class="icon-inventory_2_black_24dp-1"></span>
                                             <i>سفارش ها</i>
                                         </a>

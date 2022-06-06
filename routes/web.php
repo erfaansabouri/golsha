@@ -29,6 +29,16 @@ Route::prefix('admin')->group(function () {
 	});
 
     // Products
+    Route::prefix('invoices')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\InvoiceController::class , 'index'])->name('admin.invoices.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\InvoiceController::class , 'create'])->name('admin.invoices.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\InvoiceController::class , 'edit'])->name('admin.invoices.edit');
+        Route::get('/show/{id}', [ \App\Http\Controllers\Admin\InvoiceController::class , 'show'])->name('admin.invoices.show');
+        Route::get('/accept/{id}', [ \App\Http\Controllers\Admin\InvoiceController::class , 'accept'])->name('admin.invoices.accept');
+        Route::get('/cancel/{id}', [ \App\Http\Controllers\Admin\InvoiceController::class , 'cancel'])->name('admin.invoices.cancel');
+    });
+
+    // Products
     Route::prefix('products')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\ProductController::class , 'index'])->name('admin.products.index');
         Route::get('/create', [ \App\Http\Controllers\Admin\ProductController::class , 'create'])->name('admin.products.create');
