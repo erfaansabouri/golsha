@@ -20,6 +20,10 @@ class Pay extends Component
 
     public function pay()
     {
+        if(empty($this->cart->address_id) || empty($this->cart->delivery_type))
+        {
+            return  redirect()->route('user.cart.show')->with(['error' => 'آدرس و نحوه ارسال اجباری است.']);
+        }
         $this->cart->convertToInvoice();
         return redirect()->to('http://zarinp.al/imanamiri');
     }
