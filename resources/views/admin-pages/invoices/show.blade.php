@@ -44,8 +44,8 @@
                                 <h3 class="card-title">کاربر</h3>
                             </div>
                             <div class="card-body">
-                                <a href="{{ route('admin.users.edit', $record->user->id) }}">
-                                    {{ $record->user->full_name }} ({{ $record->user->phone_number }})
+                                <a href="{{ route('admin.users.edit', @$record->user->id ?? 0) }}">
+                                    {{ @$record->user->full_name }} ({{ @$record->user->phone_number }})
                                 </a>
                             </div>
                             <!-- /.card-body -->
@@ -57,7 +57,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">آدرس</h3>
                             </div>
-                            <div class="card-body">{{ $record->address->full ?? '-'}}</div>
+                            <div class="card-body">{{ @$record->address->full ?? '-'}}</div>
                             <!-- /.card-body -->
                         </div>
                         <!-- /.card -->
@@ -67,7 +67,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">اطلاعات تحویل گیرنده</h3>
                             </div>
-                            <div class="card-body">{{ $record->address->receiver_name }} ({{ $record->address->phone_number }})</div>
+                            <div class="card-body">{{ @$record->address->receiver_name }} ({{ @$record->address->phone_number }})</div>
                             <!-- /.card-body -->
                         </div>
                         <!-- /.card -->
@@ -77,7 +77,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">اطلاعات تحویل گیرنده</h3>
                             </div>
-                            <div class="card-body">{{ $record->address->receiver_name }} ({{ $record->address->phone_number }})</div>
+                            <div class="card-body">{{ @$record->address->receiver_name }} ({{ @$record->address->phone_number }})</div>
                             <!-- /.card-body -->
                         </div>
                         <!-- /.card -->

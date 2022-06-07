@@ -18,6 +18,7 @@ class CreateCouponsTable extends Migration
             $table->text('code')->nullable();
             $table->double('discount_percentage')->nullable();
             $table->double('discount_toman')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

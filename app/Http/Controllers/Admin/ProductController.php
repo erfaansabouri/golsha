@@ -32,4 +32,11 @@ class ProductController extends Controller
         $record = Product::query()->findOrFail($id);
         return view('admin-pages.products.edit', compact('record'))->with('pageInfo', $this->pageInfo);
     }
+
+    public function destroy($id)
+    {
+        $record = Product::query()->findOrFail($id);
+        $record->delete();
+        return view('admin-pages.products.index')->with('pageInfo', $this->pageInfo);
+    }
 }

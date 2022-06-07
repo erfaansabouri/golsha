@@ -55,7 +55,7 @@
                     </li>
                     <li class="nav-item has-treeview ">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-gears"></i>
+                            <i class="nav-icon fa fa-shopping-basket"></i>
                             <p>
                                 سفارش ها
                                 <i class="right fa fa-angle-left"></i>
@@ -77,14 +77,6 @@
                             <i class="nav-icon fa fa-tag"></i>
                             <p>
                                 کوپون های تخفیف
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.banners.index') }}" class="nav-link">
-                            <i class="nav-icon fa fa-map-signs"></i>
-                            <p>
-                                بنر ها
                             </p>
                         </a>
                     </li>

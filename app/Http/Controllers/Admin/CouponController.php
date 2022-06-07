@@ -32,4 +32,11 @@ class CouponController extends Controller
         $record = Coupon::query()->findOrFail($id);
         return view('admin-pages.coupons.edit', compact('record'))->with('pageInfo', $this->pageInfo);
     }
+
+    public function destroy($id)
+    {
+        $record = Coupon::query()->findOrFail($id);
+        $record->delete();
+        return view('admin-pages.coupons.index')->with('pageInfo', $this->pageInfo);
+    }
 }

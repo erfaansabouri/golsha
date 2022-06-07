@@ -97,7 +97,7 @@
                     <div class="ftrnewsBox">
                         <p>عضویت در خبر نامه گلشا</p>
                         <div class="ftrnewsReg">
-                            <input type="email" placeholder="ایمیل خود را وارد کنی">
+                            <input type="email" placeholder="ایمیل خود را وارد کنید">
                             <button>ثبت</button>
                         </div>
                     </div>

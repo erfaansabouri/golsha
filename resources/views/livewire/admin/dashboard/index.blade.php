@@ -21,14 +21,14 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3>{{ number_format(\App\Models\Product::query()->count()) }}</h3>
 
                                 <p>محصولات</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-th"></i>
                             </div>
-                            <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+                            <a href="{{ route('admin.products.index') }}" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -36,14 +36,14 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3>{{ number_format(\App\Models\User::query()->count()) }}</h3>
 
-                                <p>کابران</p>
+                                <p>کاربران</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-users"></i>
                             </div>
-                            <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+                            <a href="{{ route('admin.users.index') }}" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -51,14 +51,14 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
+                                <h3>{{ number_format(\App\Models\Invoice::query()->count()) }}</h3>
 
                                 <p>سفارشات</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-shopping-bag"></i>
                             </div>
-                            <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+                            <a href="{{ route('admin.invoices.index') }}" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -66,14 +66,14 @@
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
+                                <h3>{{ number_format(\App\Models\BlogPost::query()->count()) }}</h3>
 
-                                <p>بنر ها</p>
+                                <p>پست های وبلاگ ها</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-map-signs"></i>
                             </div>
-                            <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
+                            <a href="{{ route('admin.blog-posts.index') }}" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

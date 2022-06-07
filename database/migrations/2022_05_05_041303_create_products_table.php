@@ -29,6 +29,7 @@ class CreateProductsTable extends Migration
 			$table->unsignedBigInteger('view_count')->default(0);
 			$table->boolean('show_under_slider')->default(0);
 			$table->boolean('is_suggestion')->default(0);
+            $table->softDeletes();
 			$table->timestamps();
         });
 
@@ -37,6 +38,7 @@ class CreateProductsTable extends Migration
 			$table->text('title')->nullable();
             $table->text('description')->nullable();
             $table->text('image_name')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 		});
 
@@ -52,6 +54,7 @@ class CreateProductsTable extends Migration
 			$table->text('title')->nullable();
 			$table->text('description')->nullable();
 			$table->text('image_name')->nullable();
+            $table->softDeletes();
 			$table->timestamps();
 		});
 

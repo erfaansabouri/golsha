@@ -58,6 +58,7 @@
                                             <td>{{ $coupon->discount_percentage }}</td>
                                             <td>
                                                 <a href="{{ route('admin.coupons.edit', $coupon->id) }}" class="btn btn-sm btn-primary">ویرایش</a>
+                                                <a href="{{ route('admin.coupons.destroy', $coupon->id) }}" class="btn btn-sm btn-danger">غیر فعال کردن</a>
                                             </td>
                                         </tr>
                                     @endforeach

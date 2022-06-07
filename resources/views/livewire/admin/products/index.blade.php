@@ -60,11 +60,12 @@
                                             <td>{{ $product->title }}</td>
                                             <td>{{ $product->seller_name }}</td>
                                             @if($product->price == $product->purchase_price)
-                                                <td>{{ $product->price }}</td>
+                                                <td>{{ number_format($product->price) }}</td>
                                             @else
-                                                <td><strike>{{ $product->price }}</strike> {{ $product->purchase_price }}</td>
+                                                <td><strike>{{ number_format($product->price) }}</strike> {{ number_format($product->purchase_price) }}</td>
                                             @endif
-                                            <td><a class="btn btn-sm btn-primary" href="{{ route('admin.products.edit', $product->id) }}">ویرایش</a></td>
+                                            <td><a class="btn btn-sm btn-primary" href="{{ route('admin.products.edit', $product->id) }}">ویرایش</a>
+                                            <a class="btn btn-sm btn-danger" href="{{ route('admin.products.destroy', $product->id) }}">حذف</a></td>
                                         </tr>
                                     @endforeach
                                 </table>
