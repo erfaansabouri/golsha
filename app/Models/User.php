@@ -34,13 +34,13 @@ class User extends Authenticatable
         $client = new SoapClient("http://188.0.240.110/class/sms/wsdlservice/server.php?wsdl");
         $user = "09189189329";
         $pass = "3360317671";
-        $fromNum = "+98100009";
+        $fromNum = "+983000505";
         $toNum = array("9372033422");
         $pattern_code = "7xesn7g8hlqqjd4";
         $input_data = array(
             "vc" => "12588",
         );
-        echo $client ->sendPatternSms($fromNum, $toNum, $user, $pass, $pattern_code, $input_data);
+        echo $client->sendPatternSms($fromNum, $toNum, $user, $pass, $pattern_code, $input_data);
     }
 
     public function getFullNameAttribute()
