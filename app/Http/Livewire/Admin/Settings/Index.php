@@ -33,9 +33,10 @@ class Index extends Component
         if(!empty($this->category))
         {
             $settings = $settings->where('category',$this->category);
+            $this->pageInfo['title'] = 'تنظیمات ' . Setting::translateCategories($this->category);
         }
 
-		$settings = $settings->orderBy('id', 'desc')->paginate(200);
+		$settings = $settings->orderBy('id', 'asc')->paginate(200);
 		return view('livewire.admin.settings.index', [
 			'settings' => $settings,
 		])->with('pageInfo', $this->pageInfo);

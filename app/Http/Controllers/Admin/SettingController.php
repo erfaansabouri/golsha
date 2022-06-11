@@ -20,6 +20,7 @@ class SettingController extends Controller
     public function index(Request $request)
 	{
         $category = $request->category;
+        $this->pageInfo['title'] = 'تنظیمات' . $category;
 		return view('admin-pages.settings.index', compact('category'))->with('pageInfo', $this->pageInfo);
 	}
 

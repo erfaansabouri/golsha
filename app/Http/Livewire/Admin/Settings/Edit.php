@@ -12,7 +12,7 @@ use Livewire\WithFileUploads;
 class Edit extends Component
 {
 	use WithFileUploads;
-	
+
 	protected $pageInfo = [
 		'title' => 'ویرایش تنظیمات',
 	];
@@ -23,9 +23,9 @@ class Edit extends Component
 	public $oldImage;
 	public $image;
 
-	
-	
-	
+
+
+
 	public function mount($record)
 	{
 		$this->record = $record;
@@ -44,10 +44,10 @@ class Edit extends Component
 	{
 		return view('livewire.admin.settings.edit')->with('pageInfo', $this->pageInfo);
 	}
-	
+
 	public function update()
 	{
-		
+
 		if($this->record->type == Setting::TYPES['image'])
 		{
 			if($this->image)
@@ -63,8 +63,8 @@ class Edit extends Component
 			$this->record->value = $this->value;
 			$this->record->save();
 		}
-		
+
 		session()->flash('message', 'تنظیمات با موفقیت ویرایش شد.');
-		redirect()->route('admin.settings.index');
+		redirect()->route('admin.settings.edit', $this->record->id);
 	}
 }
