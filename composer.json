@@ -18,7 +18,8 @@
     "laravel/framework": "^8.0",
     "laravel/tinker": "^2.0",
     "livewire/livewire": "^2.10",
-    "ybazli/faker": "^1.0"
+    "ybazli/faker": "^1.0",
+    "ext-soap": "*"
   },
   "require-dev": {
     "facade/ignition": "^2.3.6",
