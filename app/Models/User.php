@@ -29,16 +29,16 @@ class User extends Authenticatable
     }
 
 
-    public static function sendOTPSMS()
+    public static function sendOTPSMS($phoneNumber, $otp)
     {
         $client = new SoapClient("http://188.0.240.110/class/sms/wsdlservice/server.php?wsdl");
         $user = "09189189329";
         $pass = "3360317671";
         $fromNum = "+983000505";
-        $toNum = array("9372033422");
+        $toNum = array($phoneNumber);
         $pattern_code = "7xesn7g8hlqqjd4";
         $input_data = array(
-            "vc" => "12588",
+            "vc" => $otp,
         );
         echo $client->sendPatternSms($fromNum, $toNum, $user, $pass, $pattern_code, $input_data);
     }
@@ -66,7 +66,7 @@ class User extends Authenticatable
 			'otp' => $otp,
 		]);
 
-		// TODO : send sms
+		self::sendOTPSMS($phoneNumber, $otp);
 
 		return $user;
 	}

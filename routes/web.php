@@ -2,12 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/test-sms', function ()
-{
-    \App\Models\User::SendOTPSMS();
-});
-
-
 
 Route::post('/upload-image', [\App\Http\Controllers\Admin\UploadController::class, 'upload']);
 Route::prefix('admin')->group(function () {
