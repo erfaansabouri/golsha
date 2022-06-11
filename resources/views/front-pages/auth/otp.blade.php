@@ -28,9 +28,6 @@
                                 @endforeach
                             @endif
                         </div>
-                        <div class="loginFormLbl">
-                            رمز ورود جهت تست سیستم : {{ $user->otp }}
-                        </div>
                         <form method="post" action="{{ route('user.auth.validateOTPAndLogin') }}">
                             @csrf
                             @method('post')
