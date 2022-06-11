@@ -59,6 +59,9 @@
                             <p>
                                 سفارش ها
                                 <i class="right fa fa-angle-left"></i>
+                                @if(\App\Models\Invoice::query()->where('status', \App\Models\Invoice::STATUSES['processing'])->count())
+                                    <span class="right badge badge-danger">{{ \App\Models\Invoice::query()->where('status', \App\Models\Invoice::STATUSES['processing'])->count() }} جدید</span>
+                                @endif
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
@@ -85,6 +88,9 @@
                             <i class="nav-icon fa fa-comment"></i>
                             <p>
                                 نظر ها
+                                @if(\App\Models\Comment::query()->whereNull('verified_at')->count())
+                                    <span class="right badge badge-danger">{{ \App\Models\Comment::query()->whereNull('verified_at')->count() }} جدید</span>
+                                @endif
                             </p>
                         </a>
                     </li>
