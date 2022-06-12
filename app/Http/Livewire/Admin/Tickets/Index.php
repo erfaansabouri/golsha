@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Tickets;
 
 use App\Models\Comment;
+use App\Models\ContactUs;
 use App\Models\Ticket;
 use Carbon\Carbon;
 use Livewire\Component;
@@ -19,7 +20,7 @@ class Index extends Component
     public $search = '';
     public function render()
     {
-        $tickets = Ticket::query();
+        $tickets = ContactUs::query();
         if(!empty($this->search))
         {
             $tickets = $tickets->where('id', '=', $this->search);

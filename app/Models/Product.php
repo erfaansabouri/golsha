@@ -103,7 +103,7 @@ class Product extends Model
     public function scopeSuggestion($query)
     {
         $query->whereHas('groups', function ($q){
-            $q->where('groups.id', 1); // todo
+            $q->where('groups.id', 2); // todo
         });
     }
 
