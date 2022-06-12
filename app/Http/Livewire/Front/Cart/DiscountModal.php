@@ -32,7 +32,7 @@ class DiscountModal extends Component
 
        $cart->coupon_id = $coupon->id;
        $cart->discount_percentage = $coupon->discount_percentage ?? 0;
-       $cart->discount_toman = $coupon->discount_toman ?? 0;
+       //$cart->discount_toman = $coupon->discount_toman ?? 0;
        $cart->save();
 
        $this->result = 'کد اعمال شد';
