@@ -49,6 +49,7 @@
                                         <th>نام</th>
                                         <th>ایمیل</th>
                                         <th>شماره تماس</th>
+                                        <th>نوع درخواست</th>
                                         <th>تاریخ ایجاد</th>
                                         <th>عملیات</th>
                                     </tr>
@@ -58,6 +59,7 @@
                                             <td>{{ $ticket->full_name }}</td>
                                             <td>{{ $ticket->email }}</td>
                                             <td>{{ $ticket->phone_number }}</td>
+                                            <td>{{ $ticket->type }}</td>
                                             <td>{{ $ticket->created_at_jalali }}</td>
                                             <td><button data-toggle="modal" data-target="#ticket-modal-{{ $ticket->id }}" class="btn btn-sm btn-info">نمایش</button></td>
                                         </tr>
