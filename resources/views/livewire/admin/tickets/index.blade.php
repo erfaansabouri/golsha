@@ -71,7 +71,7 @@
                                                     <div class="modal-body">
                                                         <div class="callout callout-danger">
                                                             <h5>متن تیکت</h5>
-                                                            <p>{{ $ticket->body }}</p>
+                                                            <p>{{ $ticket->message }}</p>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
