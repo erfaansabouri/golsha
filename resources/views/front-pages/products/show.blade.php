@@ -55,15 +55,15 @@
                                     {{ $product->seller_name }}
                                 </li>
                                 <li>
-                                    <span>برخی ترکیبات:</span>{{ $product->ingredients }}
+                                    <span>برخی ترکیبات:</span>{!! $product->ingredients  !!}
                                 </li>
                                 <li>
                                     <span>حجم:</span>
-                                    {{ $product->size }}
+                                    {!! $product->size !!}
                                 </li>
                                 <li>
                                     <span>خواص:</span>
-                                    {{ $product->virtues }}
+                                    {!! $product->virtues !!}
                                 </li>
                             </ul>
                             <div class="prdctInfoPric">
