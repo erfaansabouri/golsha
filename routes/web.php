@@ -70,6 +70,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\UserController::class , 'edit'])->name('admin.users.edit');
     });
 
+    // Users
+    Route::prefix('admins')->middleware(['is_super_admin'])->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\AdminController::class , 'index'])->name('admin.admins.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\AdminController::class , 'create'])->name('admin.admins.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\AdminController::class , 'edit'])->name('admin.admins.edit');
+        Route::get('/disable/{id}', [ \App\Http\Controllers\Admin\AdminController::class , 'disable'])->name('admin.admins.disable');
+    });
+
     // Coupons
     Route::prefix('coupons')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\CouponController::class , 'index'])->name('admin.coupons.index');

@@ -63,6 +63,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.admins.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-sitemap"></i>
+                            <p>
+                                ادمین ها
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item has-treeview ">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fa fa-shopping-basket"></i>
@@ -140,6 +148,14 @@
                                 </li>
                             @endforeach
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.auth.logout') }}" class="nav-link">
+                            <i class="nav-icon fa fa-sign-out"></i>
+                            <p>
+                                خروج
+                            </p>
+                        </a>
                     </li>
                 </ul>
             </nav>
