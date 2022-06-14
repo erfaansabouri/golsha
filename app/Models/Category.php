@@ -20,9 +20,9 @@ class Category extends Model
                 ->delete();
         });
     }
-	
+
 	public function products()
 	{
-		return $this->belongsToMany(Product::class);
+		return $this->belongsToMany(Product::class)->withTrashed();
 	}
 }
