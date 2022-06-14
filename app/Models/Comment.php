@@ -49,12 +49,6 @@ class Comment extends Model
 
     public function getMorphTypeAttribute()
     {
-        switch ($this->commentable_type){
-            case Product::class:
-                return 'محصول';
-                break;
-            default:
-                return '-';
-        }
+        return 'محصول';
     }
 }
