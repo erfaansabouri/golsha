@@ -4,12 +4,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="blgHdrBox">
-                    <a href="#" class="blgHdrLogo">
+                    <a href="{{ route('blog.index') }}" class="blgHdrLogo">
                         <img src="{{ asset('assets/front/img/logo4.png') }}" alt="logo">
                     </a>
                     <div class="blgHdrMenu">
                         <span class="material-icons-outlined clsMinMnu">disabled_by_default</span>
-                        <a href="#" class="blgHdrMenuLgo">
+                        <a href="{{ route('blog.index') }}" class="blgHdrMenuLgo">
                             <img src="{{ asset('assets/front/img/logo4.png') }}" alt="logo">
                         </a>
                         <ul>
