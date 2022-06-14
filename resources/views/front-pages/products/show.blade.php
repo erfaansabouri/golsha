@@ -83,9 +83,11 @@
                                     <i>مشاوره</i>
                                 </a>
                                 <div>
-                                    <a href=" https://wa.me/?text={{ urlencode(route('products.show', $product->id)) }}">
+                                    <a style="cursor:pointer;" data-toggle="modal" data-target="#share-modal">
                                         <span class="icon-share_black_24dp"></span>
                                     </a>
+
+
                                     @if(\Illuminate\Support\Facades\Auth::guard('web')->check())
                                         <a href="{{ route('products.save', $product->id) }}">
                                             <span class="icon-bookmark_border_black_24dp"></span>
@@ -103,6 +105,63 @@
             </div>
         </div>
     </section>
+
+    <!-- The Modal -->
+    <div class="modal" id="share-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">اشتراک گذاری</h4>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="col-12">
+                            <div class="row mb-3">
+                                <div class="card w-100">
+                                    <a href="https://t.me/share/url?url={{ route('products.show', $product->id) }}" target="_blank">
+                                        <div class="card-body text-center">اشتراک گذاری در تلگرام</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="card w-100">
+                                    <a href="https://api.whatsapp.com/send?text={{ route('products.show', $product->id) }}" target="_blank">
+                                        <div class="card-body text-center">اشتراک گذاری در واتساپ</div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="card w-100">
+                                    <a href="https://twitter.com/share?url={{ route('products.show', $product->id) }}" target="_blank">
+                                        <div class="card-body text-center">اشتراک گذاری در توییتر</div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="card w-100">
+                                    <input class="mb-2 form-control" style="direction: ltr" type="text" value="{{ route('products.show', $product->id) }}" id="copyMe">
+                                    <button class="btn btn-info" onclick="copyToClipboard()">کپی کردن لینک</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">بستن</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     @include('front-pages.products.partials.show-product-options')
     @include('front-pages.products.partials.product-details')
