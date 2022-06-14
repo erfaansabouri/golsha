@@ -96,7 +96,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.blog-posts.index') }}" class="nav-link">
-                            <i class="nav-icon fa fa-comment"></i>
+                            <i class="nav-icon fa fa-pencil"></i>
                             <p>
                                 وبلاگ
                             </p>
