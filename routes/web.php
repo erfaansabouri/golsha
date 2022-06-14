@@ -124,6 +124,7 @@ Route::prefix('user')->group(function () {
     Route::prefix('cart')->middleware(['auth'])->group(function () {
         Route::get('/', [ \App\Http\Controllers\Front\CartController::class , 'show'])->name('user.cart.show');
         Route::get('/add-product/{id}', [ \App\Http\Controllers\Front\CartController::class , 'addToCart'])->name('user.cart.add-product');
+        Route::get('/delete-product/{id}', [ \App\Http\Controllers\Front\CartController::class , 'deleteFromCart'])->name('user.cart.delete-product');
     });
 });
 

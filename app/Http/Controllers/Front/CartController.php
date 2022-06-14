@@ -81,4 +81,18 @@ class CartController extends Controller
 
         return redirect()->route('user.cart.show');
     }
+
+    public function deleteFromCart($id)
+    {
+        $cartProduct = CartProduct::query()->where('id', $id)
+            ->firstOrFail();
+
+        $cart = Cart::query()->where('user_id', \auth()->user()->id)
+            ->where('id', $cartProduct->cart_id)
+            ->firstOrFail();
+
+        $cartProduct->delete();
+
+        return redirect(route('user.cart.show'));
+    }
 }

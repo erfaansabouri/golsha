@@ -45,10 +45,12 @@
                     <span wire:ignore wire:click="decreaseCartProductCount({{ $cartProduct->id }})" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" ></span>
                 </div>
             </div>
-            <p class="deletCart" wire:click="deleteCartProduct({{ $cartProduct->id }})">
-                <span class="icon-trashcan1"></span>
-                <i>حذف</i>
-            </p>
+            <a href="{{ route('user.cart.delete-product', $cartProduct->id) }}">
+                <p class="deletCart">
+                    <span class="icon-trashcan1"></span>
+                    <i>حذف</i>
+                </p>
+            </a>
         </div>
     </td>
     <td class="finalPrice">{{ number_format($totalPrice) }} تومان</td>
