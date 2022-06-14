@@ -19,7 +19,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('user.auth.login.form');
+        return redirect()->route('home');
     }
 
 	public function sendOTP(Request $request)
