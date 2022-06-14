@@ -121,7 +121,7 @@
                                             </div>
                                             <div class="blgPostInfo">
                                                 <h6>{{ $blogPost->title }}</h6>
-                                                <p>{!! $blogPost->body !!}</p>
+                                                <p>{{ substr(strip_tags($blogPost->body), 0, 100) }}</p>
                                                 <div class="blgPstInfoBtm">
                                                     <div class="blgPstBtmRght">
                                                         <div>
