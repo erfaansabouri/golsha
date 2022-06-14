@@ -49,6 +49,20 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\GroupController::class , 'edit'])->name('admin.groups.edit');
     });
 
+    // Faq Categories
+    Route::prefix('faq-categories')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\FaqCategoryController::class , 'index'])->name('admin.faq-categories.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\FaqCategoryController::class , 'create'])->name('admin.faq-categories.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\FaqCategoryController::class , 'edit'])->name('admin.faq-categories.edit');
+    });
+
+    // Faqs
+    Route::prefix('faqs')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\FaqController::class , 'index'])->name('admin.faqs.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\FaqController::class , 'create'])->name('admin.faqs.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\FaqController::class , 'edit'])->name('admin.faqs.edit');
+    });
+
     // Users
     Route::prefix('users')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\UserController::class , 'index'])->name('admin.users.index');

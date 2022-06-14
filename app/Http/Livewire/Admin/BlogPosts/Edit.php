@@ -19,6 +19,7 @@ class Edit extends Component
     /* Form inputs */
     public $title;
     public $body;
+    public $small_body;
     public $oldImage;
     public $image;
 	public $tags;
@@ -26,18 +27,19 @@ class Edit extends Component
 	public $is_news = false;
 	public $is_editor_selected = false;
 	public $top_order = 0;
-	
+
 	public $categories;
 	public $category_ids = [];
 	public $old_category_ids = [];
-	
-	
-	
+
+
+
 	public function mount($record)
     {
         $this->record 		= $record;
         $this->title 		= $this->record->title;
         $this->body 		= $this->record->body;
+        $this->small_body   = $this->record->small_body;
         $this->oldImage 	= $this->record->imagePath;
 		$this->tags 		= $record->tags;
 		$this->is_popular 	= (boolean)$record->is_popular;
@@ -60,6 +62,7 @@ class Edit extends Component
     {
         $this->record->title 	= $this->title;
         $this->record->body 	= $this->body;
+        $this->record->small_body 	= $this->small_body;
         $this->record->tags 	= $this->tags;
         $this->record->is_popular = (boolean)$this->is_popular;
         $this->record->is_news 	= (boolean)$this->is_news;
@@ -72,8 +75,8 @@ class Edit extends Component
             $this->record->image_name = $imageName;
         }
         $this->record->save();
-	
-	
+
+
 		CategoryPost::query()->where('blog_post_id', $this->record->id)->delete();
 		foreach ($this->category_ids as $category_id)
 		{

@@ -121,7 +121,7 @@
                                             </div>
                                             <div class="blgPostInfo">
                                                 <h6>{{ $blogPost->title }}</h6>
-                                                <p>{!! $blogPost->body !!}</p>
+                                                <p>{!! $blogPost->small_body !!}</p>
                                                 <div class="blgPstInfoBtm">
                                                     <div class="blgPstBtmRght">
                                                         <div>

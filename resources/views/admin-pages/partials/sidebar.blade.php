@@ -45,6 +45,16 @@
                             </p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('admin.faq-categories.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-question"></i>
+                            <p>
+                                سوالات متداول
+                            </p>
+                        </a>
+                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('admin.users.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-users"></i>

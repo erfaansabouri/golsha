@@ -61,6 +61,19 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
+                                                <label for="body" class="control-label">متن کوتاه (خلاصه ای از متن که در صفحه اصلی وبلاگ نمایش داده میشود.)</label>
+                                                <div wire:ignore>
+                                                    <textarea rows="5" wire:model.defer="small_body" type="text" class="form-control" id="small_body" placeholder="متن کوتاه را وارد کنید">
+                                                        {{ $small_body }}
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
                                                 <label for="body" class="control-label">متن</label>
                                                 <div wire:ignore>
                                                     <textarea rows="10" wire:model.defer="body" type="text" class="form-control" id="body" placeholder="متن را وارد کنید">
@@ -184,6 +197,7 @@
                 }
 
             });
+
 
             $('#categories-dropdown').select2({
                 theme: "classic"
