@@ -18,28 +18,28 @@ class BlogPost extends Model
             return getenv('APP_URL'). "/storage/". $this->image_name;
         return null;
     }
-	
+
 	public function getHumanReadableCreatedAttribute()
 	{
 		if($this->image_name)
 			return getenv('APP_URL'). "/storage/". $this->image_name;
 		return null;
 	}
-	
+
 	public function getTagsArrayAttribute()
 	{
-		return explode(',',$this->tags);
+		return explode('،',$this->tags);
 	}
     public function admin()
     {
         return $this->belongsTo(Admin::class);
     }
-	
+
 	public function relatedBlogPosts()
 	{
 		return $this->hasMany(BlogPost::class,'id','id'); // TODO
 	}
-	
+
 	/* SCOPES */
 	public function scopeTopI($query)
 	{
