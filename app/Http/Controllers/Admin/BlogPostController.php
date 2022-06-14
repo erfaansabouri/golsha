@@ -31,4 +31,12 @@ class BlogPostController extends Controller
         $record = BlogPost::query()->findOrFail($id);
         return view('admin-pages.blog-posts.edit', compact('record'))->with('pageInfo', $this->pageInfo);
     }
+
+    public function destroy($id)
+    {
+        $record = BlogPost::query()->findOrFail($id);
+        $record->delete();
+        return redirect()->route('admin.blog-posts.index')->with('message', 'تغییرات با موفقیت ثبت شد.');
+
+    }
 }

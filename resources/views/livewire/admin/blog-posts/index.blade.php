@@ -62,7 +62,10 @@
                                                     <img class="img-fluid img-thumbnail img-size-64" src="{{ $blog_post->image_path }}" alt="تصویر">
                                                 @endif
                                             </td>
-                                            <td><a class="btn btn-sm btn-primary" href="{{ route('admin.blog-posts.edit', $blog_post->id) }}">ویرایش</a></td>
+                                            <td>
+                                                <a class="btn btn-sm btn-primary" href="{{ route('admin.blog-posts.edit', $blog_post->id) }}">ویرایش</a>
+                                                <a class="btn btn-sm btn-danger" href="{{ route('admin.blog-posts.destroy', $blog_post->id) }}">حذف</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </table>

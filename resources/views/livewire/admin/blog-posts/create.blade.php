@@ -70,7 +70,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="body" class="control-label">تگ ها (برای جدا کردن تگ ها از کاما استفاده نمایید.)</label>
+                                                <label for="body" class="control-label">تگ ها (برای جدا کردن تگ ها از کاما "،" استفاده نمایید.)</label>
                                                 <div wire:ignore>
                                                     <input rows="10" wire:model.defer="tags" type="text" class="form-control" id="body" placeholder="تگ ها را وارد کنید (برای جدا کردن تگ ها از کاما استفاده نمایید.)">
                                                 </div>

@@ -81,6 +81,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\BlogPostController::class , 'index'])->name('admin.blog-posts.index');
         Route::get('/create', [ \App\Http\Controllers\Admin\BlogPostController::class , 'create'])->name('admin.blog-posts.create');
         Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\BlogPostController::class , 'edit'])->name('admin.blog-posts.edit');
+        Route::get('/destroy/{id}', [ \App\Http\Controllers\Admin\BlogPostController::class , 'destroy'])->name('admin.blog-posts.destroy');
     });
 
     // Tickets
