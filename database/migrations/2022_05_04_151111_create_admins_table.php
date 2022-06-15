@@ -22,14 +22,7 @@ class CreateAdminsTable extends Migration
 			$table->timestamps();
         });
 
-        \App\Models\Admin::query()
-            ->create([
-                'full_name' => 'مدیریت گلشا',
-                'email' => 'iman@golshateb.com',
-                'password' => bcrypt('as12AS!@'),
-                'is_super' => 1,
-                'is_enable' => 1,
-            ]);
+
     }
 
     /**

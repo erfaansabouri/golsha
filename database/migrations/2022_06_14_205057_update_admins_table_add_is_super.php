@@ -17,6 +17,14 @@ class UpdateAdminsTableAddIsSuper extends Migration
             $table->boolean('is_super')->default(0);
             $table->boolean('is_enable')->default(1);
         });
+        \App\Models\Admin::query()
+            ->create([
+                'full_name' => 'مدیریت گلشا',
+                'email' => 'iman@golshateb.com',
+                'password' => bcrypt('as12AS!@'),
+                'is_super' => 1,
+                'is_enable' => 1,
+            ]);
     }
 
     /**
