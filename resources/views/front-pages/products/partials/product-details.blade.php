@@ -14,7 +14,7 @@
                         </div>
                         <div class="tab-pane" id="tabOne">
                             <h4>معرفی</h4>
-                            <p>{!! $product->introduction !!}</p>
+                            <p>{!! nl2br($product->introduction) !!}</p>
                         </div>
                         <div class="tab-pane" id="tabTwo">
                             <h4>مشخصات محصول</h4>

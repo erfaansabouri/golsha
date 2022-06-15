@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="blgSnglPstTxt">
-                                        {!! $blogPost->body !!}
+                                        {!! nl2br($blogPost->body) !!}
                                     </div>
                                     <div class="blgSnglTags">
                                         <div class="blgSnglTgHed">

@@ -20,6 +20,7 @@ class SettingSeeder extends Seeder
         $this->socials();
         $this->blog();
         $this->sliders();
+        $this->underSliders();
         $this->productBanners();
     }
 
@@ -494,6 +495,136 @@ class SettingSeeder extends Seeder
                 'category' => 'sliders',
                 'href' => 'https://google.com',
                 'type' => 'image',
+            ],
+        ];
+
+        foreach ($items as $item)
+        {
+            Setting::query()->create($item);
+        }
+    }
+    public function underSliders()
+    {
+        $items = [
+            [
+                'key' => 'under-sliders-1',
+                'value' => 'images/sample.jpg',
+                'category' => 'under-sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+                'location' => 'عکس شماره یک زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-2',
+                'value' => 'https://google.com',
+                'category' => 'under-sliders',
+                'type' => 'text',
+                'location' => 'متن شماره یک زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-3',
+                'value' => 'images/sample.jpg',
+                'category' => 'under-sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+                'location' => 'عکس شماره دو زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-4',
+                'value' => 'https://google.com',
+                'category' => 'under-sliders',
+                'type' => 'text',
+                'location' => 'متن شماره دو زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-5',
+                'value' => 'images/sample.jpg',
+                'category' => 'under-sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+                'location' => 'عکس شماره سه زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-6',
+                'value' => 'https://google.com',
+                'category' => 'under-sliders',
+                'type' => 'text',
+                'location' => 'متن شماره سه زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-7',
+                'value' => 'images/sample.jpg',
+                'category' => 'under-sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+                'location' => 'عکس شماره چهار زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-8',
+                'value' => 'https://google.com',
+                'category' => 'under-sliders',
+                'type' => 'text',
+                'location' => 'متن شماره چهار زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-9',
+                'value' => 'images/sample.jpg',
+                'category' => 'under-sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+                'location' => 'عکس شماره پنج زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-10',
+                'value' => 'https://google.com',
+                'category' => 'under-sliders',
+                'type' => 'text',
+                'location' => 'متن شماره پنج زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-11',
+                'value' => 'images/sample.jpg',
+                'category' => 'under-sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+                'location' => 'عکس شماره شش زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-12',
+                'value' => 'https://google.com',
+                'category' => 'under-sliders',
+                'type' => 'text',
+                'location' => 'متن شماره شش زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-13',
+                'value' => 'images/sample.jpg',
+                'category' => 'under-sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+                'location' => 'عکس شماره هفت زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-14',
+                'value' => 'https://google.com',
+                'category' => 'under-sliders',
+                'type' => 'text',
+                'location' => 'متن شماره هفت زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-15',
+                'value' => 'images/sample.jpg',
+                'category' => 'under-sliders',
+                'href' => 'https://google.com',
+                'type' => 'image',
+                'location' => 'عکس شماره هشت زیر اسلایدر'
+            ],
+            [
+                'key' => 'under-sliders-16',
+                'value' => 'https://google.com',
+                'category' => 'under-sliders',
+                'type' => 'text',
+                'location' => 'متن شماره هشت زیر اسلایدر'
             ],
         ];
 

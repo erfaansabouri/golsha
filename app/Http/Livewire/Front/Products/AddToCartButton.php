@@ -15,7 +15,7 @@ class AddToCartButton extends Component
     {
         $this->product = $product;
         $user = Auth::guard('web')->user();
-        if($user->cart()->exists())
+        if($user && $user->cart()->exists())
         {
             $alreadyAdded = DB::table('cart_products')
                 ->where('cart_id', $user->cart()->first()->id)

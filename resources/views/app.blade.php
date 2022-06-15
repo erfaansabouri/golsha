@@ -3,7 +3,9 @@
 @livewireStyles
 @include('front-pages.partials.head', ['pageTitle' => 'گلشا تب' . ' - ' . @$pageInfo['title'] ?? 'گلشا تب'])
 @yield('head')
-
+<style>
+    #more {display: none;}
+</style>
 <body>
 
 <header>
@@ -32,6 +34,22 @@
         navigator.clipboard.writeText(copyText.value);
 
         /* Alert the copied text */
+    }
+
+    function toggleShowMore() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
     }
 </script>
 </body>

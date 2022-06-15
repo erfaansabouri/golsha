@@ -1,6 +1,7 @@
 @extends('app')
 @section('content')
     @include('front-pages.home.partials.sliders')
+    @include('front-pages.partials.under-sliders')
     @include('front-pages.home.partials.most-sold-products')
     @include('front-pages.home.partials.golsha-suggestion')
     @include('front-pages.home.partials.twin-banners')

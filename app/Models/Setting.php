@@ -21,6 +21,7 @@ class Setting extends Model
 		'socials' => 'socials',
 		'blog' => 'blog',
         'sliders' => 'sliders',
+        'under-sliders' => 'under-sliders',
         'product-banner' => 'product-banner',
 	];
 
@@ -37,6 +38,8 @@ class Setting extends Model
 				return 'بلاگ';
             case self::CATEGORIES['sliders']:
                 return 'اسلایدر';
+            case self::CATEGORIES['under-sliders']:
+                return 'محصولات زیر اسلایدر';
             case self::CATEGORIES['product-banner']:
                 return 'بنر های صفحه محصولات';
 		}

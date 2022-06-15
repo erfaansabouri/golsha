@@ -24,7 +24,7 @@
                                 <ul class="navRowSubUl">
                                     @foreach(\App\Models\Category::all() ?? [] as $category)
                                         <li class="navRowSubLi">
-                                            <a href="#" class="navRowSubLnk">
+                                            <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="navRowSubLnk">
                                                 <i>{{ $category->title }}</i>
                                                 <span class="material-icons opnSubSub">keyboard_arrow_left</span>
                                             </a>
