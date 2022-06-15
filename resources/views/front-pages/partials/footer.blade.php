@@ -17,7 +17,7 @@
                     <div class="quicOrdrleft">
                         <span class="material-icons">phone_enabled</span>
                         <small>تماس</small>
-                        <p>{{ (new \App\Models\Setting())->findByKey('footer-4') }}</p>
+                        <p><a href="tel:{{ (new \App\Models\Setting())->findByKey('footer-4') }}">{{ (new \App\Models\Setting())->findByKey('footer-4') }}</a></p>
                     </div>
                 </div>
             </div>
@@ -59,9 +59,11 @@
                 <div class="col-lg-3">
                     <div class="ftrPaperBox">
                         <img src="{{ asset('assets/front/img/logo4.png') }}" alt="logo">
-                        <p>
-                            {{ (new \App\Models\Setting())->findByKey('footer-5') }}
-                        </p>
+                        @foreach(\App\Models\BlogPost::query()->latest()->take(4)->get() as $blogPost)
+                            <p>
+                                <a href="{{ route('blog.show', $blogPost->id) }}">{{ $blogPost->title }}</a>
+                            </p>
+                        @endforeach
                         <a href="{{ route('blog.index') }}">
                             <i>مقالات بیشتر</i>
                             <span class="material-icons-outlined">arrow_back</span>

@@ -47,6 +47,7 @@
                                         <th>مقدار</th>
                                         <th>نوع</th>
                                         <th>دسته</th>
+                                        <th>جایگاه</th>
                                         <th>ویرایش</th>
                                     </tr>
                                     @foreach($settings as $setting)
@@ -62,6 +63,7 @@
                                             @endif
                                             <td>{{ \App\Models\Setting::translateType($setting->type) }}</td>
                                             <td>{{ \App\Models\Setting::translateCategories($setting->category) }}</td>
+                                            <td>{{ $setting->location }}</td>
                                             <td><a class="btn btn-sm btn-primary" href="{{ route('admin.settings.edit', $setting->id) }}">ویرایش</a></td>
                                         </tr>
                                     @endforeach

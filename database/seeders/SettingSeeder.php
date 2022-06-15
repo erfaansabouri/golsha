@@ -221,24 +221,28 @@ class SettingSeeder extends Seeder
 				'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
+                'location' => 'متن جلوی مشاوره و ثبت سفارش سریع در واتساپ و تلگرام'
 			],
 			[
 				'key' => 'footer-2',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک واتساپ'
+            ],
 			[
 				'key' => 'footer-3',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک تلگرام'
+            ],
 			[
 				'key' => 'footer-4',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
+				'location' => 'شماره جلوی کلمه تماس',
 			],
 			[
 				'key' => 'footer-5',
@@ -251,73 +255,88 @@ class SettingSeeder extends Seeder
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک تلگرام',
+            ],
 			[
 				'key' => 'footer-7',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک اینستاگرام',
+
+            ],
 			[
 				'key' => 'footer-8',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک توییتر',
+            ],
 			[
 				'key' => 'footer-9',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک آپارات',
+            ],
 			[
 				'key' => 'footer-10',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'متن جلوی لوگو',
+            ],
 			[
 				'key' => 'footer-11',
 				'value' => \Ybazli\Faker\Facades\Faker::sentence(),
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'زیر متن جلوی لوگو',
+            ],
 			[
 				'key' => 'footer-12',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک عکس اول',
+            ],
 			[
 				'key' => 'footer-13',
 				'value' => 'images/sample.jpg',
 				'category' => 'footer',
 				'type' => 'image',
-			],
+                'location' => 'عکس اول',
+
+            ],
 			[
 				'key' => 'footer-14',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک عکس دوم',
+            ],
 			[
 				'key' => 'footer-15',
 				'value' => 'images/sample.jpg',
 				'category' => 'footer',
 				'type' => 'image',
-			],
+                'location' => 'عکس دوم',
+            ],
 			[
 				'key' => 'footer-16',
                 'value' => '09109272066',
 				'category' => 'footer',
 				'type' => 'text',
-			],
+                'location' => 'لینک عکس سوم',
+            ],
 			[
 				'key' => 'footer-17',
 				'value' => 'images/sample.jpg',
 				'category' => 'footer',
 				'type' => 'image',
-			],
+                'location' => 'عکس سوم',
+
+            ],
 		];
 
 		foreach ($items as $item)
