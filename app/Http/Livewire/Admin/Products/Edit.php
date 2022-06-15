@@ -60,6 +60,8 @@ class Edit extends Component
     public $images = [];
     public $oldImages;
 
+    public $show_in_right_bar;
+
     public function updatePurchasePrice()
     {
         if(!empty($this->discountPercentage))
@@ -126,6 +128,7 @@ class Edit extends Component
         $this->introduction = $record->introduction;
         $this->price = $record->price;
         $this->discountPercentage = $record->discount_percentage;
+        $this->show_in_right_bar = $record->show_in_right_bar;
 
         if(!empty($this->discountPercentage))
             $this->purchasePrice = ((100 - $this->discountPercentage) * $this->price) / 100;
@@ -154,6 +157,7 @@ class Edit extends Component
                 'introduction' => $this->introduction,
                 'price' => $this->price,
                 'discount_percentage' => $this->discountPercentage,
+                'show_in_right_bar' => (boolean)$this->show_in_right_bar,
             ]);
 
         foreach ($this->images as $key => $image)

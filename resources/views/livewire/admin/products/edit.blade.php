@@ -305,6 +305,16 @@
                                         </div>
                                     @endforeach
                                     <hr>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="show_in_right_bar">
+                                                    <label class="form-check-label">نمایش در سمت راست صفحه تمام محصولات</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- /.card-body -->

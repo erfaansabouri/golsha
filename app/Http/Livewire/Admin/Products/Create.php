@@ -59,6 +59,8 @@ class Create extends Component
 
     public $images = [];
 
+    public $show_in_right_bar;
+
     public function mount()
     {
          $this->categories = Category::all();
@@ -123,6 +125,7 @@ class Create extends Component
                 'introduction' => $this->introduction,
                 'price' => $this->price,
                 'discount_percentage' => $this->discountPercentage,
+                'show_in_right_bar' => (boolean)$this->show_in_right_bar,
             ]);
 
         foreach ($this->images as $key => $image)
