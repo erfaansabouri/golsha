@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use IPPanel\Client;
 use SoapClient;
 
@@ -74,5 +75,22 @@ class User extends Authenticatable
 	public function addresses()
     {
         return $this->hasMany(Address::class);
+    }
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
+
+
+    public function getCartProductCountAttribute()
+    {
+        if($this->cart()->exists())
+        {
+            return DB::table('cart_products')
+                ->where('cart_id', $this->cart()->first()->id)
+                ->sum('count');
+        }
+        return 0;
     }
 }

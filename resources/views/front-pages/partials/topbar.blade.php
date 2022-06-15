@@ -62,6 +62,7 @@
                         </div>
                         <a href="{{ route('user.cart.show') }}" class="hdrShopLink">
                             <span class="icon-shopping_bag_black_24dp"></span>
+                            <p>{{ \Illuminate\Support\Facades\Auth::guard('web')->user()->cart_product_count }}</p>
                         </a>
                         <a href="#" class="opnMnuLink"><span class="material-icons">menu</span></a>
                     </div>

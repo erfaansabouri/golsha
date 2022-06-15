@@ -28,6 +28,7 @@ class BlogPostFactory extends Factory
         return [
             'admin_id' => Admin::query()->inRandomOrder()->first()->id,
             'title' => \Ybazli\Faker\Facades\Faker::word(),
+            'small_body' => \Ybazli\Faker\Facades\Faker::sentence(),
             'body' => \Ybazli\Faker\Facades\Faker::sentence(). ' ' .\Ybazli\Faker\Facades\Faker::sentence(),
             'image_name' => 'images/sample.jpg',
 
