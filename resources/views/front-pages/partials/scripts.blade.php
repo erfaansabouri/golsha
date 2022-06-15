@@ -5,3 +5,4 @@
 <script src="{{ asset('assets/front/js/tabs.js') }}"></script>
 <script src="{{ asset('assets/front/js/swiper-bundle.js') }}"></script>
 <script src="{{ asset('assets/front/js/lightgallery.min.js') }}"></script>
+@livewireScripts

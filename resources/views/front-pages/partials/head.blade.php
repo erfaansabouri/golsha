@@ -10,4 +10,5 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/swiper-bundle.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/front/css/lightgallery.css') }}" />
     <link rel="icon" href="{{ asset('assets/front/img/logo2.png') }}">
+    @livewireStyles
 </head>
