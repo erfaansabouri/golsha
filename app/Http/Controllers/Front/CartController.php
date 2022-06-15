@@ -79,7 +79,7 @@ class CartController extends Controller
             $cartProduct->save();
         }
 
-        return redirect()->route('user.cart.show');
+        return redirect()->back();
     }
 
     public function deleteFromCart($id)

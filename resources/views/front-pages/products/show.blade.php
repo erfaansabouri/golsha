@@ -73,10 +73,7 @@
                                 @endif
                                 <p>{{ number_format($product->purchase_price) }} تومان</p>
                             </div>
-                            <a href="{{ route('user.cart.add-product', $product->id ) }}" class="prductInfBtn">
-                                <span class="icon-shopping_bag_black_24dp"></span>
-                                <i>افزودن به سبد خرید</i>
-                            </a>
+                            @livewire('front.products.add-to-cart-button', ['product' => $product])
                             <div class="advsrSharBtns">
                                 <a href="{{ route('support.index') }}" class="adviserBtn">
                                     <span class="icon-headset_mic_black_24dp"></span>
