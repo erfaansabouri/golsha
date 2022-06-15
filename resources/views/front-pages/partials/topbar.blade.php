@@ -64,13 +64,15 @@
                             <span class="icon-shopping_bag_black_24dp"></span>
                             <p>{{ \Illuminate\Support\Facades\Auth::guard('web')->user()->cart_product_count }}</p>
                         </a>
-                        <a href="#" class="opnMnuLink"><span class="material-icons">menu</span></a>
                     </div>
                     @else
                         <div class="hdrLginBox">
                             <a href="{{ route('user.auth.login.form') }}" class="hdrLginLink">ورود / عضویت</a>
                         </div>
                     @endif
+
+                    <a href="#" class="opnMnuLink d-block d-sm-none"><span class="material-icons">menu</span></a>
+
                 </div>
             </div>
         </div>

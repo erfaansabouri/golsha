@@ -4,11 +4,13 @@
             <div class="col-md-12">
                 <div class="navRowDiv">
                     <span class="material-icons clsMnuLink">close</span>
-                    <a href="#" class="navRowLogo"><img src="img/logo1.png" alt="img"></a>
-                    <div class="minMnuSrch">
-                        <button><span class="icon-search_black_24dp"></span></button>
-                        <input type="text" placeholder="جستجو در گلشا">
-                    </div>
+                    <a href="{{ route('home') }}" class="navRowLogo"><img src="{{ asset('assets/front/img/logo1.png') }}" alt="img"></a>
+                        <form  class="minMnuSrch" action="{{ route('products.index') }}" method="get">
+                            @csrf
+                            @method('get')
+                            <button><span class="icon-search_black_24dp"></span></button>
+                            <input name="search" type="text" placeholder="جستجو در گلشا">
+                        </form>
                     <ul class="navRowUl">
                         <li class="navRowLi">
                             <a href="{{ route('home') }}">

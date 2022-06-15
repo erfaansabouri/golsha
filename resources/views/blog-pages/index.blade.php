@@ -85,7 +85,7 @@
                                         </div>
                                     </div>
                                     <div class="slctedCrdInfo">
-                                        <p>{{ $blogPost->title }}</p>
+                                        <p><a href="{{ route('blog.show', $blogPost->id) }}">{{ $blogPost->title }}</a></p>
                                     </div>
                                 </a>
                             @endforeach
@@ -120,7 +120,7 @@
                                                 </div>
                                             </div>
                                             <div class="blgPostInfo">
-                                                <h6>{{ $blogPost->title }}</h6>
+                                                <h6><a href="{{ route('blog.show', $blogPost->id) }}">{{ $blogPost->title }}</a></h6>
                                                 <p>{!! $blogPost->small_body !!}</p>
                                                 <div class="blgPstInfoBtm">
                                                     <div class="blgPstBtmRght">
