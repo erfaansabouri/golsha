@@ -11,9 +11,11 @@ class Invoice extends Model
 	protected $guarded = [];
 
 	const STATUSES = [
+		'waiting_payment' => 'در انتظار پرداخت',
 		'processing' => 'در حال پردازش',
 		'done' => 'تکمیل شده',
 		'canceled' => 'لغو شده',
+		'failed_payment' => 'پرداخت ناموفق',
 	];
 
 	const DELIVERY_TYPES = [
@@ -59,5 +61,52 @@ class Invoice extends Model
             $totalPrice += $invoiceProduct->total_purchase_price;
         }
         return $totalPrice;
+    }
+
+    public function productsOriginalPrice()
+    {
+        $products = $this->products()->get();
+        $result = 0;
+        foreach ($products as $product)
+        {
+            $result = $product->totalOriginalPrice();
+        }
+        return $result;
+    }
+
+    public function productsPurchasePrice()
+    {
+        $products = $this->products()->get();
+        $result = 0;
+        foreach ($products as $product)
+        {
+            $result = $product->totalPurchasePrice();
+        }
+        return $result;
+    }
+
+    public function deliveryPrice()
+    {
+        return $this->delivery_amount ?? 0;
+    }
+
+    public function discountPrice()
+    {
+        if(empty($this->discount_percentage))
+            return 0;
+        else
+        {
+            return round($this->productsPurchasePrice() * ($this->discount_percentage / 100));
+        }
+    }
+
+    public function totalOriginalPrice()
+    {
+        return $this->productsOriginalPrice() + $this->deliveryPrice() - $this->discountPrice();
+    }
+
+    public function totalPurchasePrice()
+    {
+        return $this->productsPurchasePrice() + $this->deliveryPrice() - $this->discountPrice();
     }
 }

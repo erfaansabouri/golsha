@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/upload-image', [\App\Http\Controllers\Admin\UploadController::class, 'upload']);
+
+Route::get('/send-customer-to-payment-gateaway', [\App\Http\Controllers\PaymentController::class, 'SendCustomerToPaymentGateaway'])->name('send-customer-to-payment-gateaway');
+Route::get('/verify-payment-status', [\App\Http\Controllers\PaymentController::class, 'verifyPaymentStatus'])->name('verify-payment-status');
+
 Route::prefix('admin')->group(function () {
 	// Auth
 	Route::prefix('auth')->group(function () {

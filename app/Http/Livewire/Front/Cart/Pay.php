@@ -24,7 +24,9 @@ class Pay extends Component
         {
             return  redirect()->route('user.cart.show')->with(['error' => 'آدرس و نحوه ارسال اجباری است.']);
         }
-        $this->cart->convertToInvoice();
-        return redirect()->to('http://zarinp.al/imanamiri');
+        $invoice = $this->cart->convertToInvoice();
+        return redirect()->route('send-customer-to-payment-gateaway',[
+            'invoice_id' => $invoice->id,
+        ]);
     }
 }

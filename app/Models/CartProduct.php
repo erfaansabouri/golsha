@@ -31,4 +31,14 @@ class CartProduct extends Model
     {
         return round((($this->product_original_price - $this->product_purchase_price) / $this->product_original_price) *100);
     }
+
+    public function totalOriginalPrice()
+    {
+        return $this->product_original_price * $this->count;
+    }
+
+    public function totalPurchasePrice()
+    {
+        return $this->product_purchase_price * $this->count;
+    }
 }

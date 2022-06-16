@@ -63,7 +63,7 @@
                                             <td>{{ $invoice->status }}</td>
                                             <td>{{ $invoice->delivery_type }}</td>
                                             <td>{{ $invoice->products()->count() }} عدد</td>
-                                            <td>{{ number_format($invoice->totalPrice()) }} تومان</td>
+                                            <td>{{ number_format($invoice->totalPurchasePrice()) }} تومان</td>
                                             <td>{{ verta($invoice->created_at)->format('%d %B %Y - H:i') }}</td>
                                             <td><a href="{{ route('admin.invoices.show', $invoice->id) }}" class="btn btn-info btn-sm">نمایش جزئیات</a></td>
                                       </tr>

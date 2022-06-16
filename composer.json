@@ -10,6 +10,7 @@
   "require": {
     "php": "^7.3",
     "ext-json": "*",
+    "ext-soap": "*",
     "fideloper/proxy": "^4.2",
     "fruitcake/laravel-cors": "^2.0",
     "guzzlehttp/guzzle": "^7.0.1",
@@ -18,8 +19,8 @@
     "laravel/framework": "^8.0",
     "laravel/tinker": "^2.0",
     "livewire/livewire": "^2.10",
-    "ybazli/faker": "^1.0",
-    "ext-soap": "*"
+    "pishran/zarinpal": "^4.3",
+    "ybazli/faker": "^1.0"
   },
   "require-dev": {
     "facade/ignition": "^2.3.6",

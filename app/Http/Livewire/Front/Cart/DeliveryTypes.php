@@ -40,13 +40,13 @@ class DeliveryTypes extends Component
 
         switch ($deliveryType){
             case 1:
-                $delivery_amount =  10000;
+                $delivery_amount =  10000; // todo
                 break;
             case 2:
-                $delivery_amount =  20000;
+                $delivery_amount =  20000; // todo
                 break;
             case 3:
-                $delivery_amount =  30000;
+                $delivery_amount =  30000; // todo
                 break;
         }
         $this->cart->delivery_type = $id;

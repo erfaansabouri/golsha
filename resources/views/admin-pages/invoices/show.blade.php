@@ -33,7 +33,14 @@
                             <div class="card-header">
                                 <h3 class="card-title">قیمت کل سفارش</h3>
                             </div>
-                            <div class="card-body">{{ number_format($record->totalPrice()) }} تومان</div>
+                            <div class="card-body">
+                                {{ number_format($record->totalPurchasePrice()) }} تومان
+                                @if(!empty($record->discount_percentage))
+                                    <br>
+                                    <del>{{ number_format($record->productsPurchasePrice() + $record->deliveryPrice()) }} تومان</del>
+                                @endif
+
+                            </div>
                             <!-- /.card-body -->
                         </div>
                         <!-- /.card -->
@@ -183,7 +190,7 @@
                                                 <td>{{ number_format($invoiceProduct->product_original_price) }} تومان</td>
                                                 <td>{{ number_format($invoiceProduct->product_purchase_price) }} تومان</td>
                                                 <td>{{ $invoiceProduct->count }}</td>
-                                                <td>{{ number_format($invoiceProduct->total_purchase_price) }} تومان</td>
+                                                <td>{{ number_format($invoiceProduct->totalPurchasePrice()) }} تومان</td>
                                             </tr>
                                         @endforeach
                                         </tbody>

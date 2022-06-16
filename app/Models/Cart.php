@@ -15,58 +15,63 @@ class Cart extends Model
         return $this->hasMany(CartProduct::class);
     }
 
-    public function totalOriginalPrice()
+    public function productsOriginalPrice()
     {
         $products = $this->products()->get();
-        $total = 0;
+        $result = 0;
         foreach ($products as $product)
         {
-            $total += $product->count * $product->product_original_price;
+            $result = $product->totalOriginalPrice();
         }
+        return $result;
+    }
 
-        if(!empty($cart->delivery_amount))
+    public function productsPurchasePrice()
+    {
+        $products = $this->products()->get();
+        $result = 0;
+        foreach ($products as $product)
         {
-            $total += $cart->delivery_amount;
+            $result = $product->totalPurchasePrice();
         }
+        return $result;
+    }
 
-        return $total;
+    public function deliveryPrice()
+    {
+        return $this->delivery_amount ?? 0;
+    }
+
+    public function discountPrice()
+    {
+        if(empty($this->discount_percentage))
+            return 0;
+        else
+        {
+            return round($this->productsPurchasePrice() * ($this->discount_percentage / 100));
+        }
+    }
+
+    public function totalOriginalPrice()
+    {
+        return $this->productsOriginalPrice() + $this->deliveryPrice() - $this->discountPrice();
     }
 
     public function totalPurchasePrice()
     {
-        $products = $this->products()->get();
-        $total = 0;
-        foreach ($products as $product)
-        {
-            $total += $product->count * $product->product_purchase_price;
-        }
-
-        if(!empty($this->discount_toman))
-        {
-            $total = $total - $this->discount_toman;
-        }
-        elseif(!empty($this->discount_percentage))
-        {
-            $total =  ((100 - $this->discount_percentage) / 100) * $total ;
-        }
-
-        if(!empty($this->delivery_amount))
-        {
-            $total += $this->delivery_amount;
-        }
-
-        return $total;
+        return $this->productsPurchasePrice() + $this->deliveryPrice() - $this->discountPrice();
     }
+
 
     public function convertToInvoice()
     {
         $invoice = (new Invoice());
         $invoice->user_id = $this->user_id;
-        $invoice->unique_code = rand(100000,99999999999);
+        $invoice->unique_code = rand(100000,999999999999);
         $invoice->address_id = $this->address_id;
         $invoice->coupon_id = $this->coupon_id;
-        $invoice->discount_percentage = $this->dicount_percentage ?? 0;
-        $invoice->status = Invoice::STATUSES['processing'];
+        $invoice->discount_percentage = $this->discount_percentage ?? 0;
+        $invoice->status = Invoice::STATUSES['waiting_payment'];
         $invoice->delivery_type = $this->delivery_type;
         $invoice->delivery_amount = $this->delivery_amount;
         $invoice->save();
@@ -87,5 +92,7 @@ class Cart extends Model
 
         $this->products()->delete();
         $this->delete();
+
+        return $invoice;
     }
 }
