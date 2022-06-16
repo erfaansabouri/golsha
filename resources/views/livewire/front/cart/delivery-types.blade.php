@@ -52,7 +52,7 @@
         </p>
         @else
             <p>
-                هزینه ارسال بسته شما {{ $cart->delivery_amount }} می باشد
+                هزینه ارسال بسته شما {{ $cart->delivery_amount }}  تومان میباشد
             </p>
         @endif
         <div>

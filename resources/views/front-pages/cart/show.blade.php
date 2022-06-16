@@ -32,6 +32,12 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    @if($errors)
+                                    <div style="text-align: center">
+                                        <p style="color: red">انتخاب آدرس و نحوه ارسال مرسوله اجباری است.</p>
+                                    </div>
+                                    @endif
+
                                 </div>
                                 <div class="FrmCntanrWiz">
                                     <div class="form-container animated">

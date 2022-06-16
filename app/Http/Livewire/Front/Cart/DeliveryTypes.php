@@ -49,8 +49,17 @@ class DeliveryTypes extends Component
                 $delivery_amount =  30000; // todo
                 break;
         }
-        $this->cart->delivery_type = $id;
-        $this->cart->delivery_amount = $delivery_amount;
-        $this->cart->save();
+        if ($this->cart->totalOriginalPrice() - $this->cart->delivery_amount >= 150000)
+        {
+            $this->cart->delivery_type = $id;
+            $this->cart->delivery_amount = 0;
+            $this->cart->save();
+        }
+       else
+       {
+           $this->cart->delivery_type = $id;
+           $this->cart->delivery_amount = $delivery_amount;
+           $this->cart->save();
+       }
     }
 }
