@@ -8,17 +8,17 @@
                         <span></span>
                     </div>
                     <div class="slctdEditrBdy">
-                        @foreach($blogPost->relatedBlogPosts()->get() ?? [] as $relatedBlogPost)
-                            <a href="#" class="slctdEditrCrd">
+                        @foreach(\App\Models\BlogPost::similars()->get() ?? [] as $relatedBlogPost)
+                            <a href="{{ route('blog.show', $relatedBlogPost->id) }}" class="slctdEditrCrd">
                                 <div class="slctedCrdImg">
                                     <div class="image_parent">
                                         <div class="image_inner">
-                                            <img src="img/img22.jpg" alt="img">
+                                            <img src="{{ $relatedBlogPost->image_path }}" alt="img">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="slctedCrdInfo">
-                                    <p>تاثیرگذار ترین راه کارهای مدیریت زمان</p>
+                                    <p>{{ $relatedBlogPost->title }}</p>
                                 </div>
                             </a>
                         @endforeach

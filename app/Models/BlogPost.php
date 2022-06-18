@@ -69,4 +69,9 @@ class BlogPost extends Model
 	{
 		return $query->where('is_news', 1)->inRandomOrder()->take(5);
 	}
+
+    public static function scopeSimilars($query)
+    {
+        return $query->inRandomOrder()->take(5);
+    }
 }
