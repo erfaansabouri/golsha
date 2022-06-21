@@ -26,11 +26,11 @@
                                 <ul class="navRowSubUl">
                                     @foreach(\App\Models\Category::all() ?? [] as $category)
                                         <li class="navRowSubLi">
-                                            <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="navRowSubLnk">
+                                            <a class="navRowSubLnk">
                                                 <i>{{ $category->title }}</i>
                                                 <span class="material-icons opnSubSub">keyboard_arrow_left</span>
                                             </a>
-                                            <div class="navSubBox">
+                                            <div class="navSubBox opnd">
                                                 <div>
                                                     @php
                                                         $productGroups = $category->products()->take(45)->get()->splitIn(3);

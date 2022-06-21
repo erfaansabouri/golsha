@@ -124,7 +124,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/hekmatinasser/verta" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hekmatinasser/notowo" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ippanel/php-rest-sdk" />
-      <excludeFolder url="file://$MODULE_DIR$/storage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/pishran/zarinpal" />
     </content>
     <orderEntry type="inheritedJdk" />
