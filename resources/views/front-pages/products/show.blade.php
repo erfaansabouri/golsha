@@ -71,7 +71,7 @@
                                     <del>{{ number_format($product->price) }} تومان</del>
                                     <small>{{ $product->discount_percentage }}%</small>
                                 @endif
-                                <p>{{ number_format($product->purchase_price) }} تومان</p>
+                                <p style="font-size: 30px">{{ number_format($product->purchase_price) }} تومان</p>
                             </div>
                             @livewire('front.products.add-to-cart-button', ['product' => $product])
                             <div class="advsrSharBtns">
