@@ -42,7 +42,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label for="email" class="control-label">نام خانوادگی</label>
+                                                <label for="email" class="control-label">ایمیل</label>
                                                 <div class="">
                                                     <input wire:model="email" type="text" class="form-control" id="lastName" placeholder="نام خانوادگی را وارد کنید">
                                                 </div>
