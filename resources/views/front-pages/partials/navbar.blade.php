@@ -35,21 +35,29 @@
                                                     @php
                                                         $productGroups = $category->products()->take(45)->get()->splitIn(3);
                                                     @endphp
-                                                    @foreach($productGroups as $productGroup)
+                                                    @foreach($productGroups as $pgKey => $productGroup)
                                                         <ul>
-                                                            @foreach($productGroup as $product)
+                                                            @foreach($productGroup as $pKey => $product)
+                                                                @if($pgKey == 0 and $pKey == 0)
+                                                                    <li>
+                                                                        <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="allPrdctLnk">
+                                                                            <i>همه محصولات دسته</i>
+                                                                            <span class="material-icons">keyboard_arrow_left</span>
+                                                                        </a>
+                                                                    </li>
+                                                                @endif
                                                                 <li><a href="{{ route('products.show', $product->id) }}">{{ $product->title }}</a></li>
+                                                                @if($pgKey == 2 and $loop->last)
+                                                                        <li>
+                                                                            <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="allPrdctLnk">
+                                                                                <i>همه محصولات دسته</i>
+                                                                                <span class="material-icons">keyboard_arrow_left</span>
+                                                                            </a>
+                                                                        </li>
+                                                                @endif
                                                             @endforeach
                                                         </ul>
                                                     @endforeach
-                                                    <ul>
-                                                        <li>
-                                                            <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="allPrdctLnk">
-                                                                <i>همه محصولات دسته</i>
-                                                                <span class="material-icons">keyboard_arrow_left</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
                                                 </div>
                                             </div>
                                         </li>
