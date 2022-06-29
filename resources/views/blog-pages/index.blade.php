@@ -102,11 +102,13 @@
                 <div class="col-md-12">
                     <div class="blogPostsBox">
                         <div class="blogPstsRght">
+                            @if(!empty((new \App\Models\Setting())->getHrefByKey('blog-1')))
                             <div class="advRowBxRght">
                                 <a href="{{ (new \App\Models\Setting())->getHrefByKey('blog-1') }}">
                                     <img src="{{ (new \App\Models\Setting())->findByKey('blog-1') }}" alt="img">
                                 </a>
                             </div>
+                            @endif
                             <div class="blgLastPost">
                                 <h5>آخرین  <span>مقالات</span> گلشا</h5>
                                 <ul>
@@ -155,12 +157,16 @@
                                     <i>در اینستاگرام گلشا را دنبال کنید</i>
                                 </a>
                             </div>
+                            @if(!empty((new \App\Models\Setting())->getHrefByKey('blog-2') ))
                             <a href="{{ (new \App\Models\Setting())->getHrefByKey('blog-2') }}" class="blgAdvSidBx">
                                 <img src="{{ (new \App\Models\Setting())->findByKey('blog-2') }}" alt="img">
                             </a>
+                            @endif
+                            @if(!empty((new \App\Models\Setting())->getHrefByKey('blog-3')))
                             <a href="{{ (new \App\Models\Setting())->getHrefByKey('blog-3') }}" class="blgAdvSidBx">
                                 <img src="{{ (new \App\Models\Setting())->findByKey('blog-3') }}" alt="img">
                             </a>
+                            @endif
                             @include('blog-pages.partials.populars')
                             @include('blog-pages.partials.news')
                         </div>
