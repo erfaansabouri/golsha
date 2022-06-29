@@ -33,12 +33,18 @@ class Addresses extends Component
         $this->render();
     }
 
-    public function destroy($addressId)
+    public function destroy($cartId, $addressId)
     {
         $address = Address::query()->find($addressId);
         if ($address)
         {
             $address->delete();
+        }
+        $cart = Cart::query()->findOrFail($cartId);
+        if ($cart->address_id == $addressId)
+        {
+            $cart->address_id = null;
+            $cart->save();
         }
         $this->render();
         return redirect()->route('user.cart.show', ['active_step' => 'second']);

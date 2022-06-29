@@ -11,7 +11,7 @@
                     <p>آدرس: {{ $address->full }}</p>
                 </div>
                 <div>
-                    <button wire:click="destroy({{ $address->id }})" class="btn btn-danger">حذف آدرس</button>
+                    <button wire:click="destroy({{ $cart->id }}, {{ $address->id }})" class="btn btn-danger">حذف آدرس</button>
                     @if($address->id == $chosen_id)
                         <button wire:click="choose({{ $cart->id }}, {{ $address->id }})" class="btn btn-outline-success">انتخاب شده</button>
                     @else
