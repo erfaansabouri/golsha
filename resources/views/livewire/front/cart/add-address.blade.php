@@ -2,7 +2,7 @@
     <div class="DestntnAddrss">
         <div class="DestAddrssBx">
             <div>
-                <h6>لطفا ابتدا آدرسی را در حساب کاربریتان ایجاد نمایید.</h6>
+                <h6>در صورتی که آدرس مورد نظر در لیست وجود ندارد،‌لازم است ابتدا آدرسی ایجاد نمایید.</h6>
             </div>
             <button class="btn btn-success btn-sm" type="button"  data-toggle="modal" data-target="#create-address">ثبت آدرس جدید</button>
             <div class="modal" id="create-address">

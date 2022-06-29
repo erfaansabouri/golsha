@@ -88,6 +88,7 @@
                                         @if(\Illuminate\Support\Facades\Auth::user()->addresses()->count() == 0)
                                             @livewire('front.cart.add-address', ['cart' => $cart])
                                         @else
+                                            @livewire('front.cart.add-address', ['cart' => $cart])
                                             @livewire('front.cart.addresses', ['cart' => $cart])
                                         @endif
 

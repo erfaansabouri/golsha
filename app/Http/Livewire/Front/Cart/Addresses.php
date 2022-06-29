@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Front\Cart;
 
+use App\Models\Address;
 use App\Models\Cart;
 use Livewire\Component;
 
@@ -30,5 +31,17 @@ class Addresses extends Component
         $cart->save();
         $this->mount(Cart::query()->findOrFail($cartId));
         $this->render();
+    }
+
+    public function destroy($addressId)
+    {
+        $address = Address::query()->find($addressId);
+        if ($address)
+        {
+            $address->delete();
+        }
+        $this->render();
+        return redirect()->route('user.cart.show', ['active_step' => 'second']);
+
     }
 }
