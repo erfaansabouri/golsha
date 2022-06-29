@@ -19,7 +19,7 @@
                         </ul>
                     </div>
                     <div class="blogFtrTags">
-                        @foreach($tags as $tag)
+                        @foreach(explode(',',$tags) as $tag)
                             <a href="#">{{ $tag }}</a>
                         @endforeach
                     </div>
