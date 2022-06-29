@@ -9,14 +9,14 @@
                                 <div class="FrmStepsBox">
                                     <div class="FrmSteps">
                                         <ul>
-                                            <li>
+                                            <li @if($active_step == 'first') class="active" @endif>
                                                 <span>1</span>
                                                 <p>
                                                     <small class="icon-shopping_bag_black_24dp"></small>
                                                     <i>سبد خرید</i>
                                                 </p>
                                             </li>
-                                            <li>
+                                            <li @if($active_step == 'second') class="active" @endif>
                                                 <span>2</span>
                                                 <p>
                                                     <small class="icon-delivery-truck"></small>
@@ -40,7 +40,7 @@
 
                                 </div>
                                 <div class="FrmCntanrWiz">
-                                    <div class="form-container animated">
+                                    <div class="form-container animated @if($active_step == 'first') active @endif">
                                         <div class="yourCartBx">
                                             <div class="table-responsive">
                                                 <table class="table">
@@ -84,16 +84,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-container animated">
+                                    <div class="form-container animated @if($active_step == 'second') active @endif">
                                         @if(\Illuminate\Support\Facades\Auth::user()->addresses()->count() == 0)
-                                            <div class="DestntnAddrss">
-                                                <div class="DestAddrssBx">
-                                                    <div>
-                                                        <h6>لطفا ابتدا آدرسی را در حساب کاربریتان ایجاد نمایید.</h6>
-                                                    </div>
-                                                    <a href="{{ route('user.profile.details') }}" class="EditDestAdrs">ثبت آدرس جدید</a>
-                                                </div>
-                                            </div>
+                                            @livewire('front.cart.add-address', ['cart' => $cart])
                                         @else
                                             @livewire('front.cart.addresses', ['cart' => $cart])
                                         @endif
@@ -118,3 +111,11 @@
             </div>
         </section>
 @endsection
+@push('scripts')
+    <script>
+        window.livewire.on('addressCreated', () => {
+            $('#create-address').modal('hide');
+        })
+    </script>
+@endpush
+

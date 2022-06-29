@@ -32,7 +32,9 @@ class CartController extends Controller
             return redirect()->route('products.index');
         }
 
-        return view('front-pages.cart.show', compact('cart'));
+        $active_step = $request->active_step ?? 'first';
+
+        return view('front-pages.cart.show', compact('cart', 'active_step'));
     }
 
     public function addToCart($id)

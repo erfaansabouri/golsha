@@ -21,6 +21,7 @@
 @include('front-pages.partials.scripts')
 @yield('scripts')
 @livewireScripts
+@stack('scripts')
 <script>
     function copyToClipboard() {
         /* Get the text field */

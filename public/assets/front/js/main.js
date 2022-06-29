@@ -485,8 +485,6 @@ $(document).ready(function(){
         return false;
     });
 
-    $(".FrmSteps li:nth-of-type(1)").addClass("active");
-    $(".FrmCntanrWiz .form-container:nth-of-type(1)").addClass("active");
 
     $(".form-container").on("click", ".next", function() {
         $(".FrmSteps li").eq($(this).parents(".form-container").index() + 1).addClass("active");
