@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="drnkGlshaHdr">
-                    <h3>گلشا بنوش</h3>
+                    <h3>محصولات غذایی بهترین</h3>
                     <span></span>
                 </div>
                 <div class="drnkGlshaSldr">
