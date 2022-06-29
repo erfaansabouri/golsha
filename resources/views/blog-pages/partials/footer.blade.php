@@ -20,7 +20,7 @@
                     </div>
                     <div class="blogFtrTags">
                         @foreach($tags as $tag)
-                            <a href="{{ route('blog.show', ['tag' => $tag]) }}">{{ $tag }}</a>
+                            <a href="{{ route('blog.index', ['tag' => $tag]) }}">{{ $tag }}</a>
                         @endforeach
                     </div>
                     <div class="blogFtrAbout">
