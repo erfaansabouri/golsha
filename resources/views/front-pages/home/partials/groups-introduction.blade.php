@@ -7,9 +7,7 @@
                         <div class="glshaPrdctBox  glshaPrdctRght">
                             <div class="glshaPrdctInfo">
                                 <small>{{ $group->title }}</small>
-                                <p>
-                                    {!! $group->description !!}
-                                </p>
+                                {!! $group->description !!}
                                 <a href="{{ route('products.index', ['group_id' => $group->id]) }}">
                                     <i>بیشتر بدانید</i>
                                     <span class="material-icons-outlined">arrow_back</span>
