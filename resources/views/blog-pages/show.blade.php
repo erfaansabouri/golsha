@@ -59,7 +59,7 @@
                                             <i>زمان مورد نیاز برای مطالعه: ۲ دقیقه</i>
                                         </div>
                                     </div>
-                                    <div class="blgSnglPstTxt" style="font-size: 16px">
+                                    <div class="blgSnglPstTxt" style="font-size: 16px; margin: 0">
                                         {!! nl2br($blogPost->body) !!}
                                     </div>
                                     <div class="blgSnglTags">
