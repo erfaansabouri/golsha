@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="blgSnglPstTxt" style="font-size: 16px; margin: 0">
-                                        {!! str_replace( "</p><p>","</p><br><p>",$blogPost->body ); !!}
+                                        {!! str_replace( "<p></p>","<p><br></p>",$blogPost->body ); !!}
                                     </div>
                                     <div class="blgSnglTags">
                                         <div class="blgSnglTgHed">
