@@ -61,7 +61,7 @@
                         <img src="{{ asset('assets/front/img/logo4.png') }}" alt="logo">
                         @foreach(\App\Models\BlogPost::query()->latest()->take(4)->get() as $blogPost)
                             <p style="font-size: 12px">
-                                <a style="font-size: 12px" href="{{ route('blog.show', $blogPost->id) }}">{{ mb_substr($blogPost->title,0,40) }}</a>
+                                <a style="font-size: 12px" href="{{ route('blog.show', $blogPost->id) }}">{{ mb_substr($blogPost->title,0,40) }}...</a>
                             </p>
                         @endforeach
                         <a href="{{ route('blog.index') }}">
