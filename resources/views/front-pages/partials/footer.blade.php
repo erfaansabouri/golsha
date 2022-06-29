@@ -61,7 +61,7 @@
                         <img src="{{ asset('assets/front/img/logo4.png') }}" alt="logo">
                         @foreach(\App\Models\BlogPost::query()->latest()->take(4)->get() as $blogPost)
                             <p>
-                                <a href="{{ route('blog.show', $blogPost->id) }}">@if(strlen($blogPost->title <= 30)) {{ $blogPost->title }} @else {{ substr($blogPost->title,0,30) }}... @endif</a>
+                                <a href="{{ route('blog.show', $blogPost->id) }}">@if(mb_strlen($blogPost->title <= 30)) {{ $blogPost->title }} @else {{ substr($blogPost->title,0,30) }}... @endif</a>
                             </p>
                         @endforeach
                         <a href="{{ route('blog.index') }}">
