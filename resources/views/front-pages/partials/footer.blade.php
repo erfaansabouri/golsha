@@ -116,8 +116,7 @@
                             </p>
                         </div>
                         <div class="ftrAbutLnks">
-                            <a href="#"></a>
-                            <a href="#"></a>
+                            <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
                         </div>
                     </div>
                 </div>
