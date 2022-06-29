@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="samandehi" content="878652947"/>
     <title>{{ $pageTitle ?? '' }}</title>
     <link rel="stylesheet" href="{{ asset('assets/front/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/main_font.css') }}">
