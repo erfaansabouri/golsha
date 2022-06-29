@@ -65,36 +65,39 @@
         </div>
     </section>
 
-    <section id="SlctdEditrSec">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="SlctdEditrBx">
-                        <div class="slctdEditrHdr">
-                            <h4>منتخب سردبیر</h4>
-                            <span></span>
-                        </div>
-                        <div class="slctdEditrBdy">
-                            @foreach(\App\Models\BlogPost::query()->selectedEditor()->get() ?? [] as $blogPost)
-                                <a href="{{ route('blog.show', $blogPost->id) }}" class="slctdEditrCrd">
-                                    <div class="slctedCrdImg">
-                                        <div class="image_parent">
-                                            <div class="image_inner">
-                                                <img src="{{ $blogPost->image_path }}" alt="img">
+    @if(\App\Models\BlogPost::query()->selectedEditor()->count() > 0)
+        <section id="SlctdEditrSec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="SlctdEditrBx">
+                            <div class="slctdEditrHdr">
+                                <h4>منتخب سردبیر</h4>
+                                <span></span>
+                            </div>
+                            <div class="slctdEditrBdy">
+                                @foreach(\App\Models\BlogPost::query()->selectedEditor()->get() as $seBlog)
+                                    <a href="{{ route('blog.show', $seBlog->id) }}" class="slctdEditrCrd">
+                                        <div class="slctedCrdImg">
+                                            <div class="image_parent">
+                                                <div class="image_inner">
+                                                    <img src="{{ $seBlog->image_path }}" alt="img">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="slctedCrdInfo">
-                                        <p><a href="{{ route('blog.show', $blogPost->id) }}">{{ $blogPost->title }}</a></p>
-                                    </div>
-                                </a>
-                            @endforeach
+                                        <div class="slctedCrdInfo">
+                                            <p>{{ $seBlog->title }}</p>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+
 
     <section id="blogPostSec">
         <div class="container">
