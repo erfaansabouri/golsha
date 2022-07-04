@@ -197,6 +197,7 @@ class Edit extends Component
 
         }
 
+        CategoryProduct::query()->where('product_id', $product->id)->delete();
         foreach ($this->category_ids as $category_id)
         {
             CategoryProduct::query()
@@ -206,7 +207,7 @@ class Edit extends Component
                 ]);
         }
 
-
+        GroupProduct::query()->where('product_id', $product->id)->delete();
         foreach ($this->group_ids as $group_id)
         {
             GroupProduct::query()
