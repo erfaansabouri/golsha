@@ -33,19 +33,10 @@
                         <a href="{{ route('admin.categories.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-th-list"></i>
                             <p>
-                                دسته بندی ها
+                                دسته بندی های محصولات
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.groups.index') }}" class="nav-link">
-                            <i class="nav-icon fa fa-th-list"></i>
-                            <p>
-                                گروه ها
-                            </p>
-                        </a>
-                    </li>
-
                     <li class="nav-item">
                         <a href="{{ route('admin.faq-categories.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-question"></i>
