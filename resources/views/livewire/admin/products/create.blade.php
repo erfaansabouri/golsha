@@ -143,9 +143,9 @@
 
 
                                     <hr>
-                                    <h4>دسته بندی و گروه</h4>
+                                    <h4>دسته بندی</h4>
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-5">
                                             <div class="form-group">
                                                 <label>انتخاب دسته بندی</label>
                                                 <div wire:ignore>
@@ -158,20 +158,6 @@
 
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <div class="form-group">
-                                                <label>انتخاب گروه</label>
-                                                <div wire:ignore>
-                                                    <select id="groups-dropdown" class="form-control" multiple="multiple">
-                                                        @foreach($groups as $group)
-                                                            <option value="{{ $group->id }}">{{ $group->title }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
                                     </div>
                                     <hr>
                                     <div class="row">

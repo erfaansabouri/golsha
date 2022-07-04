@@ -174,15 +174,6 @@ class Create extends Component
                 ]);
         }
 
-
-        foreach ($this->group_ids as $group_id)
-        {
-            GroupProduct::query()
-                ->create([
-                    'product_id' => $product->id,
-                    'group_id' => $group_id
-                ]);
-        }
         session()->flash('message', 'محصول با موفقیت ایجاد شد.');
         redirect()->route('admin.products.index');
     }
