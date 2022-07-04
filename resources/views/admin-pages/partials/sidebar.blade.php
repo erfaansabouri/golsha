@@ -45,7 +45,14 @@
                             </p>
                         </a>
                     </li>
-
+                    <li class="nav-item">
+                        <a href="{{ route('admin.read-more-sections.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-th-list"></i>
+                            <p>
+                                بیشتر بدانید صفحه اصلی
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.users.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-users"></i>

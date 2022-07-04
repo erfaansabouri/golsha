@@ -110,6 +110,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/destroy/{id}', [ \App\Http\Controllers\Admin\BlogPostController::class , 'destroy'])->name('admin.blog-posts.destroy');
     });
 
+    // Read more sections
+    Route::prefix('read-more-sections')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\ReadMoreSectionController::class , 'index'])->name('admin.read-more-sections.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\ReadMoreSectionController::class , 'create'])->name('admin.read-more-sections.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\ReadMoreSectionController::class , 'edit'])->name('admin.read-more-sections.edit');
+        Route::get('/destroy/{id}', [ \App\Http\Controllers\Admin\ReadMoreSectionController::class , 'destroy'])->name('admin.read-more-sections.destroy');
+    });
+
     // Tickets
     Route::prefix('tickets')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\TicketController::class , 'index'])->name('admin.tickets.index');

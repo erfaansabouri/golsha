@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                @foreach(\App\Models\Group::all() as $key => $group)
+                @foreach(\App\Models\ReadMoreSection::all() ?? [] as $key => $group)
                     @if($key % 2 == 0)
                         <div class="glshaPrdctBox  glshaPrdctRght">
                             <div class="glshaPrdctInfo">
                                 <small>{{ $group->title }}</small>
                                 {!! $group->description !!}
-                                <a href="{{ route('products.index', ['group_id' => $group->id]) }}">
+                                <a href="{{ $group->href }}">
                                     <i>بیشتر بدانید</i>
                                     <span class="material-icons-outlined">arrow_back</span>
                                 </a>
@@ -24,8 +24,8 @@
                             </div>
                             <div class="glshaPrdctInfo">
                                 <small>{{ $group->title }}</small>
-                                <p>{!! $group->description !!}</p>
-                                <a href="{{ route('products.index', ['group_id' => $group->id]) }}">
+                                {!! $group->description !!}
+                                <a href="{{ $group->href }}">
                                     <i>بیشتر بدانید</i>
                                     <span class="material-icons-outlined">arrow_back</span>
                                 </a>
