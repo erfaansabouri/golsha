@@ -9,6 +9,6 @@
     @include('front-pages.home.partials.special-products')
     @include('front-pages.home.partials.golsha-packs')
     @include('front-pages.home.partials.groups-introduction')
-    @include('front-pages.home.partials.twin-banners')
+    @include('front-pages.home.partials.twin-banners-bot')
     @include('front-pages.home.partials.options')
 @endsection
