@@ -15,7 +15,7 @@
                         <div>
                             <ul>
                                 <li>
-                                    <a href="#" class="allPrdctLnk">
+                                    <a href="{{ route('products.index', ['category_id', $category->id]) }}" class="allPrdctLnk">
                                         <i>همه محصولات دسته</i>
                                         <span class="material-icons">keyboard_arrow_left</span>
                                     </a>
