@@ -17,55 +17,7 @@
                                 <i>صفحه اصلی</i>
                             </a>
                         </li>
-                        <li class="navRowLi havSubMnuLink">
-                            <a href="#" class="remveLink">
-                                <span class="material-icons-outlined remvLnkSpan">menu</span>
-                                <i>محصولات</i>
-                            </a>
-                            <div class="navRowSubBx">
-                                <ul class="navRowSubUl">
-                                    @foreach(\App\Models\Category::all() ?? [] as $category)
-                                        <li class="navRowSubLi">
-                                            <a class="navRowSubLnk">
-                                                <i>{{ $category->title }}</i>
-                                                <span class="material-icons opnSubSub">keyboard_arrow_left</span>
-                                            </a>
-                                            <div class="navSubBox opnd">
-                                                <div>
-                                                    @php
-                                                        $productGroups = $category->products()->take(45)->get()->splitIn(3);
-                                                    @endphp
-                                                    @foreach($productGroups as $pgKey => $productGroup)
-                                                        <ul>
-                                                            @foreach($productGroup as $pKey => $product)
-                                                                @if($pgKey == 0 and $pKey == 0)
-                                                                    <li>
-                                                                        <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="allPrdctLnk">
-                                                                            <i>همه محصولات دسته</i>
-                                                                            <span class="material-icons">keyboard_arrow_left</span>
-                                                                        </a>
-                                                                    </li>
-                                                                @endif
-                                                                <li><a href="{{ route('products.show', $product->id) }}">{{ $product->title }}</a></li>
-                                                                @if($pgKey == 2 and $loop->last)
-                                                                        <li>
-                                                                            <a href="{{ route('products.index', ['category_id' => $category->id]) }}" class="allPrdctLnk">
-                                                                                <i>همه محصولات دسته</i>
-                                                                                <span class="material-icons">keyboard_arrow_left</span>
-                                                                            </a>
-                                                                        </li>
-                                                                @endif
-                                                            @endforeach
-                                                        </ul>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        </li>
-                                    @endforeach
-
-                                </ul>
-                            </div>
-                        </li>
+                        @include('front-pages.partials.mega_menu')
                         <li class="navRowLi">
                             <a href="{{ route('blog.index') }}">
                                 <i>مجله گلشا</i>
