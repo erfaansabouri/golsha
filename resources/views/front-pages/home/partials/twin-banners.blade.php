@@ -3,12 +3,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="bannrSecBox">
-                    <a href="{{ (new \App\Models\Setting())->getHrefByKey('home-banners-1') }}" class="bannerBox">
-                        <img src="{{ (new \App\Models\Setting())->findByKey('home-banners-1') }}" alt="img">
-                    </a>
-                    <a href="{{ (new \App\Models\Setting())->getHrefByKey('home-banners-2') }}" class="bannerBox">
-                        <img src="{{ (new \App\Models\Setting())->findByKey('home-banners-2') }}" alt="img">
-                    </a>
+                    @if(!empty((new \App\Models\Setting())->getHrefByKey('home-banners-1')))
+                        <a href="{{ (new \App\Models\Setting())->getHrefByKey('home-banners-1') }}" class="bannerBox">
+                            <img src="{{ (new \App\Models\Setting())->findByKey('home-banners-1') }}" alt="img">
+                        </a>
+                    @endif
+                    @if(!empty((new \App\Models\Setting())->getHrefByKey('home-banners-1')))
+                        <a href="{{ (new \App\Models\Setting())->getHrefByKey('home-banners-2') }}" class="bannerBox">
+                            <img src="{{ (new \App\Models\Setting())->findByKey('home-banners-2') }}" alt="img">
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
