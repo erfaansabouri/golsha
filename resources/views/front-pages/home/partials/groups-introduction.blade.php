@@ -7,7 +7,7 @@
                         <div class="glshaPrdctBox  glshaPrdctRght">
                             <div class="glshaPrdctInfo">
                                 <small>{{ $group->title }}</small>
-                                {!! $group->description !!}
+                                {!! $group->body !!}
                                 <a href="{{ $group->href }}">
                                     <i>بیشتر بدانید</i>
                                     <span class="material-icons-outlined">arrow_back</span>
@@ -24,7 +24,7 @@
                             </div>
                             <div class="glshaPrdctInfo">
                                 <small>{{ $group->title }}</small>
-                                {!! $group->description !!}
+                                {!! $group->body !!}
                                 <a href="{{ $group->href }}">
                                     <i>بیشتر بدانید</i>
                                     <span class="material-icons-outlined">arrow_back</span>
