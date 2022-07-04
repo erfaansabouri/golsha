@@ -23,6 +23,7 @@ class Setting extends Model
         'sliders' => 'sliders',
         'under-sliders' => 'under-sliders',
         'product-banner' => 'product-banner',
+        'home-banner' => 'home-banner',
 	];
 
 	public static function translateCategories($category)
@@ -42,6 +43,8 @@ class Setting extends Model
                 return 'محصولات زیر اسلایدر';
             case self::CATEGORIES['product-banner']:
                 return 'بنر های صفحه محصولات';
+            case self::CATEGORIES['home-banner']:
+                return 'بنر های صفحه اصلی';
 		}
 	}
 

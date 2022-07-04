@@ -14,14 +14,14 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
-		Setting::query()->truncate();
+		/*Setting::query()->truncate();
         $this->aboutUs();
         $this->footer();
         $this->socials();
         $this->blog();
         $this->sliders();
-        $this->underSliders();
-        $this->productBanners();
+        $this->underSliders();*/
+        $this->homeBanners();
     }
 
 	public function aboutUs()
@@ -662,6 +662,44 @@ class SettingSeeder extends Seeder
                 'key' => 'product-banner-4',
                 'value' => 'images/sample.jpg',
                 'category' => 'product-banner',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+        ];
+
+        foreach ($items as $item)
+        {
+            Setting::query()->create($item);
+        }
+    }
+    public function homeBanners()
+    {
+        $items = [
+            [
+                'key' => 'home-banners-1',
+                'value' => 'images/sample.jpg',
+                'category' => 'home-banner',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'home-banners-2',
+                'value' => 'images/sample.jpg',
+                'category' => 'home-banner',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'home-banners-3',
+                'value' => 'images/sample.jpg',
+                'category' => 'home-banner',
+                'href' => 'https://google.com',
+                'type' => 'image',
+            ],
+            [
+                'key' => 'home-banners-4',
+                'value' => 'images/sample.jpg',
+                'category' => 'home-banner',
                 'href' => 'https://google.com',
                 'type' => 'image',
             ],
