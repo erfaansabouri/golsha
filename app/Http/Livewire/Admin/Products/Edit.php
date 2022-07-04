@@ -113,13 +113,7 @@ class Edit extends Component
             ->get()
             ->pluck('category_id')
             ->toArray();
-        $this->groups = Group::all();
-        $this->old_group_ids = GroupProduct::query()
-            ->where('product_id', $record->id)
-            ->get()
-            ->pluck('group_id')
-            ->toArray();
-
+        $this->category_ids = $this->old_category_ids;
         $this->title = $record->title;
         $this->sellerName = $record->seller_name;
         $this->ingredients = $record->ingredients;
@@ -198,10 +192,6 @@ class Edit extends Component
         }
 
         CategoryProduct::query()->where('product_id', $product->id)->delete();
-        if(empty($this->category_ids))
-        {
-            $this->category_ids = $this->old_category_ids;
-        }
         foreach ($this->category_ids as $category_id)
         {
             CategoryProduct::query()
