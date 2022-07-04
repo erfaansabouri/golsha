@@ -198,6 +198,10 @@ class Edit extends Component
         }
 
         CategoryProduct::query()->where('product_id', $product->id)->delete();
+        if(empty($this->category_ids))
+        {
+            $this->category_ids = $this->old_category_ids;
+        }
         foreach ($this->category_ids as $category_id)
         {
             CategoryProduct::query()
@@ -207,15 +211,6 @@ class Edit extends Component
                 ]);
         }
 
-        GroupProduct::query()->where('product_id', $product->id)->delete();
-        foreach ($this->group_ids as $group_id)
-        {
-            GroupProduct::query()
-                ->create([
-                    'product_id' => $product->id,
-                    'group_id' => $group_id
-                ]);
-        }
         session()->flash('message', 'محصول با موفقیت ویرایش شد.');
         redirect()->route('admin.products.index');
     }
