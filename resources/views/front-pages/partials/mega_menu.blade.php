@@ -24,13 +24,6 @@
                                     <li><a href="{{ route('products.show', $cProduct->id) }}">{{ $cProduct->title }}</a></li>
                                 @endforeach
                             </ul>
-                            @if($category->products()->count() > 14)
-                                <ul>
-                                    @foreach($category->products()->get()->skip(14)->take(15) ?? [] as $cProduct)
-                                        <li><a href="{{ route('products.show', $cProduct->id) }}">{{ $cProduct->title }}</a></li>
-                                    @endforeach
-                                </ul>
-                            @endif
                         </div>
                     </div>
                 </li>
