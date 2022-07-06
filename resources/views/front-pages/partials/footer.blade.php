@@ -117,8 +117,6 @@
                         </div>
                         <div class="ftrAbutLnks">
                             <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
-                        </div>
-                        <div class="ftrAbutLnks">
                             <img referrerpolicy='origin' id = 'rgvjjxlzwlaonbqesizpsizp' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=314299&p=xlaorfthaodsuiwkpfvlpfvl", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=314299&p=qftinbpdshwlodrfbsiybsiy' />
                         </div>
                     </div>
