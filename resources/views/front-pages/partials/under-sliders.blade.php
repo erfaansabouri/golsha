@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="topPrdctBox">
                     <div class="topPrdctRght">
-                        <a href="{{ (new \App\Models\Setting())->getHrefByKey('under-sliders-1') }}" class="topRghtCrd">
+                        <a href="{{ (new \App\Models\Setting())->getHrefByKey('under-sliders-1') }}" class="topRghtCrd" style="min-height: 120px">
                             <div class="topRghtCrdImg">
                                 <img src="{{ (new \App\Models\Setting())->findByKey('under-sliders-1') }}" alt="img">
                             </div>
@@ -13,7 +13,7 @@
                                 <p>{{ (new \App\Models\Setting())->findByKey('under-sliders-2') }}</p>
                             </div>
                         </a>
-                        <a href="{{ (new \App\Models\Setting())->getHrefByKey('under-sliders-3') }}" class="topRghtCrd">
+                        <a href="{{ (new \App\Models\Setting())->getHrefByKey('under-sliders-3') }}" class="topRghtCrd" style="min-height: 120px">
                             <div class="topRghtCrdImg">
                                 <img src="{{ (new \App\Models\Setting())->findByKey('under-sliders-3') }}" alt="img">
                             </div>
