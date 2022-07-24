@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa">
 @livewireStyles
-@include('front-pages.partials.head', ['pageTitle' => 'گلشا تب'  .' '. @$pageInfo['title'] ])
+@include('front-pages.partials.head', ['pageTitle' =>  @$pageInfo['title'] ?? 'گلشاتب' ])
 @yield('head')
 <style>
     #more {display: none;}
