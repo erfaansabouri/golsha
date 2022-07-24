@@ -14,13 +14,14 @@ class SettingSeeder extends Seeder
      */
     public function run()
     {
-		/*Setting::query()->truncate();
+		Setting::query()->truncate();
         $this->aboutUs();
         $this->footer();
         $this->socials();
         $this->blog();
         $this->sliders();
-        $this->underSliders();*/
+        $this->underSliders();
+        $this->productBanners();
         $this->homeBanners();
     }
 

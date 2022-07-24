@@ -119,10 +119,6 @@
                             </ul>
                         </div>
                     </div>
-                    <a href="#" class="addToCartBtn">
-                        <span class="icon-shopping_bag_black_24dp"></span>
-                        <i>افزودن به سبد خرید</i>
-                    </a>
                 </div>
             </div>
         </div>

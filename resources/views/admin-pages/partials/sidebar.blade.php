@@ -38,6 +38,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('admin.behtarin-categories.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-th-list"></i>
+                            <p>
+                                گروه غذایی بهترین
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('admin.faq-categories.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-question"></i>
                             <p>

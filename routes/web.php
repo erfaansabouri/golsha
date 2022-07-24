@@ -110,6 +110,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/destroy/{id}', [ \App\Http\Controllers\Admin\BlogPostController::class , 'destroy'])->name('admin.blog-posts.destroy');
     });
 
+    // Behtarin categories
+    Route::prefix('behtarin-categories')->group(function () {
+        Route::get('/', [ \App\Http\Controllers\Admin\BehtarinCategoryController::class , 'index'])->name('admin.behtarin-categories.index');
+        Route::get('/create', [ \App\Http\Controllers\Admin\BehtarinCategoryController::class , 'create'])->name('admin.behtarin-categories.create');
+        Route::get('/edit/{id}', [ \App\Http\Controllers\Admin\BehtarinCategoryController::class , 'edit'])->name('admin.behtarin-categories.edit');
+        Route::get('/destroy/{id}', [ \App\Http\Controllers\Admin\BehtarinCategoryController::class , 'destroy'])->name('admin.behtarin-categories.destroy');
+    });
+
     // Read more sections
     Route::prefix('read-more-sections')->group(function () {
         Route::get('/', [ \App\Http\Controllers\Admin\ReadMoreSectionController::class , 'index'])->name('admin.read-more-sections.index');

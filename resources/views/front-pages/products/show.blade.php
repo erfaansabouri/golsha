@@ -161,7 +161,7 @@
     </div>
 
     @include('front-pages.products.partials.show-product-options')
-    @include('front-pages.products.partials.product-details')
+    @include('front-pages.products.partials.product-details', ['product' => $product])
 
     <section id="prdctRltdSec">
         <div class="container">

@@ -10,25 +10,14 @@
                 <div class="drnkGlshaSldr">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            @foreach(\App\Models\Product::query()->golshaBenoosh()->take(8)->get() as $product)
+                            @foreach(\App\Models\BehtarinCategory::all() ?? [] as $behtarinCategory)
                                 <div class="swiper-slide">
-                                    <a href="{{ route('products.show', $product->id) }}" class="item">
+                                    <a href="{{ route('products.index', ['behtarin_category_id' => $behtarinCategory->id]) }}" class="item">
                                         <div class="mostSailImg">
-                                            <img src="{{ $product->first_image_path }}" alt="img">
+                                            <img src="{{ $behtarinCategory->image_path }}" alt="img">
                                         </div>
                                         <div class="mostSailInfo">
-                                            <h6>{{ $product->title }}</h6>
-                                            <div class="mostSailPric">
-                                                @if($product->hasActiveDiscount())
-                                                    <small>{{ $product->discount_percentage }}%</small>
-                                                @endif
-                                                <div>
-                                                    <span>{{ $product->purchase_price }} تومان</span>
-                                                    @if($product->hasActiveDiscount())
-                                                        <del>{{ $product->price }} تومان</del>
-                                                    @endif
-                                                </div>
-                                            </div>
+                                            <h6 class="text-center">{{ $behtarinCategory->title }}</h6>
                                         </div>
                                     </a>
                                 </div>

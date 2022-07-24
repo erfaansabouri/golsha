@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\BehtarinCategory;
+use App\Models\BehtarinCategoryProduct;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Product;
@@ -23,6 +25,15 @@ class ProductController extends Controller
             $products = $products->whereHas('categories', function ($q) use ($request){
                 $q->where('categories.id', $request->category_id);
             });
+        }
+
+        if(!empty($request->behtarin_category_id))
+        {
+            $currentFilterName = BehtarinCategory::query()->findOrFail($request->behtarin_category_id)->title;
+            $ids = BehtarinCategoryProduct::query()
+                ->where('behtarin_category_id', $request->behtarin_category_id)
+                ->pluck('product_id');
+            $products = $products->whereIn('id', $ids);
         }
 
         if(!empty($request->search))

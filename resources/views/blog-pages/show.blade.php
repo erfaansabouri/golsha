@@ -59,7 +59,7 @@
                                             <i>زمان مورد نیاز برای مطالعه: ۲ دقیقه</i>
                                         </div>
                                     </div>
-                                    <div class="blgSnglPstTxt" style="font-size: 16px; margin: 0">
+                                    <div class="blgSnglPstTxt" style="font-size: 23px; margin: 0">
                                         {!! str_replace( "<p></p>","<p><br></p>",$blogPost->body ); !!}
                                     </div>
                                     <div class="blgSnglTags">
