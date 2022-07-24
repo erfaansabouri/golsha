@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Products;
+namespace App\Http\Livewire\Admin\Invoices;
 
 use App\Models\Category;
 use App\Models\CategoryProduct;

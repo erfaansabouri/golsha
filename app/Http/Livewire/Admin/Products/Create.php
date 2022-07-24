@@ -60,6 +60,7 @@ class Create extends Component
     public $images = [];
 
     public $show_in_right_bar;
+    public $available_soon;
 
     public function mount()
     {
@@ -126,6 +127,7 @@ class Create extends Component
                 'price' => $this->price,
                 'discount_percentage' => $this->discountPercentage,
                 'show_in_right_bar' => (boolean)$this->show_in_right_bar,
+                'available_soon' => (boolean)$this->available_soon,
             ]);
 
         foreach ($this->images as $key => $image)

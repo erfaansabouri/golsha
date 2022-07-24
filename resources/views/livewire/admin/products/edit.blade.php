@@ -300,6 +300,14 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="available_soon">
+                                                    <label class="form-check-label">به زودی (با فعال کردن این گزینه محصول غیر قابل خرید کردن میشود.)</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
