@@ -207,4 +207,22 @@ class Edit extends Component
         session()->flash('message', 'محصول با موفقیت ویرایش شد.');
         redirect()->route('admin.products.index');
     }
+
+    public function deleteProductFaq($faq_id)
+    {
+        ProductFaq::query()
+            ->where('id', $faq_id)
+            ->delete();
+
+        return redirect()->route('admin.products.edit', $this->record->id);
+    }
+
+    public function deleteProductAttr($attr_id)
+    {
+        ProductAttribute::query()
+            ->where('id', $attr_id)
+            ->delete();
+
+        return redirect()->route('admin.products.edit', $this->record->id);
+    }
 }

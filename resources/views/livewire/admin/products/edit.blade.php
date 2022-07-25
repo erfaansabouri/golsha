@@ -197,7 +197,7 @@
                                             <div class="col-2">
                                                 <div class="form-group">
                                                     <label class="control-label">-</label>
-                                                    <button class="btn text-white btn-danger btn-block">حذف</button>
+                                                    <button class="btn text-white btn-danger btn-block" wire:click.prevent="deleteProductAttr({{ $attr->id }})">حذف</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -259,7 +259,7 @@
                                             <div class="col-2">
                                                 <div class="form-group">
                                                     <label class="control-label">-</label>
-                                                    <button class="btn text-white btn-danger btn-block">حذف</button>
+                                                    <button class="btn text-white btn-danger btn-block" wire:click.prevent="deleteProductFaq({{ $faq->id }})">حذف</button>
                                                 </div>
                                             </div>
                                         </div>
