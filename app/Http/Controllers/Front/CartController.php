@@ -53,6 +53,7 @@ class CartController extends Controller
 
         $cartProduct = CartProduct::query()
             ->where('product_id', $id)
+            ->where('cart_id', $cart->id)
             ->first();
 
         $product = Product::query()->findOrFail($id);
