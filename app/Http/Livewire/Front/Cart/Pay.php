@@ -20,9 +20,14 @@ class Pay extends Component
 
     public function pay()
     {
+
         if(empty($this->cart->address_id) || empty($this->cart->delivery_type))
         {
-            return  redirect()->route('user.cart.show')->with(['error' => 'آدرس و نحوه ارسال اجباری است.']);
+            $this->dispatchBrowserEvent('alert',[
+                'type'=>'error',
+                'message'=>"انتخاب آدرس و نحوه ارسال مرسوله اجباری است."
+            ]);
+            return;
         }
         $invoice = $this->cart->convertToInvoice();
         return redirect()->route('send-customer-to-payment-gateaway',[

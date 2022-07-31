@@ -19,6 +19,8 @@
     "laravel/framework": "^8.0",
     "laravel/tinker": "^2.0",
     "livewire/livewire": "^2.10",
+    "php-flasher/flasher-laravel": "^1.7",
+    "php-flasher/flasher-toastr-laravel": "^1.7",
     "pishran/zarinpal": "^4.3",
     "ybazli/faker": "^1.0"
   },
