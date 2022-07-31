@@ -62,6 +62,12 @@ class Create extends Component
     public $show_in_right_bar;
     public $available_soon;
 
+    public $home_most_sold;
+    public $home_newest;
+    public $home_suggestion;
+    public $home_special;
+    public $home_golsha_packs;
+
     public function mount()
     {
          $this->categories = Category::all();
@@ -128,6 +134,12 @@ class Create extends Component
                 'discount_percentage' => $this->discountPercentage,
                 'show_in_right_bar' => (boolean)$this->show_in_right_bar,
                 'available_soon' => (boolean)$this->available_soon,
+
+                'home_most_sold' => (boolean)$this->home_most_sold,
+                'home_newest' => (boolean)$this->home_newest,
+                'home_suggestion' => (boolean)$this->home_suggestion,
+                'home_special' => (boolean)$this->home_special,
+                'home_golsha_packs' => (boolean)$this->home_golsha_packs,
             ]);
 
         foreach ($this->images as $key => $image)

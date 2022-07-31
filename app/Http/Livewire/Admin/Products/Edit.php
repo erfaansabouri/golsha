@@ -63,6 +63,13 @@ class Edit extends Component
     public $show_in_right_bar;
     public $available_soon;
 
+
+    public $home_most_sold;
+    public $home_newest;
+    public $home_suggestion;
+    public $home_special;
+    public $home_golsha_packs;
+
     public function updatePurchasePrice()
     {
         if(!empty($this->discountPercentage))
@@ -126,6 +133,12 @@ class Edit extends Component
         $this->show_in_right_bar = $record->show_in_right_bar;
         $this->available_soon = $record->available_soon;
 
+        $this->home_most_sold = $record->home_most_sold;
+        $this->home_newest = $record->home_newest;
+        $this->home_suggestion = $record->home_suggestion;
+        $this->home_special = $record->home_special;
+        $this->home_golsha_packs = $record->home_golsha_packs;
+
         if(!empty($this->discountPercentage))
             $this->purchasePrice = ((100 - $this->discountPercentage) * $this->price) / 100;
         else
@@ -155,6 +168,12 @@ class Edit extends Component
                 'discount_percentage' => $this->discountPercentage,
                 'show_in_right_bar' => (boolean)$this->show_in_right_bar,
                 'available_soon' => (boolean)$this->available_soon,
+
+                'home_most_sold' => (boolean)$this->home_most_sold,
+                'home_newest' => (boolean)$this->home_newest,
+                'home_suggestion' => (boolean)$this->home_suggestion,
+                'home_special' => (boolean)$this->home_special,
+                'home_golsha_packs' => (boolean)$this->home_golsha_packs,
             ]);
 
         foreach ($this->images as $key => $image)

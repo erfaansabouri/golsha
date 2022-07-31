@@ -71,19 +71,18 @@ class Product extends Model
 
     public function scopeMostSold($query)
     {
-        return $query->orderBy('view_count');
+        return $query->where('home_most_sold', true);
     }
 
     public function scopeNewest($query)
     {
-        return $query->orderBy('created_at', 'desc');
+        return $query->where('home_newest', true);
     }
 
     public function scopeGolshaPacks($query)
     {
-        $query->whereHas('categories', function ($q){
-           $q->where('categories.id', 1); // todo
-        });
+        return $query->where('home_golsha_packs', true);
+
     }
 
     public function scopeGolshaBenoosh($query)
@@ -95,16 +94,13 @@ class Product extends Model
 
     public function scopeSpecial($query)
     {
-        $query->whereHas('groups', function ($q){
-            $q->where('groups.id', 1); // todo
-        });
+        return $query->where('home_special', true);
+
     }
 
     public function scopeSuggestion($query)
     {
-        $query->whereHas('groups', function ($q){
-            $q->where('groups.id', 2); // todo
-        });
+        return $query->where('home_suggestion', true);
     }
 
     public function hasActiveDiscount()

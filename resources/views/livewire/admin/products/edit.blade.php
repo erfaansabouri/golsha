@@ -309,7 +309,54 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="home_most_sold">
+                                                    <label class="form-check-label">نمایش در پر فروش ترین های صفحه اصلی</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="home_newest">
+                                                    <label class="form-check-label">نمایش در جدید ترین های صفحه اصلی</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="home_suggestion">
+                                                    <label class="form-check-label">نمایش در پیشنهاد گلشا صفحه اصلی</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="home_special">
+                                                    <label class="form-check-label">نمایش در محصولات ویژه صفحه اصلی</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row"><div class="col-6">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" wire:model.defer="home_golsha_packs">
+                                                    <label class="form-check-label">نمایش پک های گلشا صفحه اصلی</label>
+                                                </div>
+                                            </div>
+                                        </div></div>
+                                    <hr>
                                 </div>
+
 
                                 <!-- /.card-body -->
                                 <div class="card-footer">
