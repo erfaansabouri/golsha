@@ -9,7 +9,7 @@
                 <div class="drnkGlshaSldr">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            @foreach(\App\Models\Product::query()->suggestion()->take(8)->get() as $product)
+                            @foreach(\App\Models\Product::query()->suggestion()->latest()->take(8)->get() as $product)
                                 <div class="swiper-slide">
                                     <a href="{{ route('products.show', $product->id) }}" class="item">
                                         <div class="mostSailImg">

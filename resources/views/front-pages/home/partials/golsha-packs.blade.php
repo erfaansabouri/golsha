@@ -7,7 +7,7 @@
                     <span></span>
                 </div>
                 <div class="glshaPaksBox">
-                    @foreach(\App\Models\Product::query()->golshaPacks()->take(4)->get() as $product)
+                    @foreach(\App\Models\Product::query()->golshaPacks()->latest()->take(4)->get() as $product)
                         <a href="{{ route('products.show', $product->id) }}" class="glshaPakCrd">
                             <div class="packCardImg">
                                 <img src="{{ $product->first_image_path }}" alt="img">

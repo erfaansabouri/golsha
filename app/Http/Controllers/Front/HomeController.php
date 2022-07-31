@@ -15,8 +15,8 @@ class HomeController extends Controller
             ->where('category', Setting::CATEGORIES['sliders'])
             ->get();
 
-		$mostSold = Product::mostSold()->take(8)->get();
-        $suggestionProducts = Product::suggestion()->take(8)->get();
+		$mostSold = Product::mostSold()->latest()->take(8)->get();
+        $suggestionProducts = Product::suggestion()->latest()->take(8)->get();
         $twoRandomProducts = Product::query()->inRandomOrder()->take(2)->get();
         $benooshProducts = Product::query()->inRandomOrder()->take(8)->get();
 		return view('front-pages.home.index', compact('sliders', 'mostSold', 'suggestionProducts', 'twoRandomProducts', 'benooshProducts'));
